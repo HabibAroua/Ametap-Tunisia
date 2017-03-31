@@ -263,3 +263,54 @@ create or replace PROCEDURE SupprimerAdmin(a_matricule IN Admin.matricule%TYPE)
                delete Admin where matricule=a_matricule ;
                COMMIT ;
  END;
+
+Table Activite :
+create table Activite
+( 
+    id int primary key ,
+    Nom_Activite varchar(200) ,
+    Capacite int ,
+    Nombre_participant int ,
+    Date_debut date ,
+    Date_fin date ,
+    CONSTRAINT check_Date_Fin CHECK (Date_fin > Date_debut) ,
+    Montant int ,
+    prix_unitaire int  
+);
+
+Table Conjoint:
+Create table Conjoint 
+(
+    Cin int primary key ,
+    Nom varchar(200)  not null,
+    Prenom varchar(200)  not null,
+    Date_naissance date  not null,
+    metier varchar(200) ,
+    matricule int 
+);
+
+ALTER TABLE Conjoint
+ADD FOREIGN KEY (matricule)
+REFERENCES adherent(matriculeAmetap);
+
+Table Enfant :
+Create table Enfant
+(
+    id int primary key ,
+    Nom varchar(200)  not null,
+    Prenom varchar(200)  not null,
+    Date_naissance date  not null,
+    ecole varchar(200) ,
+    matricule int 
+);
+ALTER TABLE Enfant
+ADD FOREIGN KEY (matricule)
+REFERENCES adherent(matriculeAmetap);
+
+ALTER TABLE Enfant
+ADD FOREIGN KEY (id)
+REFERENCES Participant(matricule);
+
+ALTER TABLE Conjoint
+ADD FOREIGN KEY (cin)
+REFERENCES Participant(matricule);

@@ -63,5 +63,12 @@ namespace AMETAP.View.Gestion_des_adherents
         {
             Application.Exit();
         }
+
+        private void dataAdherent_DoubleClick(object sender, EventArgs e)
+        {
+            Famille f = new Famille();
+            f.matricule = dataAdherent.CurrentRow.Cells[0].Value.ToString();
+            f.Show();
+        }
     }
 }

@@ -51,6 +51,14 @@ namespace AMETAP.View
         {
             View.Gestion_des_utilisateurs.Gestion_des_utilisateurs gu = new Gestion_des_utilisateurs.Gestion_des_utilisateurs();
             gu.Show();
+            this.Hide();
+        }
+
+        private void gestionDesActivitésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.Gestion_des_activites.GestionActivite ga = new Gestion_des_activites.GestionActivite();
+            ga.Show();
+            this.Hide();
         }
     }
 }

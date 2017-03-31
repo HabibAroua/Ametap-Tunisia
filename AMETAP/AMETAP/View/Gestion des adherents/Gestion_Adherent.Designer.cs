@@ -45,7 +45,7 @@
             // btSupprimer
             // 
             this.btSupprimer.ActiveControl = null;
-            this.btSupprimer.Location = new System.Drawing.Point(283, 127);
+            this.btSupprimer.Location = new System.Drawing.Point(394, 127);
             this.btSupprimer.Name = "btSupprimer";
             this.btSupprimer.Size = new System.Drawing.Size(81, 68);
             this.btSupprimer.TabIndex = 0;
@@ -59,8 +59,9 @@
             this.dataAdherent.Location = new System.Drawing.Point(35, 211);
             this.dataAdherent.Name = "dataAdherent";
             this.dataAdherent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataAdherent.Size = new System.Drawing.Size(442, 155);
+            this.dataAdherent.Size = new System.Drawing.Size(541, 155);
             this.dataAdherent.TabIndex = 1;
+            this.dataAdherent.DoubleClick += new System.EventHandler(this.dataAdherent_DoubleClick);
             // 
             // txtChercher
             // 
@@ -77,7 +78,7 @@
             this.txtChercher.CustomButton.UseSelectable = true;
             this.txtChercher.CustomButton.Visible = false;
             this.txtChercher.Lines = new string[0];
-            this.txtChercher.Location = new System.Drawing.Point(110, 172);
+            this.txtChercher.Location = new System.Drawing.Point(109, 172);
             this.txtChercher.MaxLength = 32767;
             this.txtChercher.Name = "txtChercher";
             this.txtChercher.PasswordChar = '\0';
@@ -96,7 +97,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(35, 172);
+            this.metroLabel1.Location = new System.Drawing.Point(34, 172);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(69, 19);
             this.metroLabel1.TabIndex = 3;
@@ -105,7 +106,7 @@
             // btRefresh
             // 
             this.btRefresh.ActiveControl = null;
-            this.btRefresh.Location = new System.Drawing.Point(387, 127);
+            this.btRefresh.Location = new System.Drawing.Point(497, 127);
             this.btRefresh.Name = "btRefresh";
             this.btRefresh.Size = new System.Drawing.Size(79, 68);
             this.btRefresh.TabIndex = 4;
@@ -135,7 +136,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(452, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(535, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 70);
             this.pictureBox2.TabIndex = 9;
@@ -146,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 378);
+            this.ClientSize = new System.Drawing.Size(613, 378);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Accueil);
             this.Controls.Add(this.pictureBox1);

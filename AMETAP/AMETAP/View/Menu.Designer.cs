@@ -121,6 +121,7 @@
             this.gestionDesActivitésToolStripMenuItem.Name = "gestionDesActivitésToolStripMenuItem";
             this.gestionDesActivitésToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.gestionDesActivitésToolStripMenuItem.Text = "Gestion des activités";
+            this.gestionDesActivitésToolStripMenuItem.Click += new System.EventHandler(this.gestionDesActivitésToolStripMenuItem_Click);
             // 
             // organisateurToolStripMenuItem
             // 

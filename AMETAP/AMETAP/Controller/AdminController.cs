@@ -42,8 +42,6 @@ namespace AMETAP.Controller
                 AMETAP.View.Script.Cryptage c = new View.Script.Cryptage();
                 if ((a.login.Equals(login)) && (c.Descrypt(a.password).Equals(password)))
                 {
-                    View.Menu m = new View.Menu();
-                    m.Show();
                     test = true ;
                 }
                 return test;

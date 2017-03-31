@@ -10,7 +10,8 @@ namespace AMETAP.View.Script
     public class RegularExpression
     {
         public RegularExpression()
-        { }
+        {
+        }
         public Boolean VerifMail(String email)
         {
             bool isTrue = false;
@@ -22,8 +23,4 @@ namespace AMETAP.View.Script
             return isTrue;
         }
     }
-
-    
-
-    
 }

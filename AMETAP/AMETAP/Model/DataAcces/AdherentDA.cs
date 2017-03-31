@@ -61,7 +61,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Adherent.login from Personnel , Adherent where Personnel.matricule=Adherent.matriculeAmetap", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Adherent.login , Adherent.NOMBRE_POINT from Personnel , Adherent where Personnel.matricule=Adherent.matriculeAmetap", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Adherent");
             tab1 = dtst.Tables["Adherent"];
@@ -71,7 +71,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Adherent.login from Personnel , Adherent where (Personnel.matricule=Adherent.matriculeAmetap) AND ((Adherent.login LIKE LOWER('"+objet+"%') or Adherent.login LIKE UPPER('"+objet+"%')) )", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Adherent.login, Adherent.NOMBRE_POINT from Personnel , Adherent where (Personnel.matricule=Adherent.matriculeAmetap) AND ((Adherent.login LIKE LOWER('" + objet+"%') or Adherent.login LIKE UPPER('"+objet+"%')) )", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Adherent");
             tab1 = dtst.Tables["Adherent"];
