@@ -63,5 +63,22 @@ namespace AMETAP.Model.DataAcces.PLSQL
         {
             return "Begin SupprimerAdmin(" + matricule + "); end;  ";
         }
+
+        public String FixerBudget(int annee,double montant_provisoiore,double montant_final)
+        {
+            return "Begin FixerBudget("+annee+","+montant_provisoiore+","+montant_final+"); end;";
+        }
+
+        public String AjouterActivite(String nom_activite,int capacite ,String date_debut
+            ,String date_fin,double prix_unitaire, double montant_prevu,
+            double montant_actuel,int idTypeActivite,int idBudget,int idOrganisateur)
+        {
+            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel + "," + idTypeActivite + "," + idBudget + ","+idOrganisateur+"); end;";
+        }
+
+        public String SupprimerActivite(int id,double montant_prevu)
+        {
+            return "Begin SupprimerActivite(" + id + "," + montant_prevu + "); end;";
+        }
     }
 }

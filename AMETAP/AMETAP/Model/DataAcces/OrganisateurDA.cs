@@ -12,6 +12,7 @@ namespace AMETAP.Model.DataAcces
     {
         OleDbConnection cn;
         OleDbCommand cmd;
+        OleDbDataReader Reader;
         public OrganisateurDA()
         {
             try
@@ -96,6 +97,39 @@ namespace AMETAP.Model.DataAcces
             adap1.Fill(dtst, "Organisateur");
             tab1 = dtst.Tables["Organisateur"];
             return tab1;
+        }
+
+        public List<Organisateur>AllOrganisateur()
+        {
+            List<Organisateur> list = new List<Organisateur>();
+            string req = string.Format("SELECT *  FROM Organisateur");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                list.Add(new Organisateur((int)Reader.GetDecimal(0), Reader.GetString(1),Reader.GetString(2),Reader.GetString(3)));
+            }
+            Reader.Close();
+            cn.Close();
+            return list;
+        }
+
+        public int findIdByNomOrganisateur(String nomOrganisateur)
+        {
+            int id = 0;
+            List<Organisateur> list = new List<Organisateur>();
+            string req = string.Format("SELECT id  FROM Organisateur where NOM_ORGANISATEUR='"+nomOrganisateur+"' ");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                id = (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return id;
         }
 
     }

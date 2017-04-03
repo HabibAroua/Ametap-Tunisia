@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.UI, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -62,16 +74,19 @@
     <Compile Include="Controller\AdherentController.cs" />
     <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\Agence_VoyageController.cs" />
+    <Compile Include="Controller\BudgetController.cs" />
     <Compile Include="Controller\CentreController.cs" />
     <Compile Include="Controller\ClubController.cs" />
     <Compile Include="Controller\ConjointController.cs" />
     <Compile Include="Controller\EnfantController.cs" />
     <Compile Include="Controller\OrganisateurController.cs" />
     <Compile Include="Controller\ParticipantController.cs" />
+    <Compile Include="Controller\TypeActiviteController.cs" />
     <Compile Include="Model\Business\Activite.cs" />
     <Compile Include="Model\Business\Adherent.cs" />
     <Compile Include="Model\Business\Admin.cs" />
     <Compile Include="Model\Business\Agence_Voyage.cs" />
+    <Compile Include="Model\Business\Budget.cs" />
     <Compile Include="Model\Business\Centre.cs" />
     <Compile Include="Model\Business\Club.cs" />
     <Compile Include="Model\Business\Conjoint.cs" />
@@ -85,6 +100,7 @@
     <Compile Include="Model\DataAcces\AdherentDA.cs" />
     <Compile Include="Model\DataAcces\AdminDA.cs" />
     <Compile Include="Model\DataAcces\Agence_VoyageDA.cs" />
+    <Compile Include="Model\DataAcces\BudgetDA.cs" />
     <Compile Include="Model\DataAcces\CentreDA.cs" />
     <Compile Include="Model\DataAcces\ClubDA.cs" />
     <Compile Include="Model\DataAcces\ConjointDA.cs" />
@@ -102,6 +118,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Gestion Budget\Fixer Budget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion Budget\Fixer Budget.Designer.cs">
+      <DependentUpon>Fixer Budget.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gestion des activites\AjouterActivite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +184,12 @@
     <Compile Include="View\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Menu_Choix.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Menu_Choix.Designer.cs">
+      <DependentUpon>Menu_Choix.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Script\Cryptage.cs" />
     <Compile Include="View\Script\RegularExpression.cs" />
     <EmbeddedResource Include="View\Authentification.resx">
@@ -176,6 +204,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Gestion Budget\Fixer Budget.resx">
+      <DependentUpon>Fixer Budget.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des activites\AjouterActivite.resx">
       <DependentUpon>AjouterActivite.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu_Choix.resx">
+      <DependentUpon>Menu_Choix.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

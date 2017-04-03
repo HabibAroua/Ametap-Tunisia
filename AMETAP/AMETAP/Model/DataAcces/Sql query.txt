@@ -96,6 +96,13 @@ Create table Organisateur
         adresse varchar(50)
 );
 
+Procedure AjouterActivite
+create or replace PROCEDURE AjouterActivite(a_Nom_Activite IN Activite.Nom_Activite%TYPE , a_capacite IN Activte.Capacite%TYPE , a_date_debut IN Activite.date_fin%TYPE , a_date_fin IN Activite.date_fin%TYPE , a_prix_unitaire IN Activite.prix_unitaire%TYPE , a_montant_prevu IN Activite.montant_prevu%TYPE , a_montant_actuel IN Activie.montant_actuel%TYPE , a_idTypeActivite IN Activite.id_TypeActivite%TYPE , a_idBudget IN Activite.idBudget%TYPE)
+IS BEGIN 
+      insert into Activite values ( activite_auto_incr.nextval, a_Nom_Activite, a_capacite , 0 , a_date_debut , a_date_fin ,a_montant_prevu ,a_montant_actuel,a_idTypeActivite,a_idBudget);
+      COMMIT ;
+END;
+
 
 
 Create table Club 
@@ -265,18 +272,6 @@ create or replace PROCEDURE SupprimerAdmin(a_matricule IN Admin.matricule%TYPE)
  END;
 
 Table Activite :
-create table Activite
-( 
-    id int primary key ,
-    Nom_Activite varchar(200) ,
-    Capacite int ,
-    Nombre_participant int ,
-    Date_debut date ,
-    Date_fin date ,
-    CONSTRAINT check_Date_Fin CHECK (Date_fin > Date_debut) ,
-    Montant int ,
-    prix_unitaire int  
-);
 
 Table Conjoint:
 Create table Conjoint 
@@ -314,3 +309,79 @@ REFERENCES Participant(matricule);
 ALTER TABLE Conjoint
 ADD FOREIGN KEY (cin)
 REFERENCES Participant(matricule);
+
+Table Budget:
+Create table Budget
+(
+   id int primary key ,
+   annee int unique ,
+   montant_provisoire int ,
+   montant_final int
+);
+
+Sequence Budget:
+Create sequence budget_auto_inscr start with 1 increment by 1;
+
+Procedure fixer Budget:
+create or replace PROCEDURE FixerBudget(b_annee IN Budget.annee%TYPE , b_montant_provisoire IN Budget.montant_provisoire%TYPE , b_montant_final IN Budget.montant_final%TYPE)
+IS BEGIN 
+      insert into Budget values ( budget_auto_inscr.nextval, b_annee, b_montant_provisoire , b_montant_final);
+      COMMIT ;
+END;
+
+Type activite:
+Create table Type_Activite
+(
+  id int primary key ,
+  libelle varchar(100) unique 
+);
+insert into Type_Activite values(1,'Activite culturel');
+insert into Type_Activite values(2,'Activite de loisir');
+
+
+Table Activite:
+create table Activite
+( 
+    id int primary key ,
+    Nom_Activite varchar(200) ,
+    Capacite int ,
+    Nombre_participant int ,
+    Date_debut date ,
+    Date_fin date ,
+    CONSTRAINT check_Date_Fin CHECK (Date_fin > Date_debut) ,
+    prix_uinitaire int ,
+    montant_prevu int ,
+    montant_actuel int ,
+    id_TypeActivite int ,
+    idBudget int ,
+    idOrganisateur int
+);
+
+ALTER TABLE Activite
+ADD FOREIGN KEY (id_TypeActivite)
+REFERENCES Type_Activite(id);
+
+ALTER TABLE Activite
+ADD FOREIGN KEY (idBudget)
+REFERENCES Budget(id);
+
+Creation sequence :
+Create sequence activite_auto_incr start with 1 increment by 1 ;
+
+Procedure AjouterActivite:
+create or replace PROCEDURE AjouterActivite(a_Nom_Activite IN Activite.Nom_Activite%TYPE , a_capacite Activite.CAPACITE%TYPE , a_date_debut IN Activite.date_debut%TYPE , a_date_fin IN Activite.date_fin%TYPE , a_prix_unitaire IN Activite.PRIX_UINITAIRE%TYPE , a_montant_prevu IN Activite.montant_prevu%TYPE , a_montant_actuel IN Activite.MONTANT_ACTUEL%TYPE , a_idTypeActivite IN Activite.id_TypeActivite%TYPE , a_idBudget IN Activite.idBudget%TYPE , a_idOrganisateur IN Activite.idOrganisateur%TYPE)
+IS BEGIN 
+      insert into Activite values ( activite_auto_incr.nextval, a_Nom_Activite, a_capacite , 0 , a_date_debut , a_date_fin ,a_prix_unitaire,a_montant_prevu ,a_montant_actuel,a_idTypeActivite,a_idBudget,a_idOrganisateur);
+COMMIT ;
+update Budget set MONTANT_PROVISOIRE=MONTANT_PROVISOIRE-a_montant_prevu;
+COMMIT ;
+END;
+
+Procedure SupprimerActivite :
+create or replace PROCEDURE SupprimerActivite(a_id IN Activite.Nom_Activite%TYPE , a_montant_prevu IN Activite.Montant_prevu%TYPE)
+IS BEGIN 
+update Budget set MONTANT_PROVISOIRE=MONTANT_PROVISOIRE+a_montant_prevu where id=(select idBudget from Activite where id=a_id);
+COMMIT ;
+delete Activite where id=a_id ;
+COMMIT ;
+END;

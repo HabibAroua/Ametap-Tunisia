@@ -14,21 +14,21 @@ namespace AMETAP.Controller
         CentreController cec;
         Agence_VoyageController avc;
         ClubController cc;
+        OrganisateurDA oDA;
         public OrganisateurController()
         {
             cec = new CentreController();
             avc = new Agence_VoyageController();
             cc = new ClubController();
+            oDA = new OrganisateurDA();
 
         }
         public void AjouterOrganisateur(String type, int id, String nom, String email, String adresse, String description)
         {
-            OrganisateurDA oDA;
             Boolean test = false;
             switch (type)
             {
                 case "Club":
-                    oDA = new OrganisateurDA();
                     test = oDA.insert(new Organisateur(id, nom, email, adresse));
                     if (test == true)
                     {
@@ -41,7 +41,6 @@ namespace AMETAP.Controller
                     }
                     break;
                 case "Agence de voyage":
-                    oDA = new OrganisateurDA();
                     test = oDA.insert(new Organisateur(id, nom, email, adresse));
                     if (test == true)
                     {
@@ -55,11 +54,9 @@ namespace AMETAP.Controller
                     break;
 
                 case "Centre":
-                    oDA = new OrganisateurDA();
                     test = oDA.insert(new Organisateur(id, nom, email, adresse));
                     if (test == true)
                     {
-                        CentreController cec = new CentreController();
                         cec.AjouterCentre(id, description);
                     }
                     else
@@ -150,6 +147,11 @@ namespace AMETAP.Controller
                     }
                 }
             }
+        }
+
+        public List<Organisateur>AllOrganisateur()
+        {
+            return oDA.AllOrganisateur();
         }
     }
 }
