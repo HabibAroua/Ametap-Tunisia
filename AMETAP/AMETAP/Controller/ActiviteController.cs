@@ -62,5 +62,25 @@ namespace AMETAP.Controller
                 MessageBox.Show("Vous annulez cette suppression !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        public void ModifierActivite(int id, String nomActivite, int capacite, String typeActivite, String organisateur)
+        {
+           Boolean test= aDA.update(id, new Activite(nomActivite, capacite, taDA.findIdByLibelle(typeActivite), oDA.findIdByNomOrganisateur(organisateur)));
+            if(test==true)
+            {
+                MessageBox.Show("La mise à jour de cette cativité est effectué avec succes", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erreur de mise à jour", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void AfficherActivite(DataGridView d)
+        {
+            d.DataSource = aDA.sellectAll();
+        }
+
+
     }
 }

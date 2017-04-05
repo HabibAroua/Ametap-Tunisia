@@ -136,6 +136,12 @@
     <Compile Include="View\Gestion des activites\GestionActivite.Designer.cs">
       <DependentUpon>GestionActivite.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Gestion des activites\Modifier Activite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion des activites\Modifier Activite.Designer.cs">
+      <DependentUpon>Modifier Activite.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gestion des adherents\Famille.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des activites\GestionActivite.resx">
       <DependentUpon>GestionActivite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gestion des activites\Modifier Activite.resx">
+      <DependentUpon>Modifier Activite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des adherents\Famille.resx">
       <DependentUpon>Famille.cs</DependentUpon>

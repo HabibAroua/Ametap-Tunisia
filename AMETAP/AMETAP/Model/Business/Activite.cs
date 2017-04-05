@@ -109,5 +109,13 @@ namespace AMETAP.Model.Business
             this.id = id;
             this.montant_prevu = montant_prevu;
         }
+
+        public Activite(String nom_Activite, int capacite, int id_TypeActivite, int idOrganisateur)
+        {
+            this.nom_Activite = nom_Activite;
+            this.capacite = capacite;
+            this.id_TypeActivite = id_TypeActivite;
+            this.idOrganisateur = idOrganisateur;
+        }
     }
 }

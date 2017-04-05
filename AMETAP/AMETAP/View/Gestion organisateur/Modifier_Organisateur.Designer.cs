@@ -47,7 +47,7 @@
             // 
             // 
             this.txtDescription.CustomButton.Image = null;
-            this.txtDescription.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtDescription.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtDescription.CustomButton.Name = "";
             this.txtDescription.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -65,7 +65,7 @@
             this.txtDescription.SelectionLength = 0;
             this.txtDescription.SelectionStart = 0;
             this.txtDescription.ShortcutsEnabled = true;
-            this.txtDescription.Size = new System.Drawing.Size(203, 23);
+            this.txtDescription.Size = new System.Drawing.Size(232, 23);
             this.txtDescription.TabIndex = 27;
             this.txtDescription.UseSelectable = true;
             this.txtDescription.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -82,7 +82,7 @@
             // 
             // btAnnuler
             // 
-            this.btAnnuler.Location = new System.Drawing.Point(198, 324);
+            this.btAnnuler.Location = new System.Drawing.Point(228, 324);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 23;
@@ -92,7 +92,7 @@
             // 
             // btModifier
             // 
-            this.btModifier.Location = new System.Drawing.Point(97, 324);
+            this.btModifier.Location = new System.Drawing.Point(147, 324);
             this.btModifier.Name = "btModifier";
             this.btModifier.Size = new System.Drawing.Size(75, 23);
             this.btModifier.TabIndex = 22;
@@ -106,7 +106,7 @@
             // 
             // 
             this.txtAdresse.CustomButton.Image = null;
-            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtAdresse.CustomButton.Name = "";
             this.txtAdresse.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtAdresse.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -124,7 +124,7 @@
             this.txtAdresse.SelectionLength = 0;
             this.txtAdresse.SelectionStart = 0;
             this.txtAdresse.ShortcutsEnabled = true;
-            this.txtAdresse.Size = new System.Drawing.Size(203, 23);
+            this.txtAdresse.Size = new System.Drawing.Size(232, 23);
             this.txtAdresse.TabIndex = 21;
             this.txtAdresse.UseSelectable = true;
             this.txtAdresse.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -145,7 +145,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -163,7 +163,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(203, 23);
+            this.txtEmail.Size = new System.Drawing.Size(232, 23);
             this.txtEmail.TabIndex = 19;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -184,7 +184,7 @@
             // 
             // 
             this.txtNom.CustomButton.Image = null;
-            this.txtNom.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtNom.CustomButton.Location = new System.Drawing.Point(210, 1);
             this.txtNom.CustomButton.Name = "";
             this.txtNom.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -202,7 +202,7 @@
             this.txtNom.SelectionLength = 0;
             this.txtNom.SelectionStart = 0;
             this.txtNom.ShortcutsEnabled = true;
-            this.txtNom.Size = new System.Drawing.Size(203, 23);
+            this.txtNom.Size = new System.Drawing.Size(232, 23);
             this.txtNom.TabIndex = 17;
             this.txtNom.UseSelectable = true;
             this.txtNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 393);
+            this.ClientSize = new System.Drawing.Size(435, 393);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.btAnnuler);

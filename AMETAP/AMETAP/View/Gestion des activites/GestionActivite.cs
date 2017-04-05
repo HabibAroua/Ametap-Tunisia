@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
+
 namespace AMETAP.View.Gestion_des_activites
 {
     public partial class GestionActivite : MetroForm
@@ -49,6 +50,29 @@ namespace AMETAP.View.Gestion_des_activites
             {
                 MessageBox.Show("Il faut séléctionner une activité", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btModifier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Modifier_Activite ma = new Modifier_Activite();
+                ma.txtNomActivite.Text = dataActivite.CurrentRow.Cells[1].Value.ToString();
+                ma.txtCapacite.Text = dataActivite.CurrentRow.Cells[5].Value.ToString();
+                ma.setId(int.Parse(dataActivite.CurrentRow.Cells[0].Value.ToString()));
+                ma.setOrganisateur(dataActivite.CurrentRow.Cells[7].Value.ToString());
+                ma.setTypeActivite(dataActivite.CurrentRow.Cells[8].Value.ToString());
+                ma.Show();
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show("Il faut séléctionner une activité", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            ac.AfficherActivite(dataActivite);
         }
     }
 }

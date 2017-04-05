@@ -69,6 +69,7 @@
             this.btModifier.TabIndex = 2;
             this.btModifier.Text = "Modifier";
             this.btModifier.UseSelectable = true;
+            this.btModifier.Click += new System.EventHandler(this.btModifier_Click);
             // 
             // btRefresh
             // 
@@ -79,6 +80,7 @@
             this.btRefresh.TabIndex = 3;
             this.btRefresh.Text = "Refresh";
             this.btRefresh.UseSelectable = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // dataActivite
             // 

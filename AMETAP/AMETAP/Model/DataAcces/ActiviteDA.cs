@@ -62,8 +62,31 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean update(Object o1, Object o2)
         {
-            return false;
-        }
+            try
+            {
+                int id = (int)o1;
+                Activite a = (Activite)o2;
+                String nom_activite = a.nom_Activite;
+                int capacite = a.capacite;
+                int id_TypeActivite = a.id_TypeActivite;
+                int idOrganisateur = a.idOrganisateur;
+                PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
+                string req = string.Format(plSql.ModifierActivite(id,nom_activite, capacite,  id_TypeActivite, idOrganisateur));
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+}
         public Boolean delete(Object o)
         {
             try
@@ -91,13 +114,19 @@ namespace AMETAP.Model.DataAcces
         }
         public DataTable sellectAll()
         {
-            return null;
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur , Type_Activite.libelle from Activite,Budget,Organisateur ,Type_Activite where Activite.idBudget=Budget.id and Activite.ID_TYPEACTIVITE=Type_Activite.id and Activite.idOrganisateur=Organisateur.id ", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Activite");
+            tab1 = dtst.Tables["Activite"];
+            return tab1;
         }
         public DataTable search(String objet)
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur from Activite,Budget,Organisateur where Activite.idBudget=Budget.id and Activite.idOrganisateur=Organisateur.id and Budget.annee=" + objet+"", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur , Type_Activite.libelle from Activite,Budget,Organisateur ,Type_Activite where Activite.idBudget=Budget.id and Activite.ID_TYPEACTIVITE=Type_Activite.id and Activite.idOrganisateur=Organisateur.id and Budget.annee=" + objet+"", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Activite");
             tab1 = dtst.Tables["Activite"];
