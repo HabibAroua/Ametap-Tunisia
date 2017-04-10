@@ -62,17 +62,13 @@ namespace AMETAP.View.Gestion_des_activites
                 ma.setId(int.Parse(dataActivite.CurrentRow.Cells[0].Value.ToString()));
                 ma.setOrganisateur(dataActivite.CurrentRow.Cells[7].Value.ToString());
                 ma.setTypeActivite(dataActivite.CurrentRow.Cells[8].Value.ToString());
+                MessageBox.Show(dataActivite.CurrentRow.Cells[7].Value.ToString() + " " + dataActivite.CurrentRow.Cells[8].Value.ToString());
                 ma.Show();
             }
-            catch(NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
                 MessageBox.Show("Il faut séléctionner une activité", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btRefresh_Click(object sender, EventArgs e)
-        {
-            ac.AfficherActivite(dataActivite);
         }
     }
 }

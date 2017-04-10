@@ -41,8 +41,8 @@ namespace AMETAP.View.Gestion_organisateur
         private void btAjouter_Click(object sender, EventArgs e)
         {
             RegularExpression r = new RegularExpression();
-            try
-            {
+            //try
+            //{
                 if ((txtID.Text.ToString().Equals("")) || (txtNom.ToString().Equals("")) || (txtAdresse.Text.ToString().Equals("")) || (txtEmail.Text.ToString().Equals("")) || (txtDescription.Text.ToString().Equals("")))
                 {
                     MessageBox.Show("SVP remplir les champs manquant", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -65,11 +65,11 @@ namespace AMETAP.View.Gestion_organisateur
                         }
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("SVP donner le type de l'organisateur", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch(Exception ex)
+            //{
+              //  MessageBox.Show("SVP donner le type de l'organisateur", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             
         }
     }

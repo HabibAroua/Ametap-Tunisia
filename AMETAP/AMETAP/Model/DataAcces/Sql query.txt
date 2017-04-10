@@ -389,6 +389,6 @@ END;
 Procedure ModifierActivite :
 create or replace PROCEDURE ModifierActivite(a_id IN Activite.id%TYPE , a_nomActivite IN Activite.nom_activite%TYPE,a_capacite IN Activite.capacite%TYPE , a_idTypeActivite IN Activite.id_TypeActivite%TYPE , a_idOrganisateur IN Activite.IDORGANISATEUR%TYPE)
 IS BEGIN 
-      update Activite set nom_activite=a_nomActivite , capacite=a_capacite , id_TypeActivite=a_idTypeActivite , IDORGANISATEUR=a_idOrganisateur where id=a_id ;
-      COMMIT ;
+update Activite set nom_activite=a_nomActivite , capacite=a_capacite , id_TypeActivite=a_idTypeActivite , IDORGANISATEUR=a_idOrganisateur where id=a_id ;
+COMMIT ;
 END;

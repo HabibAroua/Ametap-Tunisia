@@ -44,7 +44,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(55, 217);
+            this.metroLabel8.Location = new System.Drawing.Point(56, 227);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(85, 19);
             this.metroLabel8.TabIndex = 40;
@@ -54,7 +54,7 @@
             // 
             this.comboOrganisateur.FormattingEnabled = true;
             this.comboOrganisateur.ItemHeight = 23;
-            this.comboOrganisateur.Location = new System.Drawing.Point(186, 207);
+            this.comboOrganisateur.Location = new System.Drawing.Point(186, 217);
             this.comboOrganisateur.Name = "comboOrganisateur";
             this.comboOrganisateur.Size = new System.Drawing.Size(215, 29);
             this.comboOrganisateur.TabIndex = 39;
@@ -63,7 +63,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(55, 171);
+            this.metroLabel6.Location = new System.Drawing.Point(56, 181);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(82, 19);
             this.metroLabel6.TabIndex = 38;
@@ -73,7 +73,7 @@
             // 
             this.comboTypeActivite.FormattingEnabled = true;
             this.comboTypeActivite.ItemHeight = 23;
-            this.comboTypeActivite.Location = new System.Drawing.Point(186, 161);
+            this.comboTypeActivite.Location = new System.Drawing.Point(186, 171);
             this.comboTypeActivite.Name = "comboTypeActivite";
             this.comboTypeActivite.Size = new System.Drawing.Size(215, 29);
             this.comboTypeActivite.TabIndex = 37;
@@ -81,7 +81,7 @@
             // 
             // btAnnuler
             // 
-            this.btAnnuler.Location = new System.Drawing.Point(186, 270);
+            this.btAnnuler.Location = new System.Drawing.Point(186, 293);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 34;
@@ -91,7 +91,7 @@
             // 
             // btModifier
             // 
-            this.btModifier.Location = new System.Drawing.Point(79, 270);
+            this.btModifier.Location = new System.Drawing.Point(79, 293);
             this.btModifier.Name = "btModifier";
             this.btModifier.Size = new System.Drawing.Size(75, 23);
             this.btModifier.TabIndex = 33;
@@ -158,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 334);
+            this.ClientSize = new System.Drawing.Size(468, 369);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.comboOrganisateur);
             this.Controls.Add(this.metroLabel6);

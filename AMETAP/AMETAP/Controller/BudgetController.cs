@@ -38,6 +38,11 @@ namespace AMETAP.Controller
             return bDA.LastYear();
         }
 
-       
+        public void AfficherBudget(DataGridView d)
+        {
+            d.DataSource = bDA.sellectAll();
+        }
+
+
     }
 }

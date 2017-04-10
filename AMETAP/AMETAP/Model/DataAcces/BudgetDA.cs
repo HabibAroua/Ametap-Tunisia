@@ -56,7 +56,13 @@ namespace AMETAP.Model.DataAcces
         }
         public DataTable sellectAll()
         {
-            return null;
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("Select * from Budget", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Budget");
+            tab1 = dtst.Tables["Budget"];
+            return tab1;
         }
         public DataTable search(String objet)
         {

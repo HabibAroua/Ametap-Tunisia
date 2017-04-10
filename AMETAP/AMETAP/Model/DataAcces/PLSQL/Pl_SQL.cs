@@ -81,7 +81,7 @@ namespace AMETAP.Model.DataAcces.PLSQL
             return "Begin SupprimerActivite(" + id + "," + montant_prevu + "); end;";
         }
 
-        public String ModifierActivite(int id,String nomActivite,int capacite,int idTypeActivite,int idOrganisateur)
+        public String ModifierActivite(int id, String nomActivite, int capacite, int idTypeActivite, int idOrganisateur)
         {
             return "Begin ModifierActivite(" + id + ",'" + nomActivite + "'," + capacite + "," + idTypeActivite + "," + idOrganisateur + "); end;";
         }

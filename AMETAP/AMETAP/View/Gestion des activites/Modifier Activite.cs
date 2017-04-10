@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
 using AMETAP.Model.Business;
+
 namespace AMETAP.View.Gestion_des_activites
 {
     public partial class Modifier_Activite : MetroForm
@@ -74,21 +75,8 @@ namespace AMETAP.View.Gestion_des_activites
             this.Close();
         }
 
-        private void Modifier_Activite_Load(object sender, EventArgs e)
-        {
-            foreach (TypeActivite at in taC.ListActiviteInComboBox())
-            {
-                comboTypeActivite.Items.Add(at.libelle.ToString());
-            }
-            foreach (Organisateur o in oc.AllOrganisateur())
-            {
-                comboOrganisateur.Items.Add(o.nom_organisateur);
-            }
-        }
-
         private void btModifier_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(comboTypeActivite.SelectedItem.ToString() + " " + comboOrganisateur.SelectedItem.ToString());
             try
             {
                 if ((!getOrganisateur().Equals(comboOrganisateur.SelectedItem.ToString())) && ((!getTypeActivite().Equals(comboTypeActivite.SelectedItem.ToString()))))
@@ -136,6 +124,18 @@ namespace AMETAP.View.Gestion_des_activites
 
                     }
                 }
+            }
+        }
+
+        private void Modifier_Activite_Load(object sender, EventArgs e)
+        {
+            foreach (TypeActivite at in taC.ListActiviteInComboBox())
+            {
+                comboTypeActivite.Items.Add(at.libelle.ToString());
+            }
+            foreach (Organisateur o in oc.AllOrganisateur())
+            {
+                comboOrganisateur.Items.Add(o.nom_organisateur);
             }
         }
     }

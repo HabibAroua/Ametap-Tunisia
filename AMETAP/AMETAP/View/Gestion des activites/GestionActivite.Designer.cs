@@ -80,7 +80,6 @@
             this.btRefresh.TabIndex = 3;
             this.btRefresh.Text = "Refresh";
             this.btRefresh.UseSelectable = true;
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // dataActivite
             // 

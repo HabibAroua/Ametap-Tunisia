@@ -132,5 +132,30 @@ namespace AMETAP.Model.DataAcces
             return id;
         }
 
+        public int maxID()
+        {
+            try
+            {
+                //cn.Open();
+                cmd = cn.CreateCommand();
+                cmd.CommandText = "select MAX(id) from Organisateur";
+                cn.Open();
+                decimal r = 0;
+                r = Convert.ToDecimal(cmd.ExecuteScalar());
+                cn.Close();
+                return (int)r;
+            }
+            catch(InvalidCastException)
+            {
+                return 0;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        
+
     }
 }

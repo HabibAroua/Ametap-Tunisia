@@ -23,11 +23,12 @@ namespace AMETAP.Controller
             oDA = new OrganisateurDA();
         }
 
-        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin,double prix_unitaire, double montant_prevu, double montant_actuel, String typeActivite ,String nomOrganisateur)
+        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin, double prix_unitaire, double montant_prevu, double montant_actuel, String typeActivite, String nomOrganisateur)
         {
-            a = new Activite(0, nom_activite, capacite,0 ,date_debut, date_fin,prix_unitaire, montant_prevu, montant_actuel, taDA.findIdByLibelle(typeActivite), bDA.findIdByLastYear(),oDA.findIdByNomOrganisateur(nomOrganisateur));
+            a = new Activite(0, nom_activite, capacite, 0, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, taDA.findIdByLibelle(typeActivite), bDA.findIdByLastYear(), oDA.findIdByNomOrganisateur(nomOrganisateur));
             Boolean test = aDA.insert(a);
-            if(test==true)
+            MessageBox.Show("type activité :" + taDA.findIdByLibelle(typeActivite) + " Year :" + bDA.findIdByLastYear() + " organisateur" + oDA.findIdByNomOrganisateur(nomOrganisateur));
+            if (test == true)
             {
                 MessageBox.Show("Congrulation!! Vous ajoutez une nouvelle activité", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -37,18 +38,18 @@ namespace AMETAP.Controller
             }
         }
 
-        public void findActivityByYear(DataGridView d,String objet)
+        public void findActivityByYear(DataGridView d, String objet)
         {
             d.DataSource = aDA.search(objet);
         }
 
-        public void SupprimerActivite(int id,double montant_prevu)
+        public void SupprimerActivite(int id, double montant_prevu)
         {
             DialogResult a = MessageBox.Show("Voulez vous supprimer cette activité ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (a == DialogResult.Yes)
             {
                 Boolean test = aDA.delete(new Activite(id, montant_prevu));
-                if(test==true)
+                if (test == true)
                 {
                     MessageBox.Show("La suppresion de cette activité est effectué avec sucéss !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -65,8 +66,8 @@ namespace AMETAP.Controller
 
         public void ModifierActivite(int id, String nomActivite, int capacite, String typeActivite, String organisateur)
         {
-           Boolean test= aDA.update(id, new Activite(nomActivite, capacite, taDA.findIdByLibelle(typeActivite), oDA.findIdByNomOrganisateur(organisateur)));
-            if(test==true)
+            Boolean test = aDA.update(id, new Activite(nomActivite, capacite, taDA.findIdByLibelle(typeActivite), oDA.findIdByNomOrganisateur(organisateur)));
+            if (test == true)
             {
                 MessageBox.Show("La mise à jour de cette cativité est effectué avec succes", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -81,6 +82,16 @@ namespace AMETAP.Controller
             d.DataSource = aDA.sellectAll();
         }
 
+        public void AfficheInformation(DataGridView d, String annee)
+        {
+            d.DataSource = aDA.selectInformation(annee);
+        }
 
+        public List<Activite> Stat(String annee)
+        {
+            return aDA.selectNomActivite(annee);
+        }
+
+        
     }
 }

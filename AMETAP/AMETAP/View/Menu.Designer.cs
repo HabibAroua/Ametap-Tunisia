@@ -44,6 +44,7 @@
             this.gestionDesUtilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.budgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fixerBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.afficherBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +160,8 @@
             // budgetToolStripMenuItem
             // 
             this.budgetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fixerBudgetToolStripMenuItem});
+            this.fixerBudgetToolStripMenuItem,
+            this.afficherBudgetToolStripMenuItem});
             this.budgetToolStripMenuItem.Name = "budgetToolStripMenuItem";
             this.budgetToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.budgetToolStripMenuItem.Text = "Budget";
@@ -167,9 +169,16 @@
             // fixerBudgetToolStripMenuItem
             // 
             this.fixerBudgetToolStripMenuItem.Name = "fixerBudgetToolStripMenuItem";
-            this.fixerBudgetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fixerBudgetToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.fixerBudgetToolStripMenuItem.Text = "Fixer Budget";
             this.fixerBudgetToolStripMenuItem.Click += new System.EventHandler(this.fixerBudgetToolStripMenuItem_Click);
+            // 
+            // afficherBudgetToolStripMenuItem
+            // 
+            this.afficherBudgetToolStripMenuItem.Name = "afficherBudgetToolStripMenuItem";
+            this.afficherBudgetToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.afficherBudgetToolStripMenuItem.Text = "Afficher Budget";
+            this.afficherBudgetToolStripMenuItem.Click += new System.EventHandler(this.afficherBudgetToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDesUtilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem budgetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixerBudgetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem afficherBudgetToolStripMenuItem;
     }
 }

@@ -59,6 +59,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,11 +119,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Gestion Budget\Afficher Budget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion Budget\Afficher Budget.Designer.cs">
+      <DependentUpon>Afficher Budget.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gestion Budget\Fixer Budget.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Gestion Budget\Fixer Budget.Designer.cs">
       <DependentUpon>Fixer Budget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gestion Budget\Information chaque année.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion Budget\Information chaque année.Designer.cs">
+      <DependentUpon>Information chaque année.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gestion des activites\AjouterActivite.cs">
       <SubType>Form</SubType>
@@ -210,8 +223,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Gestion Budget\Afficher Budget.resx">
+      <DependentUpon>Afficher Budget.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion Budget\Fixer Budget.resx">
       <DependentUpon>Fixer Budget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Gestion Budget\Information chaque année.resx">
+      <DependentUpon>Information chaque année.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des activites\AjouterActivite.resx">
       <DependentUpon>AjouterActivite.cs</DependentUpon>

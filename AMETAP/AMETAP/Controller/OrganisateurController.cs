@@ -25,15 +25,16 @@ namespace AMETAP.Controller
         }
         public void AjouterOrganisateur(String type, int id, String nom, String email, String adresse, String description)
         {
+            id = oDA.maxID();
             Boolean test = false;
             switch (type)
             {
                 case "Club":
-                    test = oDA.insert(new Organisateur(id, nom, email, adresse));
+                    test = oDA.insert(new Organisateur(id+1, nom, email, adresse));
                     if (test == true)
                     {
                         ClubController cc = new ClubController();
-                        cc.ajouterClub(id, description);
+                        cc.ajouterClub(id + 1, description);
                     }
                     else
                     {
@@ -41,11 +42,11 @@ namespace AMETAP.Controller
                     }
                     break;
                 case "Agence de voyage":
-                    test = oDA.insert(new Organisateur(id, nom, email, adresse));
+                    test = oDA.insert(new Organisateur(id + 1, nom, email, adresse));
                     if (test == true)
                     {
                         Agence_VoyageController avc = new Agence_VoyageController();
-                        avc.AjouterAgence_Voyage(id, description);
+                        avc.AjouterAgence_Voyage(id + 1, description);
                     }
                     else
                     {
@@ -54,10 +55,10 @@ namespace AMETAP.Controller
                     break;
 
                 case "Centre":
-                    test = oDA.insert(new Organisateur(id, nom, email, adresse));
+                    test = oDA.insert(new Organisateur(id + 1, nom, email, adresse));
                     if (test == true)
                     {
-                        cec.AjouterCentre(id, description);
+                        cec.AjouterCentre(id+ 1, description);
                     }
                     else
                     {

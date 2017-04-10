@@ -66,7 +66,13 @@ namespace AMETAP.View
             View.Gestion_Budget.Fixer_Budget fb = new Gestion_Budget.Fixer_Budget();
             fb.Show();
             this.Hide();
+        }
 
+        private void afficherBudgetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.Gestion_Budget.Afficher_Budget ab = new Gestion_Budget.Afficher_Budget();
+            ab.Show();
+            this.Hide();
         }
     }
 }
