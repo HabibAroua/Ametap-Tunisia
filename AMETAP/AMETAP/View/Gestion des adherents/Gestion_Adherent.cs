@@ -37,6 +37,12 @@ namespace AMETAP.View.Gestion_des_adherents
             ac.affihcer(dataAdherent);
         }
 
+        public void Afficher()
+        {
+            ac.affihcer(dataAdherent);
+        
+        }
+
         private void btRefresh_Click(object sender, EventArgs e)
         {
             ac.affihcer(dataAdherent);

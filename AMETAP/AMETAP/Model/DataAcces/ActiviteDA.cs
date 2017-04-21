@@ -40,12 +40,11 @@ namespace AMETAP.Model.DataAcces
                 double prix_unitaire = a.prix_unitaire;
                 double montant_prevu = a.montant_prevu;
                 double montant_actuel = a.montant_actuel;
-                int id_TypeActivite = a.id_TypeActivite;
-                int idBudget = a.idBudget;
+                int idBudgetCategorie = a.idBudgetCategorie;
                 int idOrganisateur = a.idOrganisateur;
                 PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
                 //MessageBox.Show("nom activité :" + nom_activite + " capacité " + capacite + " nombre part :" + nombre_participant + " montant prevu " + montant_prevu + " " + "id type" + id_TypeActivite + " id budget" + idBudget + " id Organisateur" + idOrganisateur);
-                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, id_TypeActivite, idBudget, idOrganisateur));
+                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, idBudgetCategorie, idOrganisateur));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
@@ -63,31 +62,31 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean update(Object o1, Object o2)
         {
-            try
-            {
-                int id = (int)o1;
-                Activite a = (Activite)o2;
-                String nom_activite = a.nom_Activite;
-                int capacite = a.capacite;
-                int id_TypeActivite = a.id_TypeActivite;
-                int idOrganisateur = a.idOrganisateur;
-                PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
-                string req = string.Format(plSql.ModifierActivite(id, nom_activite, capacite, id_TypeActivite, idOrganisateur));
-                cmd.Connection = cn;
-                cn.Open();
-                cmd.CommandText = req;
-                cmd.ExecuteNonQuery();
+          //  try
+            //{
+              //  int id = (int)o1;
+                //Activite a = (Activite)o2;
+                //String nom_activite = a.nom_Activite;
+                //int capacite = a.capacite;
+                //int id_TypeActivite = a.id_TypeActivite;
+                //int idOrganisateur = a.idOrganisateur;
+                //PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
+                //string req = string.Format(plSql.ModifierActivite(id, nom_activite, capacite, id_TypeActivite, idOrganisateur));
+                //cmd.Connection = cn;
+                //cn.Open();
+                //cmd.CommandText = req;
+                //cmd.ExecuteNonQuery();
             //cn.Close();
-            return true;
-            }
-            catch (OleDbException)
-            {
+            //return true;
+            //}
+            //catch (OleDbException)
+            //{
                 return false;
-            }
-            finally
-            {
-                cn.Close(); 
-            }
+            //}
+            //finally
+            //{
+              //  cn.Close(); 
+            //}
         }
         public Boolean delete(Object o)
         {
@@ -128,7 +127,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur , Type_Activite.libelle from Activite,Budget,Organisateur ,Type_Activite where Activite.idBudget=Budget.id and Activite.ID_TYPEACTIVITE=Type_Activite.id and Activite.idOrganisateur=Organisateur.id and Budget.annee=" + objet + "", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur  from Activite,Organisateur,Budget,BudgetCategorie  where Activite.idOrganisateur=Organisateur.id and Budget.annee=" + objet + " and Budget.id=BudgetCategorie.IDBUDGET and Activite.IDBUDGETCAT=BudgetCategorie.id", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Activite");
             tab1 = dtst.Tables["Activite"];
@@ -154,7 +153,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select  Activite.nom_activite , Activite.Montant_prevu , null AS Total   from Activite , Budget  where Budget.annee=" + annee + " union all Select null, null, Montant_provisoire from Budget where annee = " + annee + " union all Select DISTINCT  null, null, Budget.Montant_final from Activite , Budget where annee =" + annee + " ", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select DISTINCT Activite.Nom_Activite ,Activite.MONTANT_PREVU , null as Total_des_activites , null as Total from Activite , Budget, BudgetCategorie where Activite.idBudgetCat=BudgetCategorie.id and Budget.annee="+annee+" union all select DISTINCT null, null, sum(Montant_prevu), null as Total from Activite , Budget where Budget.annee = "+annee+" union all select DISTINCT null, null, null, Budget.MONTANT_FINAL from Activite , Budget where Budget.annee = "+annee+"", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Activite");
             tab1 = dtst.Tables["Activite"];
@@ -164,7 +163,7 @@ namespace AMETAP.Model.DataAcces
         public List<Activite> selectNomActivite(String annee)
         {
             List<Activite> listActivite = new List<Activite>();
-            string req = string.Format("select Activite.Nom_Activite , Activite.Montant_prevu from Activite ,Budget where (Activite.idbudget=Budget.id) AND (Budget.annee=2006)");
+            string req = string.Format("select Activite.Nom_Activite , Activite.Montant_prevu from Activite ,Budget ,BudgetCategorie where (Activite.IDBUDGETCAT=BudgetCategorie.id) AND (Budget.annee="+annee+") and (Budget.id=BudgetCategorie.IDBUDGET) and (Activite.IDBUDGETCAT=BudgetCategorie.id) ");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
@@ -177,6 +176,20 @@ namespace AMETAP.Model.DataAcces
             return listActivite;
         }
 
-
+        public int getId(String typeActivite , int annee)
+        {
+            int res = 0;
+            string req = string.Format("select BudgetCategorie.id  from budgetCategorie , Budget where budgetCategorie.idBudget=budget.id and budget.annee="+annee+" and BudgetCategorie.Categorie='"+typeActivite+"' ");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res =(int) Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
     }
 }

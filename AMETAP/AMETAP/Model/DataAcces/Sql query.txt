@@ -323,11 +323,15 @@ Sequence Budget:
 Create sequence budget_auto_inscr start with 1 increment by 1;
 
 Procedure fixer Budget:
-create or replace PROCEDURE FixerBudget(b_annee IN Budget.annee%TYPE , b_montant_provisoire IN Budget.montant_provisoire%TYPE , b_montant_final IN Budget.montant_final%TYPE)
-IS BEGIN 
-      insert into Budget values ( budget_auto_inscr.nextval, b_annee, b_montant_provisoire , b_montant_final);
-      COMMIT ;
-END;
+create or replace PROCEDURE FixerBudget(b_id IN Budget.id%TYPE , b_annee IN Budget.annee%TYPE , b_montant_provisoire IN Budget.montant_provisoire%TYPE , b_montant_final IN Budget.montant_final%TYPE , b_montantCat1 IN BudgetCategorie.montant%TYPE , b_montantCat2 IN BudgetCategorie.montant%TYPE , b_categorie1 IN BudgetCategorie.Categorie%TYPE , b_categorie2 IN BudgetCategorie.Categorie%TYPE)
+ IS BEGIN
+ insert into Budget values ( budget_auto_inscr.nextval, b_annee, b_montant_provisoire , b_montant_final);
+ COMMIT ;
+ insert into BudgetCategorie values (budgetCat_auto_incr.nextval , b_montantCat1 ,b_categorie1 ,b_id);
+ COMMIT;
+ insert into BudgetCategorie values (budgetCat_auto_incr.nextval , b_montantCat2 ,b_categorie2 ,b_id);
+ COMMIT;
+ END;
 
 Type activite:
 Create table Type_Activite

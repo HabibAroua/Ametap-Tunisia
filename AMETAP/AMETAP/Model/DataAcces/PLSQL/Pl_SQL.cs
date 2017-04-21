@@ -64,16 +64,16 @@ namespace AMETAP.Model.DataAcces.PLSQL
             return "Begin SupprimerAdmin(" + matricule + "); end;  ";
         }
 
-        public String FixerBudget(int annee,double montant_provisoiore,double montant_final)
+        public String FixerBudget(int id,int annee,double montant_provisoiore,double montant_final,double montantCat1, double montantCat2)
         {
-            return "Begin FixerBudget("+annee+","+montant_provisoiore+","+montant_final+"); end;";
+            return "Begin FixerBudget("+id+","+annee+","+montant_provisoiore+","+montant_final+","+montantCat1+","+montantCat2+"); end;";
         }
 
         public String AjouterActivite(String nom_activite,int capacite ,String date_debut
             ,String date_fin,double prix_unitaire, double montant_prevu,
-            double montant_actuel,int idTypeActivite,int idBudget,int idOrganisateur)
+            double montant_actuel,int idBudgetCat,int idOrganisateur)
         {
-            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel + "," + idTypeActivite + "," + idBudget + ","+idOrganisateur+"); end;";
+            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel +"," + idBudgetCat + ","+idOrganisateur+"); end;";
         }
 
         public String SupprimerActivite(int id,double montant_prevu)

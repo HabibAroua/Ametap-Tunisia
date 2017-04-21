@@ -61,7 +61,15 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debu
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\ja\DevExpress.Sparkline.v16.2.Core.resources.dll
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\ru\DevExpress.Sparkline.v16.2.Core.resources.dll
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_Budget.Fixer_Budget.resources
-C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Menu_Choix.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_des_activites.Modifier_Activite.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_Budget.Afficher_Budget.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_Budget.Information_chaque_année.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\DevExpress.XtraBars.v16.2.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\DevExpress.XtraBars.v16.2.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\de\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\es\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\ja\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\ru\DevExpress.XtraBars.v16.2.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Main.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.exe.licenses
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_des_Inscriptions.Gestion_des_inscriptions.resources

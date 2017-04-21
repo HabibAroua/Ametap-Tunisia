@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -82,12 +83,15 @@
     <Compile Include="Controller\EnfantController.cs" />
     <Compile Include="Controller\OrganisateurController.cs" />
     <Compile Include="Controller\ParticipantController.cs" />
+    <Compile Include="Controller\ParticipationController.cs" />
     <Compile Include="Controller\TypeActiviteController.cs" />
     <Compile Include="Model\Business\Activite.cs" />
     <Compile Include="Model\Business\Adherent.cs" />
     <Compile Include="Model\Business\Admin.cs" />
     <Compile Include="Model\Business\Agence_Voyage.cs" />
     <Compile Include="Model\Business\Budget.cs" />
+    <Compile Include="Model\Business\BudgetCategorie.cs" />
+    <Compile Include="Model\Business\Categorie.cs" />
     <Compile Include="Model\Business\Centre.cs" />
     <Compile Include="Model\Business\Club.cs" />
     <Compile Include="Model\Business\Conjoint.cs" />
@@ -95,12 +99,15 @@
     <Compile Include="Model\Business\Nature_Agent.cs" />
     <Compile Include="Model\Business\Organisateur.cs" />
     <Compile Include="Model\Business\Participant.cs" />
+    <Compile Include="Model\Business\Participation.cs" />
+    <Compile Include="Model\Business\Payaiment.cs" />
     <Compile Include="Model\Business\Personnel.cs" />
     <Compile Include="Model\Business\TypeActivite.cs" />
     <Compile Include="Model\DataAcces\ActiviteDA.cs" />
     <Compile Include="Model\DataAcces\AdherentDA.cs" />
     <Compile Include="Model\DataAcces\AdminDA.cs" />
     <Compile Include="Model\DataAcces\Agence_VoyageDA.cs" />
+    <Compile Include="Model\DataAcces\BudgetCategorieDA.cs" />
     <Compile Include="Model\DataAcces\BudgetDA.cs" />
     <Compile Include="Model\DataAcces\CentreDA.cs" />
     <Compile Include="Model\DataAcces\ClubDA.cs" />
@@ -109,8 +116,8 @@
     <Compile Include="Model\DataAcces\IData.cs" />
     <Compile Include="Model\DataAcces\OrganisateurDA.cs" />
     <Compile Include="Model\DataAcces\ParticipantDA.cs" />
+    <Compile Include="Model\DataAcces\ParticipationDA.cs" />
     <Compile Include="Model\DataAcces\PLSQL\Pl_SQL.cs" />
-    <Compile Include="Model\DataAcces\TypeActiviteDA.cs" />
     <Compile Include="View\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +174,12 @@
     <Compile Include="View\Gestion des adherents\Gestion_Adherent.Designer.cs">
       <DependentUpon>Gestion_Adherent.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.Designer.cs">
+      <DependentUpon>Gestion des inscriptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Gestion des utilisateurs\Gestion des utilisateurs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,20 +210,21 @@
     <Compile Include="View\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Menu_Choix.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Menu_Choix.Designer.cs">
-      <DependentUpon>Menu_Choix.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Script\Cryptage.cs" />
     <Compile Include="View\Script\RegularExpression.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +261,9 @@
     <EmbeddedResource Include="View\Gestion des adherents\Gestion_Adherent.resx">
       <DependentUpon>Gestion_Adherent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Gestion des Inscriptions\Gestion des inscriptions.resx">
+      <DependentUpon>Gestion des inscriptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des utilisateurs\Gestion des utilisateurs.resx">
       <DependentUpon>Gestion des utilisateurs.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,11 +279,11 @@
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Menu_Choix.resx">
-      <DependentUpon>Menu_Choix.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

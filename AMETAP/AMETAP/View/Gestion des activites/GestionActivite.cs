@@ -60,15 +60,34 @@ namespace AMETAP.View.Gestion_des_activites
                 ma.txtNomActivite.Text = dataActivite.CurrentRow.Cells[1].Value.ToString();
                 ma.txtCapacite.Text = dataActivite.CurrentRow.Cells[5].Value.ToString();
                 ma.setId(int.Parse(dataActivite.CurrentRow.Cells[0].Value.ToString()));
-                ma.setOrganisateur(dataActivite.CurrentRow.Cells[7].Value.ToString());
-                ma.setTypeActivite(dataActivite.CurrentRow.Cells[8].Value.ToString());
-                MessageBox.Show(dataActivite.CurrentRow.Cells[7].Value.ToString() + " " + dataActivite.CurrentRow.Cells[8].Value.ToString());
+                ma.setOrganisateur(dataActivite.CurrentRow.Cells[6].Value.ToString());
+                ma.setTypeActivite(dataActivite.CurrentRow.Cells[7].Value.ToString());
+                //MessageBox.Show(dataActivite.CurrentRow.Cells[7].Value.ToString() + " " + dataActivite.CurrentRow.Cells[8].Value.ToString());
                 ma.Show();
             }
             catch (NullReferenceException ex)
             {
                 MessageBox.Show("Il faut séléctionner une activité", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Menu m = new View.Menu();
+            m.Show();
+            this.Close();
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            GestionActivite ga = new GestionActivite();
+            ga.Show();
+            this.Close();
         }
     }
 }

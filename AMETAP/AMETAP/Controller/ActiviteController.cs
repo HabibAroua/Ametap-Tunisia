@@ -12,22 +12,21 @@ namespace AMETAP.Controller
     {
         ActiviteDA aDA;
         BudgetDA bDA;
-        TypeActiviteDA taDA;
+        //TypeActiviteDA taDA;
         OrganisateurDA oDA;
         Activite a;
         public ActiviteController()
         {
             aDA = new ActiviteDA();
             bDA = new BudgetDA();
-            taDA = new TypeActiviteDA();
+          //  taDA = new TypeActiviteDA();
             oDA = new OrganisateurDA();
         }
 
-        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin, double prix_unitaire, double montant_prevu, double montant_actuel, String typeActivite, String nomOrganisateur)
+        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin, double prix_unitaire, double montant_prevu, double montant_actuel, String categorie, String nomOrganisateur)
         {
-            a = new Activite(0, nom_activite, capacite, 0, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, taDA.findIdByLibelle(typeActivite), bDA.findIdByLastYear(), oDA.findIdByNomOrganisateur(nomOrganisateur));
+            a = new Activite(0, nom_activite, capacite, 0, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, getIdBudgetCat(categorie), oDA.findIdByNomOrganisateur(nomOrganisateur));
             Boolean test = aDA.insert(a);
-            MessageBox.Show("type activité :" + taDA.findIdByLibelle(typeActivite) + " Year :" + bDA.findIdByLastYear() + " organisateur" + oDA.findIdByNomOrganisateur(nomOrganisateur));
             if (test == true)
             {
                 MessageBox.Show("Congrulation!! Vous ajoutez une nouvelle activité", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -66,15 +65,7 @@ namespace AMETAP.Controller
 
         public void ModifierActivite(int id, String nomActivite, int capacite, String typeActivite, String organisateur)
         {
-            Boolean test = aDA.update(id, new Activite(nomActivite, capacite, taDA.findIdByLibelle(typeActivite), oDA.findIdByNomOrganisateur(organisateur)));
-            if (test == true)
-            {
-                MessageBox.Show("La mise à jour de cette cativité est effectué avec succes", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Erreur de mise à jour", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         public void AfficherActivite(DataGridView d)
@@ -92,6 +83,22 @@ namespace AMETAP.Controller
             return aDA.selectNomActivite(annee);
         }
 
-        
+        public void calculerMontant_prevu(String capacite,String prix_unitaire,String montant_prevu)
+        {
+            if((capacite.Equals(""))||(prix_unitaire.Equals("")))
+            {
+                montant_prevu = "";
+            }
+            else
+            {
+                montant_prevu = "" + (double.Parse(prix_unitaire) / 2) * int.Parse(capacite);
+            }
+        }
+
+        public int getIdBudgetCat(String categorie )
+        {
+            return aDA.getId(categorie,bDA.LastYear() );
+        }
+
     }
 }

@@ -45,15 +45,19 @@
             this.budgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fixerBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afficherBudgetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lesInscriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDesInscriptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(506, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(1258, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 137);
             this.pictureBox1.TabIndex = 0;
@@ -67,10 +71,11 @@
             this.activitéToolStripMenuItem,
             this.organisateurToolStripMenuItem,
             this.utilisateurToolStripMenuItem,
-            this.budgetToolStripMenuItem});
+            this.budgetToolStripMenuItem,
+            this.lesInscriptionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(566, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1318, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,6 +124,7 @@
             this.activitéToolStripMenuItem.Name = "activitéToolStripMenuItem";
             this.activitéToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.activitéToolStripMenuItem.Text = "Activité";
+            this.activitéToolStripMenuItem.Click += new System.EventHandler(this.activitéToolStripMenuItem_Click);
             // 
             // gestionDesActivitésToolStripMenuItem
             // 
@@ -180,22 +186,50 @@
             this.afficherBudgetToolStripMenuItem.Text = "Afficher Budget";
             this.afficherBudgetToolStripMenuItem.Click += new System.EventHandler(this.afficherBudgetToolStripMenuItem_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-14, 158);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1530, 425);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lesInscriptionToolStripMenuItem
+            // 
+            this.lesInscriptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionDesInscriptionToolStripMenuItem});
+            this.lesInscriptionToolStripMenuItem.Name = "lesInscriptionToolStripMenuItem";
+            this.lesInscriptionToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
+            this.lesInscriptionToolStripMenuItem.Text = "Les inscription";
+            // 
+            // gestionDesInscriptionToolStripMenuItem
+            // 
+            this.gestionDesInscriptionToolStripMenuItem.Name = "gestionDesInscriptionToolStripMenuItem";
+            this.gestionDesInscriptionToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gestionDesInscriptionToolStripMenuItem.Text = "Gestion des inscription";
+            this.gestionDesInscriptionToolStripMenuItem.Click += new System.EventHandler(this.gestionDesInscriptionToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 390);
+            this.ClientSize = new System.Drawing.Size(1358, 709);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Menu";
             this.Text = " Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +253,8 @@
         private System.Windows.Forms.ToolStripMenuItem budgetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixerBudgetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem afficherBudgetToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem lesInscriptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionDesInscriptionToolStripMenuItem;
     }
 }

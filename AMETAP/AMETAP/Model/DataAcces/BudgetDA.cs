@@ -29,8 +29,10 @@ namespace AMETAP.Model.DataAcces
                 int annee  = b.annee;
                 double montant_provisoire = b.montant_provisoire;
                 double montant_final = b.montant_final;
+                double montantBudget1 = b.b1.montant;
+                double montantBudget2 = b.b2.montant;
                 PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
-                string req = string.Format(plSql.FixerBudget(annee, montant_provisoire, montant_final));
+                string req = string.Format(plSql.FixerBudget(id,annee,montant_provisoire,montant_final,montantBudget1,montantBudget2));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
@@ -71,13 +73,20 @@ namespace AMETAP.Model.DataAcces
 
         public int LastYear()
         {
-            cmd=cn.CreateCommand();
-            cmd.CommandText = "select MAX(annee) from Budget";
-            cn.Open();
-            decimal r = 0;
-            r = Convert.ToDecimal(cmd.ExecuteScalar());
-            cn.Close();
-            return (int)r;
+            try
+            {
+                cmd = cn.CreateCommand();
+                cmd.CommandText = "select MAX(annee) from Budget";
+                cn.Open();
+                decimal r = 0;
+                r = Convert.ToDecimal(cmd.ExecuteScalar());
+                cn.Close();
+                return (int)r;
+            }
+            catch(Exception)
+            {
+                return 2005;
+            }
         }
 
         public double LastPrixProvisore()
@@ -99,6 +108,29 @@ namespace AMETAP.Model.DataAcces
             Reader.Close();
             cn.Close();
             return id;
+        }
+
+        public int maxID()
+        {
+            try
+            {
+                //cn.Open();
+                cmd = cn.CreateCommand();
+                cmd.CommandText = "select MAX(id) from Budget";
+                cn.Open();
+                decimal r = 0;
+                r = Convert.ToDecimal(cmd.ExecuteScalar());
+                cn.Close();
+                return (int)r;
+            }
+            catch (InvalidCastException)
+            {
+                return 0;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

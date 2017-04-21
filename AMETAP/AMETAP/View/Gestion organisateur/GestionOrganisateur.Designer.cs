@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionOrganisateur));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAjouter = new MetroFramework.Controls.MetroTile();
             this.btSupprimer = new MetroFramework.Controls.MetroTile();
             this.btModifier = new MetroFramework.Controls.MetroTile();
@@ -43,13 +43,8 @@
             this.r2 = new MetroFramework.Controls.MetroRadioButton();
             this.r3 = new MetroFramework.Controls.MetroRadioButton();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.Accueil = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataOrganisation)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btAjouter
@@ -57,7 +52,7 @@
             this.btAjouter.ActiveControl = null;
             this.btAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btAjouter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAjouter.Location = new System.Drawing.Point(37, 154);
+            this.btAjouter.Location = new System.Drawing.Point(37, 84);
             this.btAjouter.Name = "btAjouter";
             this.btAjouter.Size = new System.Drawing.Size(68, 69);
             this.btAjouter.TabIndex = 0;
@@ -71,7 +66,7 @@
             // 
             this.btSupprimer.ActiveControl = null;
             this.btSupprimer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btSupprimer.Location = new System.Drawing.Point(177, 154);
+            this.btSupprimer.Location = new System.Drawing.Point(177, 84);
             this.btSupprimer.Name = "btSupprimer";
             this.btSupprimer.Size = new System.Drawing.Size(79, 70);
             this.btSupprimer.TabIndex = 1;
@@ -85,7 +80,7 @@
             // 
             this.btModifier.ActiveControl = null;
             this.btModifier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btModifier.Location = new System.Drawing.Point(339, 154);
+            this.btModifier.Location = new System.Drawing.Point(339, 84);
             this.btModifier.Name = "btModifier";
             this.btModifier.Size = new System.Drawing.Size(84, 70);
             this.btModifier.Style = MetroFramework.MetroColorStyle.Blue;
@@ -97,33 +92,33 @@
             // 
             // dataOrganisation
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataOrganisation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataOrganisation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataOrganisation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataOrganisation.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataOrganisation.Location = new System.Drawing.Point(37, 353);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataOrganisation.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataOrganisation.Location = new System.Drawing.Point(32, 304);
             this.dataOrganisation.Name = "dataOrganisation";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataOrganisation.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataOrganisation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataOrganisation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataOrganisation.Size = new System.Drawing.Size(538, 150);
             this.dataOrganisation.TabIndex = 3;
@@ -131,7 +126,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(53, 264);
+            this.metroLabel1.Location = new System.Drawing.Point(53, 197);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(62, 19);
             this.metroLabel1.TabIndex = 4;
@@ -152,7 +147,7 @@
             this.txtChercher.CustomButton.UseSelectable = true;
             this.txtChercher.CustomButton.Visible = false;
             this.txtChercher.Lines = new string[0];
-            this.txtChercher.Location = new System.Drawing.Point(121, 264);
+            this.txtChercher.Location = new System.Drawing.Point(144, 193);
             this.txtChercher.MaxLength = 32767;
             this.txtChercher.Name = "txtChercher";
             this.txtChercher.PasswordChar = '\0';
@@ -174,7 +169,7 @@
             this.groupBox1.Controls.Add(this.r1);
             this.groupBox1.Controls.Add(this.r2);
             this.groupBox1.Controls.Add(this.r3);
-            this.groupBox1.Location = new System.Drawing.Point(53, 293);
+            this.groupBox1.Location = new System.Drawing.Point(53, 238);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(445, 42);
             this.groupBox1.TabIndex = 6;
@@ -220,7 +215,7 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile1.Location = new System.Drawing.Point(497, 157);
+            this.metroTile1.Location = new System.Drawing.Point(497, 87);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(61, 56);
             this.metroTile1.TabIndex = 7;
@@ -229,43 +224,11 @@
             this.metroTile1.UseTileImage = true;
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // Accueil
-            // 
-            this.Accueil.AutoSize = true;
-            this.Accueil.Location = new System.Drawing.Point(49, 121);
-            this.Accueil.Name = "Accueil";
-            this.Accueil.Size = new System.Drawing.Size(42, 13);
-            this.Accueil.TabIndex = 9;
-            this.Accueil.Text = "Accueil";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(37, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 51);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(509, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 69);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // GestionOrganisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 500);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.Accueil);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtChercher);
@@ -281,8 +244,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataOrganisation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,8 +262,5 @@
         private MetroFramework.Controls.MetroRadioButton r2;
         private MetroFramework.Controls.MetroRadioButton r3;
         private MetroFramework.Controls.MetroTile metroTile1;
-        private System.Windows.Forms.Label Accueil;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 72);
+            this.label1.Location = new System.Drawing.Point(144, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // viewAnnee
             // 
             this.viewAnnee.AutoSize = true;
-            this.viewAnnee.Location = new System.Drawing.Point(91, 72);
+            this.viewAnnee.Location = new System.Drawing.Point(206, 91);
             this.viewAnnee.Name = "viewAnnee";
             this.viewAnnee.Size = new System.Drawing.Size(35, 13);
             this.viewAnnee.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // btAfficher
             // 
-            this.btAfficher.Location = new System.Drawing.Point(130, 103);
+            this.btAfficher.Location = new System.Drawing.Point(196, 137);
             this.btAfficher.Name = "btAfficher";
             this.btAfficher.Size = new System.Drawing.Size(75, 23);
             this.btAfficher.TabIndex = 2;
@@ -72,9 +72,9 @@
             // dataActivite
             // 
             this.dataActivite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataActivite.Location = new System.Drawing.Point(39, 165);
+            this.dataActivite.Location = new System.Drawing.Point(84, 195);
             this.dataActivite.Name = "dataActivite";
-            this.dataActivite.Size = new System.Drawing.Size(300, 150);
+            this.dataActivite.Size = new System.Drawing.Size(452, 150);
             this.dataActivite.TabIndex = 3;
             // 
             // chart1
@@ -83,7 +83,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(397, 33);
+            this.chart1.Location = new System.Drawing.Point(631, 63);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(826, 368);
+            this.ClientSize = new System.Drawing.Size(1027, 368);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataActivite);
             this.Controls.Add(this.btAfficher);

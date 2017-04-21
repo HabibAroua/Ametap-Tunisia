@@ -20,8 +20,6 @@ namespace AMETAP.View
 
         private void déconnexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            
             this.Hide();
             Authentification a = new Authentification();
             a.Show();
@@ -37,42 +35,54 @@ namespace AMETAP.View
         {
             View.Gestion_des_adherents.Gestion_Adherent ga = new Gestion_des_adherents.Gestion_Adherent();
             ga.Show();
-            this.Hide();
+            //this.Hide();
+            //new View.Gestion_des_adherents.Gestion_Adherent.Aff.ShowDialog(
         }
 
         private void gestionDesOrganisateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.Gestion_organisateur.GestionOrganisateur go = new Gestion_organisateur.GestionOrganisateur();
             go.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void gestionDesUtilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.Gestion_des_utilisateurs.Gestion_des_utilisateurs gu = new Gestion_des_utilisateurs.Gestion_des_utilisateurs();
             gu.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void gestionDesActivitésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.Gestion_des_activites.GestionActivite ga = new Gestion_des_activites.GestionActivite();
             ga.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void fixerBudgetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.Gestion_Budget.Fixer_Budget fb = new Gestion_Budget.Fixer_Budget();
             fb.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void afficherBudgetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.Gestion_Budget.Afficher_Budget ab = new Gestion_Budget.Afficher_Budget();
             ab.Show();
-            this.Hide();
+            //this.Hide();
+        }
+
+        private void activitéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gestionDesInscriptionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.Gestion_des_Inscriptions.Gestion_des_inscriptions gi = new Gestion_des_Inscriptions.Gestion_des_inscriptions();
+            gi.Show();
         }
     }
 }

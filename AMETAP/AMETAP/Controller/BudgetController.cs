@@ -19,9 +19,9 @@ namespace AMETAP.Controller
             bDA = new BudgetDA();
         }
 
-        public void fixerBudget(int annee,double montant_provisoire,double montant_final)
+        public void fixerBudget(int annee,double montant_provisoire,double montant_final,double montantBudget1,double montantBudget2)
         {
-            b = new Budget(0, annee, montant_provisoire, montant_final);
+            b = new Budget(bDA.maxID()+1, annee, montant_provisoire, montant_final,new BudgetCategorie(0,montantBudget1),new BudgetCategorie(0,montantBudget2));
             Boolean test = bDA.insert(b);
             if(test==true)
             {

@@ -11,17 +11,17 @@ namespace AMETAP.Controller
 {
     class TypeActiviteController
     {
-        TypeActiviteDA taDA;
+        //TypeActiviteDA taDA;
         public TypeActiviteController()
         {
-            taDA = new TypeActiviteDA();
+          //  taDA = new TypeActiviteDA();
         }
 
 
         public List<TypeActivite> ListActiviteInComboBox()
         {
-            List<TypeActivite>  list = taDA.SelectAll();
-            return list;
+            //List<TypeActivite>  list = taDA.SelectAll();
+            return null; //list;
         }
 
     }

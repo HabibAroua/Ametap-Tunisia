@@ -146,9 +146,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(424, 83);
+            this.pictureBox1.Location = new System.Drawing.Point(424, 74);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 220);
+            this.pictureBox1.Size = new System.Drawing.Size(242, 229);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -167,7 +167,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(591, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(591, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 71);
             this.pictureBox2.TabIndex = 8;
@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 327);
+            this.ClientSize = new System.Drawing.Size(665, 316);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.pictureBox1);
@@ -190,6 +190,7 @@
             this.Controls.Add(this.txtLogin);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Authentification";
             this.Text = "Authentification";
             this.Load += new System.EventHandler(this.Authentification_Load);

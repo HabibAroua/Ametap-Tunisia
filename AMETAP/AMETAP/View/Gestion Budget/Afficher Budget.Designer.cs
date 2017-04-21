@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Afficher_Budget));
             this.dataBudget = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataBudget)).BeginInit();
@@ -36,7 +37,7 @@
             // dataBudget
             // 
             this.dataBudget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBudget.Location = new System.Drawing.Point(57, 113);
+            this.dataBudget.Location = new System.Drawing.Point(107, 113);
             this.dataBudget.Name = "dataBudget";
             this.dataBudget.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataBudget.Size = new System.Drawing.Size(393, 177);
@@ -46,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 77);
+            this.label1.Location = new System.Drawing.Point(225, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 3;
@@ -56,9 +57,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 339);
+            this.ClientSize = new System.Drawing.Size(584, 339);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataBudget);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Afficher_Budget";
             this.Text = "Afficher Budget";
             this.Load += new System.EventHandler(this.Afficher_Budget_Load);

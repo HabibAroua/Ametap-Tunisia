@@ -42,11 +42,15 @@
             this.btAnnuler = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtMontantPrevu = new MetroFramework.Controls.MetroTextBox();
-            this.comboTypeActivite = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.comboOrganisateur = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdActiviteLoisir = new MetroFramework.Controls.MetroRadioButton();
+            this.rdActiviteCulturel = new MetroFramework.Controls.MetroRadioButton();
+            this.comboNomActivite = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapacite)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -64,7 +68,7 @@
             // 
             // 
             this.txtNomActivite.CustomButton.Image = null;
-            this.txtNomActivite.CustomButton.Location = new System.Drawing.Point(193, 1);
+            this.txtNomActivite.CustomButton.Location = new System.Drawing.Point(242, 1);
             this.txtNomActivite.CustomButton.Name = "";
             this.txtNomActivite.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNomActivite.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -82,7 +86,7 @@
             this.txtNomActivite.SelectionLength = 0;
             this.txtNomActivite.SelectionStart = 0;
             this.txtNomActivite.ShortcutsEnabled = true;
-            this.txtNomActivite.Size = new System.Drawing.Size(215, 23);
+            this.txtNomActivite.Size = new System.Drawing.Size(264, 23);
             this.txtNomActivite.TabIndex = 1;
             this.txtNomActivite.UseSelectable = true;
             this.txtNomActivite.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -92,8 +96,9 @@
             // 
             this.txtCapacite.Location = new System.Drawing.Point(164, 132);
             this.txtCapacite.Name = "txtCapacite";
-            this.txtCapacite.Size = new System.Drawing.Size(215, 20);
+            this.txtCapacite.Size = new System.Drawing.Size(264, 20);
             this.txtCapacite.TabIndex = 2;
+            this.txtCapacite.ValueChanged += new System.EventHandler(this.txtCapacite_ValueChanged);
             // 
             // metroLabel2
             // 
@@ -109,7 +114,7 @@
             this.txtDateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtDateDebut.Location = new System.Drawing.Point(164, 179);
             this.txtDateDebut.Name = "txtDateDebut";
-            this.txtDateDebut.Size = new System.Drawing.Size(215, 20);
+            this.txtDateDebut.Size = new System.Drawing.Size(264, 20);
             this.txtDateDebut.TabIndex = 6;
             // 
             // metroLabel4
@@ -135,7 +140,7 @@
             this.txtDatefin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtDatefin.Location = new System.Drawing.Point(164, 220);
             this.txtDatefin.Name = "txtDatefin";
-            this.txtDatefin.Size = new System.Drawing.Size(215, 20);
+            this.txtDatefin.Size = new System.Drawing.Size(264, 20);
             this.txtDatefin.TabIndex = 9;
             // 
             // metroLabel7
@@ -153,7 +158,7 @@
             // 
             // 
             this.txtPrixUnitaire.CustomButton.Image = null;
-            this.txtPrixUnitaire.CustomButton.Location = new System.Drawing.Point(193, 1);
+            this.txtPrixUnitaire.CustomButton.Location = new System.Drawing.Point(242, 1);
             this.txtPrixUnitaire.CustomButton.Name = "";
             this.txtPrixUnitaire.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPrixUnitaire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -171,11 +176,12 @@
             this.txtPrixUnitaire.SelectionLength = 0;
             this.txtPrixUnitaire.SelectionStart = 0;
             this.txtPrixUnitaire.ShortcutsEnabled = true;
-            this.txtPrixUnitaire.Size = new System.Drawing.Size(215, 23);
+            this.txtPrixUnitaire.Size = new System.Drawing.Size(264, 23);
             this.txtPrixUnitaire.TabIndex = 14;
             this.txtPrixUnitaire.UseSelectable = true;
             this.txtPrixUnitaire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPrixUnitaire.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPrixUnitaire.TextChanged += new System.EventHandler(this.txtPrixUnitaire_TextChanged);
             // 
             // btAjouter
             // 
@@ -211,7 +217,7 @@
             // 
             // 
             this.txtMontantPrevu.CustomButton.Image = null;
-            this.txtMontantPrevu.CustomButton.Location = new System.Drawing.Point(193, 1);
+            this.txtMontantPrevu.CustomButton.Location = new System.Drawing.Point(242, 1);
             this.txtMontantPrevu.CustomButton.Name = "";
             this.txtMontantPrevu.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMontantPrevu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -229,30 +235,20 @@
             this.txtMontantPrevu.SelectionLength = 0;
             this.txtMontantPrevu.SelectionStart = 0;
             this.txtMontantPrevu.ShortcutsEnabled = true;
-            this.txtMontantPrevu.Size = new System.Drawing.Size(215, 23);
+            this.txtMontantPrevu.Size = new System.Drawing.Size(264, 23);
             this.txtMontantPrevu.TabIndex = 18;
             this.txtMontantPrevu.UseSelectable = true;
             this.txtMontantPrevu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMontantPrevu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // comboTypeActivite
-            // 
-            this.comboTypeActivite.FormattingEnabled = true;
-            this.comboTypeActivite.ItemHeight = 23;
-            this.comboTypeActivite.Location = new System.Drawing.Point(164, 368);
-            this.comboTypeActivite.Name = "comboTypeActivite";
-            this.comboTypeActivite.Size = new System.Drawing.Size(215, 29);
-            this.comboTypeActivite.TabIndex = 19;
-            this.comboTypeActivite.UseSelectable = true;
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(33, 377);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(82, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(67, 19);
             this.metroLabel6.TabIndex = 20;
-            this.metroLabel6.Text = "Type Activité";
+            this.metroLabel6.Text = "Catégorie";
             // 
             // comboOrganisateur
             // 
@@ -260,7 +256,7 @@
             this.comboOrganisateur.ItemHeight = 23;
             this.comboOrganisateur.Location = new System.Drawing.Point(164, 414);
             this.comboOrganisateur.Name = "comboOrganisateur";
-            this.comboOrganisateur.Size = new System.Drawing.Size(215, 29);
+            this.comboOrganisateur.Size = new System.Drawing.Size(264, 29);
             this.comboOrganisateur.TabIndex = 21;
             this.comboOrganisateur.UseSelectable = true;
             // 
@@ -273,15 +269,56 @@
             this.metroLabel8.TabIndex = 22;
             this.metroLabel8.Text = "Organisateur";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdActiviteLoisir);
+            this.groupBox1.Controls.Add(this.rdActiviteCulturel);
+            this.groupBox1.Location = new System.Drawing.Point(164, 368);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(264, 40);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            // 
+            // rdActiviteLoisir
+            // 
+            this.rdActiviteLoisir.AutoSize = true;
+            this.rdActiviteLoisir.Location = new System.Drawing.Point(131, 19);
+            this.rdActiviteLoisir.Name = "rdActiviteLoisir";
+            this.rdActiviteLoisir.Size = new System.Drawing.Size(107, 15);
+            this.rdActiviteLoisir.TabIndex = 1;
+            this.rdActiviteLoisir.Text = "Activité de loisir";
+            this.rdActiviteLoisir.UseSelectable = true;
+            // 
+            // rdActiviteCulturel
+            // 
+            this.rdActiviteCulturel.AutoSize = true;
+            this.rdActiviteCulturel.Location = new System.Drawing.Point(7, 19);
+            this.rdActiviteCulturel.Name = "rdActiviteCulturel";
+            this.rdActiviteCulturel.Size = new System.Drawing.Size(106, 15);
+            this.rdActiviteCulturel.TabIndex = 0;
+            this.rdActiviteCulturel.Text = "Activité culturel";
+            this.rdActiviteCulturel.UseSelectable = true;
+            // 
+            // comboNomActivite
+            // 
+            this.comboNomActivite.FormattingEnabled = true;
+            this.comboNomActivite.ItemHeight = 23;
+            this.comboNomActivite.Location = new System.Drawing.Point(455, 85);
+            this.comboNomActivite.Name = "comboNomActivite";
+            this.comboNomActivite.Size = new System.Drawing.Size(322, 29);
+            this.comboNomActivite.TabIndex = 24;
+            this.comboNomActivite.UseSelectable = true;
+            // 
             // AjouterActivite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 532);
+            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.Controls.Add(this.comboNomActivite);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.comboOrganisateur);
             this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.comboTypeActivite);
             this.Controls.Add(this.txtMontantPrevu);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.btAnnuler);
@@ -300,6 +337,8 @@
             this.Text = "Ajouter une activité";
             this.Load += new System.EventHandler(this.AjouterActivite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCapacite)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,9 +360,12 @@
         private MetroFramework.Controls.MetroButton btAnnuler;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtMontantPrevu;
-        private MetroFramework.Controls.MetroComboBox comboTypeActivite;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroComboBox comboOrganisateur;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroRadioButton rdActiviteLoisir;
+        private MetroFramework.Controls.MetroRadioButton rdActiviteCulturel;
+        private MetroFramework.Controls.MetroComboBox comboNomActivite;
     }
 }

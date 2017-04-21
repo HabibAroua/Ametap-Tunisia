@@ -56,7 +56,7 @@
             // 
             // 
             this.txtMatricule.CustomButton.Image = null;
-            this.txtMatricule.CustomButton.Location = new System.Drawing.Point(182, 1);
+            this.txtMatricule.CustomButton.Location = new System.Drawing.Point(323, 1);
             this.txtMatricule.CustomButton.Name = "";
             this.txtMatricule.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMatricule.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -74,7 +74,7 @@
             this.txtMatricule.SelectionLength = 0;
             this.txtMatricule.SelectionStart = 0;
             this.txtMatricule.ShortcutsEnabled = true;
-            this.txtMatricule.Size = new System.Drawing.Size(204, 23);
+            this.txtMatricule.Size = new System.Drawing.Size(345, 23);
             this.txtMatricule.TabIndex = 1;
             this.txtMatricule.UseSelectable = true;
             this.txtMatricule.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -87,7 +87,7 @@
             // 
             // 
             this.txtLogin.CustomButton.Image = null;
-            this.txtLogin.CustomButton.Location = new System.Drawing.Point(182, 1);
+            this.txtLogin.CustomButton.Location = new System.Drawing.Point(323, 1);
             this.txtLogin.CustomButton.Name = "";
             this.txtLogin.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtLogin.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -105,7 +105,7 @@
             this.txtLogin.SelectionLength = 0;
             this.txtLogin.SelectionStart = 0;
             this.txtLogin.ShortcutsEnabled = true;
-            this.txtLogin.Size = new System.Drawing.Size(204, 23);
+            this.txtLogin.Size = new System.Drawing.Size(345, 23);
             this.txtLogin.TabIndex = 3;
             this.txtLogin.UseSelectable = true;
             this.txtLogin.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -127,7 +127,7 @@
             // 
             // 
             this.txtPassword.CustomButton.Image = null;
-            this.txtPassword.CustomButton.Location = new System.Drawing.Point(182, 1);
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(323, 1);
             this.txtPassword.CustomButton.Name = "";
             this.txtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -145,7 +145,7 @@
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
-            this.txtPassword.Size = new System.Drawing.Size(204, 23);
+            this.txtPassword.Size = new System.Drawing.Size(345, 23);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSelectable = true;
             this.txtPassword.UseSystemPasswordChar = true;
@@ -168,7 +168,7 @@
             // 
             // 
             this.txtConfirmPassword.CustomButton.Image = null;
-            this.txtConfirmPassword.CustomButton.Location = new System.Drawing.Point(182, 1);
+            this.txtConfirmPassword.CustomButton.Location = new System.Drawing.Point(323, 1);
             this.txtConfirmPassword.CustomButton.Name = "";
             this.txtConfirmPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtConfirmPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -186,7 +186,7 @@
             this.txtConfirmPassword.SelectionLength = 0;
             this.txtConfirmPassword.SelectionStart = 0;
             this.txtConfirmPassword.ShortcutsEnabled = true;
-            this.txtConfirmPassword.Size = new System.Drawing.Size(204, 23);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(345, 23);
             this.txtConfirmPassword.TabIndex = 7;
             this.txtConfirmPassword.UseSelectable = true;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
@@ -227,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 394);
+            this.ClientSize = new System.Drawing.Size(683, 394);
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.btInscrire);
             this.Controls.Add(this.txtConfirmPassword);
@@ -239,6 +239,7 @@
             this.Controls.Add(this.txtMatricule);
             this.Controls.Add(this.metroLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Inscription";
             this.Text = "Inscription";
             this.Load += new System.EventHandler(this.Inscription_Load);

@@ -8,9 +8,6 @@ namespace AMETAP.Model.Business
 {
     public class Activite
     {
-        private int v;
-        private int idTypeActivite;
-
         public int id
         {
             get;
@@ -65,13 +62,7 @@ namespace AMETAP.Model.Business
             set;
         }
 
-        public int id_TypeActivite
-        {
-            get;
-            set;
-        }
-
-        public int idBudget
+        public int idBudgetCategorie
         {
             get;
             set;
@@ -88,7 +79,7 @@ namespace AMETAP.Model.Business
         }
         public Activite(int id, String nom_Activite , int capacite 
             , int nombre_participant , String date_debut,String  date_fin  ,double prix_unitaire ,
-            double montant_prevu , double montant_actuel , int id_TypeActivite , int idBudget , int idOrganisateur)
+            double montant_prevu , double montant_actuel , int idBudgetCategorie, int idOrganisateur)
         {
             this.id = id;
             this.nom_Activite = nom_Activite;
@@ -99,8 +90,7 @@ namespace AMETAP.Model.Business
             this.prix_unitaire = prix_unitaire;
             this.montant_prevu = montant_prevu;
             this.montant_actuel = montant_actuel;
-            this.id_TypeActivite = id_TypeActivite;
-            this.idBudget = idBudget;
+            this.idBudgetCategorie = idBudgetCategorie;
             this.idOrganisateur = idOrganisateur;
         }
 
@@ -112,11 +102,10 @@ namespace AMETAP.Model.Business
 
 
 
-        public Activite(String nom_Activite, int capacite, int id_TypeActivite, int idOrganisateur)
+        public Activite(String nom_Activite, int capacite, int idOrganisateur)
         {
             this.nom_Activite = nom_Activite;
             this.capacite = capacite;
-            this.id_TypeActivite = id_TypeActivite;
             this.idOrganisateur = idOrganisateur;
         }
 

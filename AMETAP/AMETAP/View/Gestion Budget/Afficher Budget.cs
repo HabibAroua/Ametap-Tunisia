@@ -32,5 +32,17 @@ namespace AMETAP.View.Gestion_Budget
             ica.Show();
             ica.viewAnnee.Text =dataBudget.CurrentRow.Cells[1].Value.ToString();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Menu m = new View.Menu();
+            m.Show();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

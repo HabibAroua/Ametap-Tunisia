@@ -30,5 +30,17 @@ namespace AMETAP.View.Gestion_Budget
                chart1.Series["Activites"].Points.AddXY(a.nom_Activite, a.montant_prevu);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Menu m = new View.Menu();
+            m.Show();
+            this.Close();
+        }
     }
 }
