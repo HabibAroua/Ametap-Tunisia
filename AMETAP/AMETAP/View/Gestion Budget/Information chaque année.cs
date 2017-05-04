@@ -15,19 +15,27 @@ namespace AMETAP.View.Gestion_Budget
     public partial class Information_chaque_année : MetroForm
     {
         ActiviteController ac;
+        BudgetController bc;
         public Information_chaque_année()
         {
             InitializeComponent();
             ac = new ActiviteController();
+            bc = new BudgetController();
         }
 
         private void btAfficher_Click(object sender, EventArgs e)
         {
-            ac.AfficheInformation(dataActivite, viewAnnee.Text.ToString());
-            foreach (Activite a in ac.Stat(viewAnnee.Text))
+            foreach (Activite a in ac.StatCulturel(viewAnnee.Text))
             {
-                //MessageBox.Show(a.nom_Activite);
-               chart1.Series["Activites"].Points.AddXY(a.nom_Activite, a.montant_prevu);
+                dataActivite.Rows.Add(a.nom_Activite, a.montant_prevu ,ac.totalMontant_prevuCulturel(viewAnnee.Text.ToString()),bc.getBudget(viewAnnee.Text.ToString()));
+                chart1.Series["Activites"].Points.AddXY(a.nom_Activite, a.montant_prevu);
+            }
+
+            foreach (Activite a in ac.StatLoisir(viewAnnee.Text))
+            {
+                dataGridView1.Rows.Add(a.nom_Activite, a.montant_prevu, ac.totalMontant_prevuLoisir(viewAnnee.Text.ToString()),bc.getBudget(viewAnnee.Text.ToString()));
+                chart2.Series["Activites"].Points.AddXY(a.nom_Activite, a.montant_prevu.ToString());
+
             }
         }
 

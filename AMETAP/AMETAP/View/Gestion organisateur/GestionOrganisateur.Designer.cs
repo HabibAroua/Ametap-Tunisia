@@ -238,6 +238,8 @@
             this.Controls.Add(this.btSupprimer);
             this.Controls.Add(this.btAjouter);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionOrganisateur";
             this.Text = "Gestion Organisateur";
             this.Load += new System.EventHandler(this.GestionOrganisateur_Load);

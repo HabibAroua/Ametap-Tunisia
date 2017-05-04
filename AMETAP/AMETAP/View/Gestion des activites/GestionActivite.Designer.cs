@@ -95,6 +95,7 @@
             this.dataActivite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataActivite.Size = new System.Drawing.Size(863, 262);
             this.dataActivite.TabIndex = 4;
+            this.dataActivite.DoubleClick += new System.EventHandler(this.dataActivite_DoubleClick);
             // 
             // comboAnnee
             // 
@@ -135,6 +136,7 @@
             this.rdActiviteCulturel.TabIndex = 1;
             this.rdActiviteCulturel.Text = "Activité culturel";
             this.rdActiviteCulturel.UseSelectable = true;
+            this.rdActiviteCulturel.Click += new System.EventHandler(this.rdActiviteCulturel_Click);
             // 
             // rdActiviteLoisir
             // 
@@ -145,6 +147,7 @@
             this.rdActiviteLoisir.TabIndex = 0;
             this.rdActiviteLoisir.Text = "Activité de loisir";
             this.rdActiviteLoisir.UseSelectable = true;
+            this.rdActiviteLoisir.Click += new System.EventHandler(this.rdActiviteLoisir_Click);
             // 
             // GestionActivite
             // 

@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraBars;
 
 namespace AMETAP.View
 {
-    public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class MenuRadial : Form
     {
-        public Main()
+        public MenuRadial()
         {
             InitializeComponent();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -15,16 +15,7 @@ namespace AMETAP
 {
     public partial class Authentification : MetroForm
     {
-        private const int CP_NOCLOSE_BUTTON = 0x200;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
+        
         AdminController ac;
         public Authentification()
         {
@@ -79,7 +70,7 @@ namespace AMETAP
             Boolean test= ac.Connecter(txtLogin.Text.ToString(),txtPassword.Text.ToString());
             if(test==true)
             {
-                View.Menu m = new View.Menu();
+                View.Index m = new View.Index();
                 m.Show();
                 this.Hide();
             }
@@ -90,6 +81,11 @@ namespace AMETAP
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Authentification_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

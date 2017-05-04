@@ -73,13 +73,26 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+
+        public String date_debut_inscription
+        {
+            get;
+            set;
+        }
+
+        public String date_fin_inscription
+        {
+            get;
+            set;
+        }
         public Activite()
         {
 
         }
         public Activite(int id, String nom_Activite , int capacite 
             , int nombre_participant , String date_debut,String  date_fin  ,double prix_unitaire ,
-            double montant_prevu , double montant_actuel , int idBudgetCategorie, int idOrganisateur)
+            double montant_prevu , double montant_actuel , int idBudgetCategorie, int idOrganisateur,String date_debut_inscription,
+            String date_fin_inscription)
         {
             this.id = id;
             this.nom_Activite = nom_Activite;
@@ -92,6 +105,8 @@ namespace AMETAP.Model.Business
             this.montant_actuel = montant_actuel;
             this.idBudgetCategorie = idBudgetCategorie;
             this.idOrganisateur = idOrganisateur;
+            this.date_debut_inscription = date_debut_inscription;
+            this.date_fin_inscription = date_fin_inscription;
         }
 
         public Activite(int id,double montant_prevu)
@@ -113,6 +128,11 @@ namespace AMETAP.Model.Business
         {
             this.nom_Activite = nom_Activite;
             this.montant_prevu = montant_prevu;
+        }
+
+        public Activite(int id)
+        {
+            this.id = id;
         }
     }
 }

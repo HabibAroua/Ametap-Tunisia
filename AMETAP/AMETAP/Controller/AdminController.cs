@@ -72,11 +72,11 @@ namespace AMETAP.Controller
                 Boolean test = ad.delete(matricule);
                 if (test == true)
                 {
-                    MessageBox.Show("Cet utilisateur a été supprimé !","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("La suppression de cet utilisateur est effectué avec succés !", "Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Cette suppresion est echoué", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Erreur de suppression", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

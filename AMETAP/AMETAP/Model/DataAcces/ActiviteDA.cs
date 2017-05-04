@@ -42,9 +42,11 @@ namespace AMETAP.Model.DataAcces
                 double montant_actuel = a.montant_actuel;
                 int idBudgetCategorie = a.idBudgetCategorie;
                 int idOrganisateur = a.idOrganisateur;
+                String date_debut_inscription = a.date_debut_inscription;
+                String date_fin_inscription = a.date_fin_inscription;
                 PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
                 //MessageBox.Show("nom activité :" + nom_activite + " capacité " + capacite + " nombre part :" + nombre_participant + " montant prevu " + montant_prevu + " " + "id type" + id_TypeActivite + " id budget" + idBudget + " id Organisateur" + idOrganisateur);
-                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, idBudgetCategorie, idOrganisateur));
+                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, idBudgetCategorie, idOrganisateur,date_debut_inscription,date_fin_inscription));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
@@ -160,10 +162,10 @@ namespace AMETAP.Model.DataAcces
             return tab1;
         }
 
-        public List<Activite> selectNomActivite(String annee)
+        public List<Activite> selectNomActiviteCulturel(String annee)
         {
             List<Activite> listActivite = new List<Activite>();
-            string req = string.Format("select Activite.Nom_Activite , Activite.Montant_prevu from Activite ,Budget ,BudgetCategorie where (Activite.IDBUDGETCAT=BudgetCategorie.id) AND (Budget.annee="+annee+") and (Budget.id=BudgetCategorie.IDBUDGET) and (Activite.IDBUDGETCAT=BudgetCategorie.id) ");
+            string req = string.Format("select Activite.Nom_Activite , Activite.Montant_prevu from Activite ,Budget ,BudgetCategorie where (Activite.IDBUDGETCAT=BudgetCategorie.id) AND (Budget.annee="+annee+") and (Budget.id=BudgetCategorie.IDBUDGET) and (Activite.IDBUDGETCAT=BudgetCategorie.id) and (BudgetCategorie.Categorie='Activité culturel') ");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
@@ -176,6 +178,21 @@ namespace AMETAP.Model.DataAcces
             return listActivite;
         }
 
+        public List<Activite> selectNomActiviteLoisir(String annee)
+        {
+            List<Activite> listActivite = new List<Activite>();
+            string req = string.Format("select Activite.Nom_Activite , Activite.Montant_prevu from Activite ,Budget ,BudgetCategorie where (Activite.IDBUDGETCAT=BudgetCategorie.id) AND (Budget.annee=" + annee + ") and (Budget.id=BudgetCategorie.IDBUDGET) and (Activite.IDBUDGETCAT=BudgetCategorie.id) and (BudgetCategorie.Categorie='Activité de loisir') ");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                listActivite.Add(new Activite(Reader.GetString(0), (double)Reader.GetDecimal(1)));
+            }
+            Reader.Close();
+            cn.Close();
+            return listActivite;
+        }
         public int getId(String typeActivite , int annee)
         {
             int res = 0;
@@ -186,6 +203,98 @@ namespace AMETAP.Model.DataAcces
             while (Reader.Read())
             {
                 res =(int) Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
+
+        public int getCapacite(int id)
+        {
+            int res = 0;
+            string req = string.Format("select capacite from Activite where id="+id+"");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res = (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
+
+        public int getNombreParticipant(int id)
+        {
+            int res = 0;
+            string req = string.Format("select NOMBRE_PARTICIPANT from Activite where id=" + id + "");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res = (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
+
+        public int sumMontant_prevuLoisir(String annee)
+        {
+            int res = 0;
+            string req = string.Format("select montant_prevu from Activite , BudgetCategorie , Budget where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité de loisir' and Budget.id=BudgetCategorie.idbudget and Budget.annee="+annee+"");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res =res+ (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
+
+        public int sumMontant_prevuCulturel(String annee)
+        {
+            int res = 0;
+            string req = string.Format("select montant_prevu from Activite , BudgetCategorie , Budget where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité culturel' and Budget.id=BudgetCategorie.idbudget and Budget.annee=" + annee + "");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res = res + (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return res;
+        }
+
+        public DataTable activiteActuel()
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Activite.ID , Activite.Nom_activite , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE , Organisateur.nom_organisateur  from Activite , organisateur where (Activite.date_debut_inscription<=sysdate) and (Activite.date_fin_inscription>=sysdate) and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Activite");
+            tab1 = dtst.Tables["Activite"];
+            return tab1;
+        }
+
+        public int restePlace(int idActivite)
+        {
+
+            int res = 0;
+            string req = string.Format("select CAPACITE-NOMBRE_PARTICIPANT from Activite where id="+idActivite);
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                res = res + (int)Reader.GetDecimal(0);
             }
             Reader.Close();
             cn.Close();

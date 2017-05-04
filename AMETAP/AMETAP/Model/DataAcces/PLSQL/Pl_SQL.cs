@@ -71,9 +71,9 @@ namespace AMETAP.Model.DataAcces.PLSQL
 
         public String AjouterActivite(String nom_activite,int capacite ,String date_debut
             ,String date_fin,double prix_unitaire, double montant_prevu,
-            double montant_actuel,int idBudgetCat,int idOrganisateur)
+            double montant_actuel,int idBudgetCat,int idOrganisateur,String date_debut_inscription,String date_fin_inscription)
         {
-            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel +"," + idBudgetCat + ","+idOrganisateur+"); end;";
+            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel +"," + idBudgetCat + ","+idOrganisateur+",'"+date_debut_inscription+"','"+date_fin_inscription+"'); end;";
         }
 
         public String SupprimerActivite(int id,double montant_prevu)
@@ -84,6 +84,16 @@ namespace AMETAP.Model.DataAcces.PLSQL
         public String ModifierActivite(int id, String nomActivite, int capacite, int idTypeActivite, int idOrganisateur)
         {
             return "Begin ModifierActivite(" + id + ",'" + nomActivite + "'," + capacite + "," + idTypeActivite + "," + idOrganisateur + "); end;";
+        }
+
+        public String AccepterDemandeAdherent(int matricule,int idActivite,int id,int valeur)
+        {
+            return "Begin AccepterDemandeAdherent("+matricule+","+idActivite+","+id+","+valeur+"); END;";
+        }
+
+        public String RefuserDemandeAdherent(int id)
+        {
+            return "Begin RefuserDemandeAdherent(" + id + "); END;";
         }
     }
 }

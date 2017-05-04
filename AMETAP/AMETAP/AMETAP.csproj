@@ -76,6 +76,7 @@
     <Compile Include="Controller\AdherentController.cs" />
     <Compile Include="Controller\AdminController.cs" />
     <Compile Include="Controller\Agence_VoyageController.cs" />
+    <Compile Include="Controller\BudgetCategorieController.cs" />
     <Compile Include="Controller\BudgetController.cs" />
     <Compile Include="Controller\CentreController.cs" />
     <Compile Include="Controller\ClubController.cs" />
@@ -84,6 +85,9 @@
     <Compile Include="Controller\OrganisateurController.cs" />
     <Compile Include="Controller\ParticipantController.cs" />
     <Compile Include="Controller\ParticipationController.cs" />
+    <Compile Include="Controller\PayaimentController.cs" />
+    <Compile Include="Controller\Script\DateValue.cs" />
+    <Compile Include="Controller\Script\Mailing.cs" />
     <Compile Include="Controller\TypeActiviteController.cs" />
     <Compile Include="Model\Business\Activite.cs" />
     <Compile Include="Model\Business\Adherent.cs" />
@@ -117,6 +121,8 @@
     <Compile Include="Model\DataAcces\OrganisateurDA.cs" />
     <Compile Include="Model\DataAcces\ParticipantDA.cs" />
     <Compile Include="Model\DataAcces\ParticipationDA.cs" />
+    <Compile Include="Model\DataAcces\PayaimentDA.cs" />
+    <Compile Include="Model\DataAcces\PersonnelDA.cs" />
     <Compile Include="Model\DataAcces\PLSQL\Pl_SQL.cs" />
     <Compile Include="View\Authentification.cs">
       <SubType>Form</SubType>
@@ -155,6 +161,12 @@
     </Compile>
     <Compile Include="View\Gestion des activites\GestionActivite.Designer.cs">
       <DependentUpon>GestionActivite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gestion des activites\Information d%27une Activite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Gestion des activites\Information d%27une Activite.Designer.cs">
+      <DependentUpon>Information d%27une Activite.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Gestion des activites\Modifier Activite.cs">
       <SubType>Form</SubType>
@@ -204,17 +216,17 @@
     <Compile Include="View\Gestion organisateur\Modifier_Organisateur.Designer.cs">
       <DependentUpon>Modifier_Organisateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Index.Designer.cs">
+      <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Inscription.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Inscription.Designer.cs">
       <DependentUpon>Inscription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
@@ -222,8 +234,8 @@
     <Compile Include="View\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Script\Cryptage.cs" />
-    <Compile Include="View\Script\RegularExpression.cs" />
+    <Compile Include="Controller\Script\Cryptage.cs" />
+    <Compile Include="Controller\Script\RegularExpression.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
@@ -252,6 +264,9 @@
     <EmbeddedResource Include="View\Gestion des activites\GestionActivite.resx">
       <DependentUpon>GestionActivite.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Gestion des activites\Information d%27une Activite.resx">
+      <DependentUpon>Information d%27une Activite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Gestion des activites\Modifier Activite.resx">
       <DependentUpon>Modifier Activite.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,11 +291,11 @@
     <EmbeddedResource Include="View\Gestion organisateur\Modifier_Organisateur.resx">
       <DependentUpon>Modifier_Organisateur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Inscription.resx">
       <DependentUpon>Inscription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

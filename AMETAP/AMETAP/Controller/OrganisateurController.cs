@@ -126,24 +126,24 @@ namespace AMETAP.Controller
             test3 = cc.isUpdated(id, nom, email, adresse, description);
             if (test1 == true)
             {
-                MessageBox.Show("Cet organisateur est déjà modifié", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La mise à jour de cet organisateur est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 if (test2 == true)
                 {
-                    MessageBox.Show("Cet organisateur est déjà modifié", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La mise à jour de cet organisateur est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
                 {
                     if (test3 == true)
                     {
-                        MessageBox.Show("Cet organisateur est déjà modifié", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("La mise à jour de cet organisateur est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Erreur de modification", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Erreur de la mise à jour", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
                 }

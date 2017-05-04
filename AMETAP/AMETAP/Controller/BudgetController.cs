@@ -14,9 +14,11 @@ namespace AMETAP.Controller
     {
         BudgetDA bDA;
         Budget b;
+        AdherentDA aDA;
         public BudgetController()
         {
             bDA = new BudgetDA();
+            aDA = new AdherentDA();
         }
 
         public void fixerBudget(int annee,double montant_provisoire,double montant_final,double montantBudget1,double montantBudget2)
@@ -25,7 +27,8 @@ namespace AMETAP.Controller
             Boolean test = bDA.insert(b);
             if(test==true)
             {
-                MessageBox.Show("Vous fixez ce budget !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vous avez fixé un nouveau budget", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                aDA.InitialiserNombrePoint();
             }
             else
             {
@@ -41,6 +44,11 @@ namespace AMETAP.Controller
         public void AfficherBudget(DataGridView d)
         {
             d.DataSource = bDA.sellectAll();
+        }
+
+        public int getBudget(String annee)
+        {
+            return bDA.getBudget(annee);
         }
 
 

@@ -15,10 +15,12 @@ namespace AMETAP.View.Gestion_des_activites
     public partial class GestionActivite : MetroForm
     {
         ActiviteController ac;
+        BudgetCategorieController bcc;
         public GestionActivite()
         {
             InitializeComponent();
             ac = new ActiviteController();
+            bcc = new BudgetCategorieController();
         }
 
         private void btAjouter_Click(object sender, EventArgs e)
@@ -88,6 +90,30 @@ namespace AMETAP.View.Gestion_des_activites
             GestionActivite ga = new GestionActivite();
             ga.Show();
             this.Close();
+        }
+
+        private void dataActivite_DoubleClick(object sender, EventArgs e)
+        {
+            Information_d_une_Activite iua = new Information_d_une_Activite();
+            iua.viewActivite.Text = dataActivite.CurrentRow.Cells[1].Value.ToString();
+            iua.viewDateDebut.Text = dataActivite.CurrentRow.Cells[3].Value.ToString().Substring(0, 10);
+            iua.viewDateFin.Text = dataActivite.CurrentRow.Cells[4].Value.ToString().Substring(0, 10);
+            iua.viewCapacite.Text = dataActivite.CurrentRow.Cells[5].Value.ToString();
+            int reste = int.Parse(dataActivite.CurrentRow.Cells[5].Value.ToString()) - int.Parse(dataActivite.CurrentRow.Cells[6].Value.ToString());
+            iua.viewReste.Text = reste.ToString();
+            iua.viewPrixUnitaire.Text = dataActivite.CurrentRow.Cells[2].Value.ToString();
+            iua.setIdActivite(int.Parse(dataActivite.CurrentRow.Cells[0].Value.ToString()));
+            iua.Show();
+        }
+
+        private void rdActiviteCulturel_Click(object sender, EventArgs e)
+        {
+            bcc.afficheCulturel(dataActivite,comboAnnee.SelectedItem.ToString());
+        }
+
+        private void rdActiviteLoisir_Click(object sender, EventArgs e)
+        {
+            bcc.afficheLoisir(dataActivite, comboAnnee.SelectedItem.ToString());
         }
     }
 }

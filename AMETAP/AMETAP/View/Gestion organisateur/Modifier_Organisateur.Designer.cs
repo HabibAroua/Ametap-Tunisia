@@ -233,6 +233,8 @@
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.metroLabel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Modifier_Organisateur";
             this.Text = "Modifier Organisateur";
             this.ResumeLayout(false);

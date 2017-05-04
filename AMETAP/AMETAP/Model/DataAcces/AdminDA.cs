@@ -101,7 +101,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Admin.login from Personnel , Admin where Personnel.matricule=admin.matricule", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.cin, Personnel.nom, Personnel.prenom, Personnel.ETAT_CIVIL, Personnel.NBR_ENFANT, Personnel.DATE_NAISSAINCE,Personnel.lieu,Personnel.adresse,Personnel.Tel , Admin.login from Personnel , Admin where Personnel.matricule=admin.matricule", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Admin");
             tab1 = dtst.Tables["Admin"];

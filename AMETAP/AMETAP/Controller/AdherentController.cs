@@ -29,7 +29,7 @@ namespace AMETAP.Controller
             ParticipantController pc = new ParticipantController();
             if (test == true)
             {
-                MessageBox.Show("Cet adherent a été supprimé !!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La suppression de cet adhérent est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 pc.Suuprimer(matricule);
             }
             else

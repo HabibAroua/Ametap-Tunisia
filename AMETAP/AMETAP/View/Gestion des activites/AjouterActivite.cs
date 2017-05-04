@@ -18,26 +18,38 @@ namespace AMETAP.View.Gestion_des_activites
         ActiviteController ac;
         TypeActiviteController taC;
         OrganisateurController oc;
+        BudgetCategorieController bcc;
         public AjouterActivite()
         {
             InitializeComponent();
             ac = new ActiviteController();
             taC = new TypeActiviteController();
             oc = new OrganisateurController();
+            bcc = new BudgetCategorieController();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (rdActiviteCulturel.Checked == true)
+            if (int.Parse(viewMontant.Text.ToString()) - int.Parse(txtMontantPrevu.Text.ToString()) >= 0)
             {
-                ac.AjouterActivite(txtNomActivite.Text.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString());
+                if (rdActiviteCulturel.Checked == true)
+                {
+                    ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString());
+
+                }
+                else
+                {
+                    if (rdActiviteLoisir.Checked == true)
+                    {
+                        ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString());
+                        viewMontant.Text = bcc.getMontantProvisoire("Activité de loisir").ToString();
+                        
+                    }
+                }
             }
             else
             {
-                if (rdActiviteLoisir.Checked == true)
-                {
-                    ac.AjouterActivite(txtNomActivite.Text.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString());
-                }
+                MessageBox.Show("Vous n'avez pas ajouter une nouvelle activité car le budget est inssuffisant !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -47,16 +59,6 @@ namespace AMETAP.View.Gestion_des_activites
             {
                 comboOrganisateur.Items.Add(o.nom_organisateur);
             }
-
-            comboNomActivite.Items.Add("Cours Anglais");
-            comboNomActivite.Items.Add("Omra");
-            comboNomActivite.Items.Add("Cours français");
-            comboNomActivite.Items.Add("Excurssion");
-            comboNomActivite.Items.Add("Cours Espagnole");
-            comboNomActivite.Items.Add("Cours Italien");
-            comboNomActivite.Items.Add("Théatre");
-            comboNomActivite.Items.Add("Cours danse");
-            comboNomActivite.Items.Add("Voyage");
             txtMontantPrevu.Enabled = false;
         }
 
@@ -68,8 +70,6 @@ namespace AMETAP.View.Gestion_des_activites
             }
             else
             {
-                //ac.calculerMontant_prevu(txtCapacite.Text, txtPrixUnitaire.Text, txtPrixUnitaire.Text);
-                //MessageBox.Show("" + (int.Parse(txtPrixUnitaire.Text) / 2) * int.Parse(txtPrixUnitaire.Text));
                 txtMontantPrevu.Text = "" + (int.Parse(txtPrixUnitaire.Text) / 2) * int.Parse(txtCapacite.Text);
             }
         }
@@ -82,11 +82,47 @@ namespace AMETAP.View.Gestion_des_activites
             }
             else
             {
-                //ac.calculerMontant_prevu(txtCapacite.Text, txtPrixUnitaire.Text, txtPrixUnitaire.Text);
-                //MessageBox.Show("" + (int.Parse(txtPrixUnitaire.Text) / 2) * int.Parse(txtPrixUnitaire.Text));
                 txtMontantPrevu.Text = "" + (int.Parse(txtPrixUnitaire.Text) / 2) * int.Parse(txtCapacite.Text);
             }
+        }
+        private void rdActiviteCulturel_CheckedChanged(object sender, EventArgs e)
+        {
+            comboNomActivite.Items.Clear();
+            if (rdActiviteCulturel.Checked == true)
+            {
+                comboNomActivite.Items.Add("Cours Anglais");
+                comboNomActivite.Items.Add("Cours francais");
+                comboNomActivite.Items.Add("Cours Espagnole");
+                comboNomActivite.Items.Add("Theatre");
+                comboNomActivite.Items.Add("Cinema");
+            }
+        }
 
+        private void rdActiviteLoisir_CheckedChanged(object sender, EventArgs e)
+        {
+            comboNomActivite.Items.Clear();
+            if (rdActiviteLoisir.Checked == true)
+            {
+                comboNomActivite.Items.Add("Cours aerobic");
+                comboNomActivite.Items.Add("Cours danse orientale");
+                comboNomActivite.Items.Add("Omra");
+                comboNomActivite.Items.Add("Voyage Japon");
+                comboNomActivite.Items.Add("Voyage France");
+                comboNomActivite.Items.Add("Voyage Espagne");
+                comboNomActivite.Items.Add("Voyage Italie");
+                comboNomActivite.Items.Add("Voyage Allemagne");
+                comboNomActivite.Items.Add("Voyage Autriche");
+            }
+        }
+
+        private void rdActiviteCulturel_Click(object sender, EventArgs e)
+        {
+            viewMontant.Text = bcc.getMontantProvisoire("Activité culturel").ToString();
+        }
+
+        private void rdActiviteLoisir_Click(object sender, EventArgs e)
+        {
+            viewMontant.Text =""+bcc.getMontantProvisoire("Activité de loisir");
         }
     }
 }

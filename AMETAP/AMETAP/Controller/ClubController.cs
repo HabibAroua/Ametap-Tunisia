@@ -26,7 +26,7 @@ namespace AMETAP.Controller
             Boolean test= cDA.insert(c);
             if(test==true)
             {
-                MessageBox.Show("L'insertion de cette organisation est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("L'ajout de cette organisation est effectué avec succes", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

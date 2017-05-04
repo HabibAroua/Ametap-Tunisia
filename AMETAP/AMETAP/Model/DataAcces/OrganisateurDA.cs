@@ -81,7 +81,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select  Organisateur.id , Organisateur.Nom_organisateur , Organisateur.email, Organisateur.Adresse, Centre.description  from Organisateur , centre where Organisateur.id = centre.id Union all Select organisateur.id, Organisateur.Nom_organisateur,Organisateur.Email ,Organisateur.Adresse, club.description from organisateur , club where Organisateur.id = club.id Union all select organisateur.id, Organisateur.Nom_organisateur, Organisateur.email,Organisateur.Adresse, agence_voyage.description from organisateur , agence_voyage where Organisateur.id = agence_voyage.id  ", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select * from Organisateur", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Organisateur");
             tab1 = dtst.Tables["Organisateur"];

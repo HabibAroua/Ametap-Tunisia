@@ -11,6 +11,12 @@ namespace AMETAP.Model.Business
     public class Adherent
     {
         //Implement attribut
+
+        public Personnel personnel
+        {
+            get;
+            set;
+        }
         public int matriculeAmetap
         {
             get;
@@ -34,6 +40,12 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+
+        public int nombre_point
+        {
+            get;
+            set;
+        }
         //Constructeur
         public Adherent(int matriculeAmetap, int matriculeEtap,String login,String password)
         {
@@ -41,6 +53,20 @@ namespace AMETAP.Model.Business
             this.matriculeEtap = matriculeEtap;
             this.login = login;
             this.password = password;
+        }
+
+        public Adherent( String login, String password,int nombre_point,Personnel personnel)
+        {
+            this.login = login;
+            this.password = password;
+            this.nombre_point = nombre_point;
+            this.personnel = personnel;
+        }
+
+        public Adherent(Personnel personnel,int nombre_point)
+        {
+            this.personnel = personnel;
+            this.nombre_point = nombre_point;
         }
     }
 }

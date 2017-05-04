@@ -117,6 +117,8 @@
             this.Controls.Add(this.txtRecherhce);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dataUtilisateur);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Gestion_des_utilisateurs";
             this.Text = "Gestion des utilisateurs";
             this.Load += new System.EventHandler(this.Gestion_des_utilisateurs_Load);

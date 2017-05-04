@@ -110,6 +110,22 @@ namespace AMETAP.Model.DataAcces
             return id;
         }
 
+        public int getBudget(String annee)
+        {
+            int budget = 0;
+            string req = string.Format("select BUDGET_ACCRDE from Budget where Annee=" + annee);
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                budget = (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return budget;
+        }
+
         public int maxID()
         {
             try
@@ -132,5 +148,7 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+
+        
     }
 }

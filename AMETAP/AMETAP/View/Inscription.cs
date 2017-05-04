@@ -95,5 +95,10 @@ namespace AMETAP.View
                 btInscrire.Enabled = false;
             }
         }
+
+        private void Inscription_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

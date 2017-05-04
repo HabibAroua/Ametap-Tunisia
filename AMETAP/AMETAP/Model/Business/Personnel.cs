@@ -155,6 +155,12 @@ namespace AMETAP.Model.Business
             this.email = email;
         }
 
+        public Personnel(String nom,String prenom)
+        {
+            this.nom = nom;
+            this.prenom = prenom;
+        }
+
     }
 }
 

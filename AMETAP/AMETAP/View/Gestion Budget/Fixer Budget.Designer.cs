@@ -41,12 +41,14 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtBudgetLoisir = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.viewResteBudget = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(84, 89);
+            this.metroLabel1.Location = new System.Drawing.Point(84, 73);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(46, 19);
             this.metroLabel1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // 
             this.comboAnnee.FormattingEnabled = true;
             this.comboAnnee.ItemHeight = 23;
-            this.comboAnnee.Location = new System.Drawing.Point(320, 89);
+            this.comboAnnee.Location = new System.Drawing.Point(372, 63);
             this.comboAnnee.Name = "comboAnnee";
             this.comboAnnee.Size = new System.Drawing.Size(227, 29);
             this.comboAnnee.TabIndex = 2;
@@ -65,7 +67,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(84, 140);
+            this.metroLabel2.Location = new System.Drawing.Point(84, 147);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(102, 19);
             this.metroLabel2.TabIndex = 3;
@@ -86,7 +88,7 @@
             this.txtMontantFinal.CustomButton.UseSelectable = true;
             this.txtMontantFinal.CustomButton.Visible = false;
             this.txtMontantFinal.Lines = new string[0];
-            this.txtMontantFinal.Location = new System.Drawing.Point(320, 140);
+            this.txtMontantFinal.Location = new System.Drawing.Point(372, 143);
             this.txtMontantFinal.MaxLength = 32767;
             this.txtMontantFinal.Name = "txtMontantFinal";
             this.txtMontantFinal.PasswordChar = '\0';
@@ -104,7 +106,7 @@
             // 
             // btFixer
             // 
-            this.btFixer.Location = new System.Drawing.Point(55, 350);
+            this.btFixer.Location = new System.Drawing.Point(84, 350);
             this.btFixer.Name = "btFixer";
             this.btFixer.Size = new System.Drawing.Size(75, 23);
             this.btFixer.TabIndex = 5;
@@ -114,7 +116,7 @@
             // 
             // btAnnuler
             // 
-            this.btAnnuler.Location = new System.Drawing.Point(155, 350);
+            this.btAnnuler.Location = new System.Drawing.Point(183, 350);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 6;
@@ -125,7 +127,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(84, 192);
+            this.metroLabel3.Location = new System.Drawing.Point(84, 196);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(89, 19);
             this.metroLabel3.TabIndex = 7;
@@ -146,7 +148,7 @@
             this.txtMontantProvisoire.CustomButton.UseSelectable = true;
             this.txtMontantProvisoire.CustomButton.Visible = false;
             this.txtMontantProvisoire.Lines = new string[0];
-            this.txtMontantProvisoire.Location = new System.Drawing.Point(320, 188);
+            this.txtMontantProvisoire.Location = new System.Drawing.Point(372, 192);
             this.txtMontantProvisoire.MaxLength = 32767;
             this.txtMontantProvisoire.Name = "txtMontantProvisoire";
             this.txtMontantProvisoire.PasswordChar = '\0';
@@ -176,7 +178,7 @@
             this.txtBudgetCulturel.CustomButton.UseSelectable = true;
             this.txtBudgetCulturel.CustomButton.Visible = false;
             this.txtBudgetCulturel.Lines = new string[0];
-            this.txtBudgetCulturel.Location = new System.Drawing.Point(320, 238);
+            this.txtBudgetCulturel.Location = new System.Drawing.Point(372, 246);
             this.txtBudgetCulturel.MaxLength = 32767;
             this.txtBudgetCulturel.Name = "txtBudgetCulturel";
             this.txtBudgetCulturel.PasswordChar = '\0';
@@ -196,7 +198,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(84, 238);
+            this.metroLabel4.Location = new System.Drawing.Point(71, 250);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(201, 19);
             this.metroLabel4.TabIndex = 12;
@@ -205,7 +207,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(84, 289);
+            this.metroLabel5.Location = new System.Drawing.Point(71, 296);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(200, 19);
             this.metroLabel5.TabIndex = 14;
@@ -226,7 +228,7 @@
             this.txtBudgetLoisir.CustomButton.UseSelectable = true;
             this.txtBudgetLoisir.CustomButton.Visible = false;
             this.txtBudgetLoisir.Lines = new string[0];
-            this.txtBudgetLoisir.Location = new System.Drawing.Point(320, 285);
+            this.txtBudgetLoisir.Location = new System.Drawing.Point(372, 292);
             this.txtBudgetLoisir.MaxLength = 32767;
             this.txtBudgetLoisir.Name = "txtBudgetLoisir";
             this.txtBudgetLoisir.PasswordChar = '\0';
@@ -243,11 +245,31 @@
             this.txtBudgetLoisir.TextChanged += new System.EventHandler(this.txtBudgetLoisir_TextChanged);
             this.txtBudgetLoisir.Click += new System.EventHandler(this.txtBudgetLoisir_Click);
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(84, 111);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(253, 19);
+            this.metroLabel6.TabIndex = 15;
+            this.metroLabel6.Text = "Le reste du budget de l\'anneé précédente";
+            // 
+            // viewResteBudget
+            // 
+            this.viewResteBudget.AutoSize = true;
+            this.viewResteBudget.Location = new System.Drawing.Point(372, 111);
+            this.viewResteBudget.Name = "viewResteBudget";
+            this.viewResteBudget.Size = new System.Drawing.Size(83, 19);
+            this.viewResteBudget.TabIndex = 16;
+            this.viewResteBudget.Text = "metroLabel7";
+            // 
             // Fixer_Budget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 397);
+            this.Controls.Add(this.viewResteBudget);
+            this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.txtBudgetLoisir);
             this.Controls.Add(this.metroLabel4);
@@ -285,5 +307,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox txtBudgetLoisir;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel viewResteBudget;
     }
 }

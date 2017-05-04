@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ajouter_Organisateur));
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.txtID = new MetroFramework.Controls.MetroTextBox();
             this.txtNom = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.txtEmail = new MetroFramework.Controls.MetroTextBox();
@@ -44,45 +42,6 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txtDescription = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 80);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(21, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "ID";
-            // 
-            // txtID
-            // 
-            // 
-            // 
-            // 
-            this.txtID.CustomButton.Image = null;
-            this.txtID.CustomButton.Location = new System.Drawing.Point(181, 1);
-            this.txtID.CustomButton.Name = "";
-            this.txtID.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtID.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtID.CustomButton.TabIndex = 1;
-            this.txtID.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtID.CustomButton.UseSelectable = true;
-            this.txtID.CustomButton.Visible = false;
-            this.txtID.Lines = new string[0];
-            this.txtID.Location = new System.Drawing.Point(164, 76);
-            this.txtID.MaxLength = 32767;
-            this.txtID.Name = "txtID";
-            this.txtID.PasswordChar = '\0';
-            this.txtID.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtID.SelectedText = "";
-            this.txtID.SelectionLength = 0;
-            this.txtID.SelectionStart = 0;
-            this.txtID.ShortcutsEnabled = true;
-            this.txtID.Size = new System.Drawing.Size(203, 23);
-            this.txtID.TabIndex = 1;
-            this.txtID.UseSelectable = true;
-            this.txtID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtNom
             // 
@@ -99,7 +58,7 @@
             this.txtNom.CustomButton.UseSelectable = true;
             this.txtNom.CustomButton.Visible = false;
             this.txtNom.Lines = new string[0];
-            this.txtNom.Location = new System.Drawing.Point(164, 126);
+            this.txtNom.Location = new System.Drawing.Point(164, 78);
             this.txtNom.MaxLength = 32767;
             this.txtNom.Name = "txtNom";
             this.txtNom.PasswordChar = '\0';
@@ -117,7 +76,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(24, 126);
+            this.metroLabel2.Location = new System.Drawing.Point(26, 82);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(116, 19);
             this.metroLabel2.TabIndex = 2;
@@ -138,7 +97,7 @@
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(164, 175);
+            this.txtEmail.Location = new System.Drawing.Point(164, 121);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -156,7 +115,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 175);
+            this.metroLabel3.Location = new System.Drawing.Point(26, 121);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(41, 19);
             this.metroLabel3.TabIndex = 4;
@@ -177,7 +136,7 @@
             this.txtAdresse.CustomButton.UseSelectable = true;
             this.txtAdresse.CustomButton.Visible = false;
             this.txtAdresse.Lines = new string[0];
-            this.txtAdresse.Location = new System.Drawing.Point(164, 223);
+            this.txtAdresse.Location = new System.Drawing.Point(164, 161);
             this.txtAdresse.MaxLength = 32767;
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.PasswordChar = '\0';
@@ -195,7 +154,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(24, 223);
+            this.metroLabel4.Location = new System.Drawing.Point(24, 161);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(55, 19);
             this.metroLabel4.TabIndex = 6;
@@ -203,7 +162,7 @@
             // 
             // btAjouter
             // 
-            this.btAjouter.Location = new System.Drawing.Point(84, 380);
+            this.btAjouter.Location = new System.Drawing.Point(52, 324);
             this.btAjouter.Name = "btAjouter";
             this.btAjouter.Size = new System.Drawing.Size(75, 23);
             this.btAjouter.TabIndex = 8;
@@ -213,7 +172,7 @@
             // 
             // btAnnuler
             // 
-            this.btAnnuler.Location = new System.Drawing.Point(185, 380);
+            this.btAnnuler.Location = new System.Drawing.Point(180, 324);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 9;
@@ -224,7 +183,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(24, 278);
+            this.metroLabel5.Location = new System.Drawing.Point(24, 214);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(85, 19);
             this.metroLabel5.TabIndex = 10;
@@ -239,7 +198,7 @@
             "Club",
             "Agence de voyage",
             "Centre"});
-            this.comboOrganisateur.Location = new System.Drawing.Point(164, 275);
+            this.comboOrganisateur.Location = new System.Drawing.Point(164, 212);
             this.comboOrganisateur.Name = "comboOrganisateur";
             this.comboOrganisateur.Size = new System.Drawing.Size(203, 21);
             this.comboOrganisateur.TabIndex = 11;
@@ -247,7 +206,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(26, 330);
+            this.metroLabel6.Location = new System.Drawing.Point(26, 264);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(74, 19);
             this.metroLabel6.TabIndex = 12;
@@ -268,7 +227,7 @@
             this.txtDescription.CustomButton.UseSelectable = true;
             this.txtDescription.CustomButton.Visible = false;
             this.txtDescription.Lines = new string[0];
-            this.txtDescription.Location = new System.Drawing.Point(164, 330);
+            this.txtDescription.Location = new System.Drawing.Point(164, 264);
             this.txtDescription.MaxLength = 32767;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
@@ -287,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 426);
+            this.ClientSize = new System.Drawing.Size(399, 379);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.comboOrganisateur);
@@ -300,9 +259,9 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.metroLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
+            this.Movable = false;
             this.Name = "Ajouter_Organisateur";
             this.Text = "Ajouter Organisateur";
             this.Load += new System.EventHandler(this.Ajouter_Organisateur_Load);
@@ -312,9 +271,6 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox txtID;
         private MetroFramework.Controls.MetroTextBox txtNom;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox txtEmail;

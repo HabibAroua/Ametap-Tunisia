@@ -79,6 +79,15 @@ insert into Personnel values (8,'Hmaied','Naouel',3,205,99,'F','C',0,'02/03/1986
 insert into Personnel values (9,'Naoufel','Majdoubi',1,205,99,'M','M',0,'02/03/1970','Bizerte','2569','Rue bassatin Zarzouna','2569','06/04/1992',0,'Non','Technicien supérier',100,404,133,'majdoubi.naoufel@yahoo.es');
 insert into Personnel values (11,'Samir','Borgi',5,21,20,'M','M',2,'02/07/1960','Tunis','235','Avenue liberté Menzah 5','2569','07/04/1988',0,'Oui','Médcin',100,404,133,'');
 insert into Personnel values (12,'Chtourou','Sabiha',1,210,20,'M','F',4,'02/06/1965','Sfax','214','Avenue Tayeb Mhiri Sfax','2147','15/11/1987',0,'Oui','Formateur',100,404,133,'');
+insert into Personnel values (13,'Kedidi','Sadok',2,104,108,'F','C',0,'02/10/1978','Ariana','2570014','rue tayeb mfiri Ariana','55036987','29/05/1999',0,'Oui','Ingenieur',100,404,133,'')
+insert into Personnel values (15,'Miri','Maroua',1,104,108,'F','C',0,'28/03/1987','Ariana','2570014','cite ghazela Ariana','55036987','29/05/2008',0,'Oui','resource humain',100,404,133,'')
+insert into Personnel values (14,'Hmaied','Sara',5,104,108,'F','C',0,'02/10/1990','Ariana','2570013','cite ghazela Ariana','55036987','29/05/',0,'Oui','Ingenieur',100,404,133,'')
+insert into Personnel values (16,'Brinsi','Anis',5,104,108,'M','C',0,'02/10/1985','Ariana','25060013','cite ghazela Ariana','55036987','29/05/2007',0,'Oui','Ingenieur',100,404,134,'')
+insert into Personnel values (21,'Ben Salah','Salah',3,104,108,'M','C',0,'17/11/1970','Morneg','014789','Dokeli Morneg','71715961','29/05/1988',0,'Oui','Bilologi',100,404,134,'')
+insert into Personnel values (20,'Mansouri','Salah',2,104,108,'M','C',0,'17/11/1970','Morneg','250500003','Dokeli Morneg','550000087','29/05/1988',0,'Oui','Bilologi',100,404,134,'')
+insert into Personnel values (19,'Miri','Hamda',2,104,108,'M','M',2,'02/10/1962','Morneg','25050003','Dokeli Morneg','55041987','29/05/1988',0,'Oui','Bilologi',100,404,134,'')
+insert into Personnel values (18,'Chalouf','Ibticem',1,104,108,'F','M',2,'02/10/1962','Morneg','25050013','Dokeli Morneg','55041987','29/05/2007',0,'Oui','Ingenieur',100,404,134,'')
+
 
 create or replace PROCEDURE Inscrire
 ( c_matricule IN admin.matricule%TYPE, c_login IN admin.login%TYPE, c_password IN admin.password%TYPE) 

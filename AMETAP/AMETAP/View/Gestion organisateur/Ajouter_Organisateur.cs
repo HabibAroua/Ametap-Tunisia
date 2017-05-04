@@ -24,7 +24,6 @@ namespace AMETAP.View.Gestion_organisateur
 
         private void btAnnuler_Click(object sender, EventArgs e)
         {
-            txtID.Clear();
             txtAdresse.Clear();
             txtEmail.Clear();
             txtNom.Clear();
@@ -43,7 +42,7 @@ namespace AMETAP.View.Gestion_organisateur
             RegularExpression r = new RegularExpression();
             //try
             //{
-                if ((txtID.Text.ToString().Equals("")) || (txtNom.ToString().Equals("")) || (txtAdresse.Text.ToString().Equals("")) || (txtEmail.Text.ToString().Equals("")) || (txtDescription.Text.ToString().Equals("")))
+                if ((txtNom.ToString().Equals("")) || (txtAdresse.Text.ToString().Equals("")) || (txtEmail.Text.ToString().Equals("")) || (txtDescription.Text.ToString().Equals("")))
                 {
                     MessageBox.Show("SVP remplir les champs manquant", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -61,7 +60,7 @@ namespace AMETAP.View.Gestion_organisateur
                         }
                         else
                         {
-                            oc.AjouterOrganisateur(comboOrganisateur.SelectedItem.ToString(), int.Parse(txtID.Text.ToString()), txtNom.Text.ToString(), txtEmail.Text.ToString(), txtAdresse.Text.ToString(), txtDescription.Text.ToString());
+                            oc.AjouterOrganisateur(comboOrganisateur.SelectedItem.ToString(), 0, txtNom.Text.ToString(), txtEmail.Text.ToString(), txtAdresse.Text.ToString(), txtDescription.Text.ToString());
                         }
                     }
                 }
