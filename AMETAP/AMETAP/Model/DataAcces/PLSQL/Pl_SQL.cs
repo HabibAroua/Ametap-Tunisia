@@ -95,5 +95,15 @@ namespace AMETAP.Model.DataAcces.PLSQL
         {
             return "Begin RefuserDemandeAdherent(" + id + "); END;";
         }
+
+        public String AccepterDemandeEnfant(int matricule, int idActivite, int id, int valeur)
+        {
+            return "Begin AccepterDemandeEnfant(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
+        }
+
+        public String AccepterDemandeConjoint(int matricule, int idActivite, int id, int valeur)
+        {
+            return "Begin AccepterDemandeConjoint(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
+        }
     }
 }

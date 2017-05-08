@@ -32,32 +32,59 @@ namespace AMETAP.Controller
             d.DataSource = pDA.selectDemandeParActivite(idActivite);
         }
 
-        public void Accepter(int matricule , int idActivite , int id ,int valeur)
+        public void AccepterAdherent(int matricule , int idActivite , int id ,int valeur)
         {
-            if(aDA.getCapacite(idActivite)==aDA.getNombreParticipant(idActivite))
+            if (aDA.getCapacite(idActivite) == aDA.getNombreParticipant(idActivite))
             {
                 MessageBox.Show("Vous êtes pas accepter autres demandes ! le nombre de place est plein ", "Errur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                Boolean test = false;
-                if(perDA.getEtat_Civil(matricule)=="M")
+
+                Boolean test1 = pDA.accepterAdherent(matricule, idActivite, 0, 0);
+                
+                if (test1 == true)
                 {
-                    test = pDA.accepter(new Participation(id, "", 1, "", new Payaiment(0, 0), new Participant(matricule), new Activite(idActivite)), valeur*2);
-                }
-                else
+                    MessageBox.Show("Inscription de l'adherent effectué ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }                
+            }
+
+        }
+
+        public void AccepterConjoint(int matricule, int idActivite, int id, int valeur)
+        {
+            if (aDA.getCapacite(idActivite) == aDA.getNombreParticipant(idActivite))
+            {
+                MessageBox.Show("Vous êtes pas accepter autres demandes ! le nombre de place est plein ", "Errur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+
+                Boolean test1 = pDA.accepterConjoint(matricule, idActivite, 0, 0);
+
+                if (test1 == true)
                 {
-                    test = pDA.accepter(new Participation(id, "", 1, "", new Payaiment(0, 0), new Participant(matricule), new Activite(idActivite)), valeur);
-                }
-                if (test == true)
-                {
-                    //MessageBox.Show("Inscription effectué", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                   // MessageBox.Show("Erreur d'inscription", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Inscription de l'adherent effectué ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+
+        }
+        public void AccepterEnfant(int matricule, int idActivite, int id, int valeur)
+        {
+            if (aDA.getCapacite(idActivite) == aDA.getNombreParticipant(idActivite))
+            {
+                MessageBox.Show("Vous êtes pas accepter autres demandes ! le nombre de place est plein ", "Errur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                Boolean test2 = pDA.accepterEnfant(matricule, idActivite, 0, 0);
+                if (test2 == true)
+                {
+                    MessageBox.Show("Inscription de Enfant effectué ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+
         }
 
         public void refuser(int id)
@@ -73,15 +100,57 @@ namespace AMETAP.Controller
             }
         }
 
+        public void getAllParticipant(DataGridView d, int idActivite)
+        {
+            d.DataSource = pDA.getAllParticipant(idActivite);
+        }
+
         public void getParticipationAdherent(DataGridView d,int idActivite)
         {
             d.DataSource = pDA.getParticipationAdherent(idActivite);
         }
 
-        public List<Participation> DemandeList(int idActivite)
+        public void getParticipationConjoint(DataGridView d,int idActivite)
+        {
+            d.DataSource = pDA.getParticipantConjoint(idActivite);
+        }
+
+        public void getParticipationEnfant(DataGridView d,int idActivite)
+        {
+            d.DataSource = pDA.getParticipantEnfant(idActivite);
+        }
+
+        public List<Participation> DemandeListAdherent(int idActivite)
         {
              return pDA.affich(idActivite);
         }
-    }
 
+        public List<Participation> DemandeListConjoint(int idActivite)
+        {
+            return pDA.affichConjoint(idActivite);
+        }
+
+        public List<Participation> DemandeListEnfant(int idActivite)
+        {
+            return pDA.affichEnfant(idActivite);
+        }
+
+        public List<Participation> AllDemande(int idActivite)
+        {
+            List<Participation> listAll = new List<Participation>();
+            foreach(Participation p in DemandeListAdherent(idActivite))
+            {
+                listAll.Add(p);
+            }
+            foreach(Participation p in DemandeListConjoint(idActivite))
+            {
+                listAll.Add(p);
+            }
+            foreach(Participation p in DemandeListEnfant(idActivite))
+            {
+                listAll.Add(p);
+            }
+            return listAll;
+        }
+    }
 }

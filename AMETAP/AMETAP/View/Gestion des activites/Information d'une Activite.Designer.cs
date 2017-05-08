@@ -161,6 +161,7 @@
             this.rdEnfant.TabIndex = 3;
             this.rdEnfant.Text = "Enfant";
             this.rdEnfant.UseSelectable = true;
+            this.rdEnfant.Click += new System.EventHandler(this.rdEnfant_Click);
             // 
             // rdConjoint
             // 
@@ -171,6 +172,7 @@
             this.rdConjoint.TabIndex = 2;
             this.rdConjoint.Text = "Conjoint";
             this.rdConjoint.UseSelectable = true;
+            this.rdConjoint.Click += new System.EventHandler(this.rdConjoint_Click);
             // 
             // rdAdherent
             // 
@@ -192,6 +194,7 @@
             this.rdTous.TabIndex = 0;
             this.rdTous.Text = "Tous";
             this.rdTous.UseSelectable = true;
+            this.rdTous.Click += new System.EventHandler(this.rdTous_Click);
             // 
             // metroLabel10
             // 

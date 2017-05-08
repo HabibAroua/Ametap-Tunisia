@@ -48,7 +48,7 @@ namespace AMETAP.View.Gestion_des_activites
         {
             AdherentDA a = new AdherentDA();
             List<Participation> list = new List<Participation>();
-            list= pc.DemandeList(getIdActivite());
+            list= pc.DemandeListAdherent(getIdActivite());
             int reste = int.Parse(viewReste.Text.ToString());
             int i = 0;
             int nbr = 0;
@@ -89,6 +89,21 @@ namespace AMETAP.View.Gestion_des_activites
             //Information_d_une_Activite ine = new Information_d_une_Activite();
            // ine.Show();
             //this.Close();
+        }
+
+        private void rdTous_Click(object sender, EventArgs e)
+        {
+            pc.getAllParticipant(dataGridView1,getIdActivite());
+        }
+
+        private void rdConjoint_Click(object sender, EventArgs e)
+        {
+            pc.getParticipationConjoint(dataGridView1, getIdActivite());
+        }
+
+        private void rdEnfant_Click(object sender, EventArgs e)
+        {
+            pc.getParticipationEnfant(dataGridView1, getIdActivite());
         }
     }
 }

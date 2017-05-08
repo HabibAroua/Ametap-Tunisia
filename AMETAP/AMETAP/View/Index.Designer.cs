@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.dataOrganisation = new System.Windows.Forms.DataGridView();
@@ -50,6 +50,8 @@
             this.fichierToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.metroTabPage7 = new MetroFramework.Controls.MetroTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,6 +69,8 @@
             this.fichierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.btRefresh = new MetroFramework.Controls.MetroTile();
@@ -77,6 +81,8 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -92,6 +98,8 @@
             this.fichierToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dataUtilisateur = new System.Windows.Forms.DataGridView();
             this.metroTile7 = new MetroFramework.Controls.MetroTile();
@@ -102,6 +110,8 @@
             this.fichierToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroTile9 = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
@@ -110,6 +120,8 @@
             this.fichierToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.déconnexionToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -335,7 +347,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem2});
+            this.fichierToolStripMenuItem2,
+            this.applicationToolStripMenuItem3});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -358,6 +371,18 @@
             this.quitterToolStripMenuItem2.Name = "quitterToolStripMenuItem2";
             resources.ApplyResources(this.quitterToolStripMenuItem2, "quitterToolStripMenuItem2");
             this.quitterToolStripMenuItem2.Click += new System.EventHandler(this.quitterToolStripMenuItem2_Click);
+            // 
+            // applicationToolStripMenuItem3
+            // 
+            this.applicationToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem3});
+            this.applicationToolStripMenuItem3.Name = "applicationToolStripMenuItem3";
+            resources.ApplyResources(this.applicationToolStripMenuItem3, "applicationToolStripMenuItem3");
+            // 
+            // refreshToolStripMenuItem3
+            // 
+            this.refreshToolStripMenuItem3.Name = "refreshToolStripMenuItem3";
+            resources.ApplyResources(this.refreshToolStripMenuItem3, "refreshToolStripMenuItem3");
             // 
             // miniToolStrip
             // 
@@ -509,37 +534,37 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.metroGrid1, "metroGrid1");
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.GridColor = System.Drawing.Color.BlanchedAlmond;
             this.metroGrid1.HighLightPercentage = 0.5F;
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -548,7 +573,8 @@
             // menuStrip4
             // 
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem1});
+            this.fichierToolStripMenuItem1,
+            this.applicationToolStripMenuItem4});
             resources.ApplyResources(this.menuStrip4, "menuStrip4");
             this.menuStrip4.Name = "menuStrip4";
             // 
@@ -571,6 +597,18 @@
             this.quitterToolStripMenuItem1.Name = "quitterToolStripMenuItem1";
             resources.ApplyResources(this.quitterToolStripMenuItem1, "quitterToolStripMenuItem1");
             this.quitterToolStripMenuItem1.Click += new System.EventHandler(this.quitterToolStripMenuItem1_Click);
+            // 
+            // applicationToolStripMenuItem4
+            // 
+            this.applicationToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem4});
+            this.applicationToolStripMenuItem4.Name = "applicationToolStripMenuItem4";
+            resources.ApplyResources(this.applicationToolStripMenuItem4, "applicationToolStripMenuItem4");
+            // 
+            // refreshToolStripMenuItem4
+            // 
+            this.refreshToolStripMenuItem4.Name = "refreshToolStripMenuItem4";
+            resources.ApplyResources(this.refreshToolStripMenuItem4, "refreshToolStripMenuItem4");
             // 
             // metroTabPage6
             // 
@@ -671,7 +709,8 @@
             // menuStrip5
             // 
             this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem});
+            this.fichierToolStripMenuItem,
+            this.applicationToolStripMenuItem5});
             resources.ApplyResources(this.menuStrip5, "menuStrip5");
             this.menuStrip5.Name = "menuStrip5";
             // 
@@ -695,6 +734,18 @@
             resources.ApplyResources(this.quitterToolStripMenuItem, "quitterToolStripMenuItem");
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
+            // applicationToolStripMenuItem5
+            // 
+            this.applicationToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem5});
+            this.applicationToolStripMenuItem5.Name = "applicationToolStripMenuItem5";
+            resources.ApplyResources(this.applicationToolStripMenuItem5, "applicationToolStripMenuItem5");
+            // 
+            // refreshToolStripMenuItem5
+            // 
+            this.refreshToolStripMenuItem5.Name = "refreshToolStripMenuItem5";
+            resources.ApplyResources(this.refreshToolStripMenuItem5, "refreshToolStripMenuItem5");
+            // 
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
@@ -705,7 +756,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             resources.ApplyResources(this.metroTabControl1, "metroTabControl1");
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -735,14 +786,12 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.UseWaitCursor = true;
             // 
             // btAccepter
             // 
             resources.ApplyResources(this.btAccepter, "btAccepter");
             this.btAccepter.Name = "btAccepter";
             this.btAccepter.UseSelectable = true;
-            this.btAccepter.UseWaitCursor = true;
             this.btAccepter.Click += new System.EventHandler(this.btAccepter_Click);
             // 
             // label3
@@ -758,7 +807,6 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            this.groupBox3.UseWaitCursor = true;
             // 
             // rdEnfant
             // 
@@ -769,7 +817,7 @@
             this.rdEnfant.UseCustomForeColor = true;
             this.rdEnfant.UseSelectable = true;
             this.rdEnfant.UseStyleColors = true;
-            this.rdEnfant.UseWaitCursor = true;
+            this.rdEnfant.Click += new System.EventHandler(this.rdEnfant_Click);
             // 
             // rdConjoint
             // 
@@ -781,6 +829,7 @@
             this.rdConjoint.UseSelectable = true;
             this.rdConjoint.UseStyleColors = true;
             this.rdConjoint.UseWaitCursor = true;
+            this.rdConjoint.Click += new System.EventHandler(this.rdConjoint_Click);
             // 
             // dataDemande
             // 
@@ -788,7 +837,6 @@
             resources.ApplyResources(this.dataDemande, "dataDemande");
             this.dataDemande.Name = "dataDemande";
             this.dataDemande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDemande.UseWaitCursor = true;
             // 
             // metroLabel6
             // 
@@ -802,16 +850,15 @@
             resources.ApplyResources(this.dataActiviteActuel, "dataActiviteActuel");
             this.dataActiviteActuel.Name = "dataActiviteActuel";
             this.dataActiviteActuel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataActiviteActuel.UseWaitCursor = true;
             this.dataActiviteActuel.SelectionChanged += new System.EventHandler(this.dataActiviteActuel_SelectionChanged);
             // 
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem3});
+            this.fichierToolStripMenuItem3,
+            this.applicationToolStripMenuItem});
             resources.ApplyResources(this.menuStrip2, "menuStrip2");
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.UseWaitCursor = true;
             // 
             // fichierToolStripMenuItem3
             // 
@@ -832,6 +879,19 @@
             this.quitterToolStripMenuItem3.Name = "quitterToolStripMenuItem3";
             resources.ApplyResources(this.quitterToolStripMenuItem3, "quitterToolStripMenuItem3");
             this.quitterToolStripMenuItem3.Click += new System.EventHandler(this.quitterToolStripMenuItem3_Click);
+            // 
+            // applicationToolStripMenuItem
+            // 
+            this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem});
+            this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
+            resources.ApplyResources(this.applicationToolStripMenuItem, "applicationToolStripMenuItem");
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            resources.ApplyResources(this.refreshToolStripMenuItem, "refreshToolStripMenuItem");
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // metroTabPage2
             // 
@@ -932,7 +992,8 @@
             // menuStrip3
             // 
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem4});
+            this.fichierToolStripMenuItem4,
+            this.applicationToolStripMenuItem1});
             resources.ApplyResources(this.menuStrip3, "menuStrip3");
             this.menuStrip3.Name = "menuStrip3";
             // 
@@ -955,6 +1016,18 @@
             this.quitterToolStripMenuItem4.Name = "quitterToolStripMenuItem4";
             resources.ApplyResources(this.quitterToolStripMenuItem4, "quitterToolStripMenuItem4");
             this.quitterToolStripMenuItem4.Click += new System.EventHandler(this.quitterToolStripMenuItem4_Click);
+            // 
+            // applicationToolStripMenuItem1
+            // 
+            this.applicationToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem1});
+            this.applicationToolStripMenuItem1.Name = "applicationToolStripMenuItem1";
+            resources.ApplyResources(this.applicationToolStripMenuItem1, "applicationToolStripMenuItem1");
+            // 
+            // refreshToolStripMenuItem1
+            // 
+            this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
+            resources.ApplyResources(this.refreshToolStripMenuItem1, "refreshToolStripMenuItem1");
             // 
             // metroTabPage3
             // 
@@ -1006,7 +1079,8 @@
             // menuStrip6
             // 
             this.menuStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem5});
+            this.fichierToolStripMenuItem5,
+            this.applicationToolStripMenuItem2});
             resources.ApplyResources(this.menuStrip6, "menuStrip6");
             this.menuStrip6.Name = "menuStrip6";
             // 
@@ -1029,6 +1103,18 @@
             this.quitterToolStripMenuItem5.Name = "quitterToolStripMenuItem5";
             resources.ApplyResources(this.quitterToolStripMenuItem5, "quitterToolStripMenuItem5");
             this.quitterToolStripMenuItem5.Click += new System.EventHandler(this.quitterToolStripMenuItem5_Click);
+            // 
+            // applicationToolStripMenuItem2
+            // 
+            this.applicationToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem2});
+            this.applicationToolStripMenuItem2.Name = "applicationToolStripMenuItem2";
+            resources.ApplyResources(this.applicationToolStripMenuItem2, "applicationToolStripMenuItem2");
+            // 
+            // refreshToolStripMenuItem2
+            // 
+            this.refreshToolStripMenuItem2.Name = "refreshToolStripMenuItem2";
+            resources.ApplyResources(this.refreshToolStripMenuItem2, "refreshToolStripMenuItem2");
             // 
             // pictureBox1
             // 
@@ -1218,5 +1304,17 @@
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroButton btAccepter;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem2;
     }
 }

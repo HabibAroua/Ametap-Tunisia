@@ -148,7 +148,86 @@ namespace AMETAP.View
             adC.afficher(dataUtilisateur);
             bc.AfficherBudget(dataBudget);
             acc.ActiviteActuel(dataActiviteActuel);
+            if(rdConjoint.Checked==true)
+            {
+                try
+                {
+                    a = new AdherentDA();
+                    listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            else
+            {
+                if(rdEnfant.Checked==true)
+                {
+                    try
+                    {
+                        a = new AdherentDA();
+                        listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        listEnfant = pc.DemandeListEnfant(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                }
+
+            }
             
+            
+        }
+
+        private void Refresh()
+        {
+            ac.affihcer(dataAdherent);
+            for (int i = 2006; i < 2050; i++)
+            {
+                comboAnnee.Items.Add(i.ToString());
+            }
+            oc.affiche(dataOrganisation);
+            //pc.AfficheDemande(dataActiviteActuel);
+            //paC.afficheNonPayaiment(dataGridView2);
+            adC.afficher(dataUtilisateur);
+            bc.AfficherBudget(dataBudget);
+            acc.ActiviteActuel(dataActiviteActuel);
+            if (rdConjoint.Checked == true)
+            {
+                try
+                {
+                    a = new AdherentDA();
+                    listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            else
+            {
+                if (rdEnfant.Checked == true)
+                {
+                    try
+                    {
+                        a = new AdherentDA();
+                        listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                }
+            }
         }
 
         private void comboAnnee_TextChanged(object sender, EventArgs e)
@@ -353,15 +432,40 @@ namespace AMETAP.View
             //MessageBox.Show("Changed");
         }
         AdherentDA a;
-        List<Participation> list = new List<Participation>();
+        List<Participation> listAdherent = new List<Participation>();
+        List<Participation> listConjoint = new List<Participation>();
+        List<Participation> listEnfant = new List<Participation>();
         private void dataActiviteActuel_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                a = new AdherentDA();
+                if ((rdEnfant.Checked == false) && (rdConjoint.Checked == false))
+                {
+                    a = new AdherentDA();
+                    listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    listEnfant = pc.DemandeListEnfant(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                }
+                else
+                {
+                    if(rdConjoint.Checked==true)
+                    {
+                        a = new AdherentDA();
+                        listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
 
-                list = pc.DemandeList(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    }
+                    else
+                    {
+                        if(rdEnfant.Checked==true)
+                        {
+                            a = new AdherentDA();
+                            listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                            pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                        }
+                    }
+                }
             }
             catch(Exception)
             {
@@ -371,59 +475,109 @@ namespace AMETAP.View
 
         private void btAccepter_Click(object sender, EventArgs e)
         {
-            ActiviteDA aDA = new ActiviteDA();
-            AdherentDA aDDA = new AdherentDA();
-            int reste = aDA.restePlace(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-            int i = 0;
-            int nbr = 0;
-            //MessageBox.Show("" + reste);
-            foreach (Participation l in list)
+            try
             {
-                //MessageBox.Show(l.participant.matricule + "");
-                nbr++;
-            }
-            if (nbr <= reste)
-            {
-                reste = nbr;
-            }
-            else
-            {
-
-            }
-            Mailing m;
-            while (i != reste)
-            {
-                foreach (Participation l in list)
+                ActiviteDA aDA = new ActiviteDA();
+                AdherentDA aDDA = new AdherentDA();
+                ParticipantDA pDA = new ParticipantDA();
+                int reste = aDA.restePlace(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                int i = 0;
+                int nbr = 0;
+                //MessageBox.Show("" + reste);
+                foreach (Participation l in listAdherent)
                 {
-                    if (aDDA.getNombrePoint(l.participant.matricule) <= 0)
+                    //MessageBox.Show(l.participant.matricule + "");
+                    nbr++;
+                }
+                if (nbr <= reste)
+                {
+                    reste = nbr;
+                }
+                else
+                {
+
+                }
+                Mailing m;
+                //while (i != reste)
+
+                foreach (Participation l in listAdherent)
+                {
+                    if ((aDDA.getNombrePoint(l.participant.matricule) <= 0))
                     {
                         pc.refuser(l.id);
-                        //MessageBox.Show("Erreur");
+                        MessageBox.Show("Erreur");
+                        MessageBox.Show(aDDA.getNombrePoint(l.participant.matricule) + " " + aDDA.getNombrePoint(pDA.getMatriculeByConjoint(l.participant.matricule)) + " " + aDDA.getNombrePoint(pDA.getMatriculeByEnfant(l.participant.matricule)));
                         continue;
                     }
                     else
                     {
                         foreach (String a in a.listAdresse(l.participant.matricule))
                         {
-
                             m = new Mailing(a, "Notification", "Vous etes le bienvenue , nous avons accepte votre demande");
                             m.sendMail();
                         }
-                        pc.Accepter(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), l.id, 0);
+                        pc.AccepterAdherent(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+
                         if (i == reste)
                         {
+                            MessageBox.Show("Erreur");
                             break;
                         }
                         i++;
+                        //}
                     }
                 }
+
+                foreach (Participation l in listConjoint)
+                {
+                    pc.AccepterConjoint(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+                }
+                foreach (Participation l in listEnfant)
+                {
+                    pc.AccepterEnfant(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+                }
+                a = new AdherentDA();
+                listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
             }
-            MessageBox.Show("Tous les inscriptions sont effectué avec succes", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            a = new AdherentDA();
-            list = pc.DemandeList(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-            pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void rdConjoint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            //    a = new AdherentDA();
+            //    listAll = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            //    pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            }
+            catch (Exception)
+            {
 
+            }
+            
+        }
+
+        private void rdEnfant_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            //    a = new AdherentDA();
+              //  listAll = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                //pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            }
+            catch(Exception)
+            {
+
+            }
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
     }
 }
