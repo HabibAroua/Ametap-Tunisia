@@ -249,7 +249,6 @@
             this.ForeColor = System.Drawing.Color.Silver;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Movable = false;
             this.Name = "Authentification";
             this.Padding = new System.Windows.Forms.Padding(23, 69, 23, 23);
             this.Resizable = false;

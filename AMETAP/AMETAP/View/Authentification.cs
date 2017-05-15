@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
-
+using System.Threading;
 
 namespace AMETAP
 {
@@ -17,9 +17,14 @@ namespace AMETAP
     {
         
         AdminController ac;
+        
         public Authentification()
         {
+            Thread t = new Thread(startForm);
+            t.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            t.Abort();
         }
 
         private void btAnnuler_Click(object sender, EventArgs e)
@@ -88,6 +93,11 @@ namespace AMETAP
         private void Authentification_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public void startForm()
+        {
+            Application.Run(new View.SplashScreen());
         }
     }
 }

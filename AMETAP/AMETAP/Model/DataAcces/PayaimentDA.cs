@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OleDb;
 
 namespace AMETAP.Model.DataAcces
@@ -49,5 +45,50 @@ namespace AMETAP.Model.DataAcces
         {
             throw new NotImplementedException();
         }
+
+        public DataTable sellectNonPayer(int idActivite)
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Personnel.matricule , Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE , Activite.id  from Personnel , Adherent , Participation ,Activite ,Participant where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite="+idActivite+" and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1 and Participant.matricule=Adherent.matriculeEtap and Participation.matriculePart=Participant.matricule and Participation.ETATPAYAIMENT=0 union all select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, idActivite from Enfant , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Enfant.id and Participation.matriculePart = Enfant.id and Participation.etat = 1 and Participation.idActivite ="+idActivite+" and Participation.ETATPAYAIMENT=0 union all select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, idActivite from Conjoint , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Conjoint.cin and Participation.matriculePart = Conjoint.cin and Participation.etat = 1 and Participation.idActivite ="+idActivite+" and Participation.ETATPAYAIMENT=0", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Participation");
+            tab1 = dtst.Tables["Participation"];
+            return tab1;
+        }
+
+        public DataTable selectAdherentNonPayer(int idActivite)
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Personnel.matricule , Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE , Activite.id  from Personnel , Adherent , Participation , Activite , Participant where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite=" + idActivite + " and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1 and Participant.matricule=Adherent.matriculeEtap and Participation.matriculePart=Participant.matricule and Participation.ETATPAYAIMENT=0", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Participation");
+            tab1 = dtst.Tables["Participation"];
+            return tab1;
+        }
+
+        public DataTable selectConjointNonPayer(int idActivite)
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, idActivite from Conjoint , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Conjoint.cin and Participation.matriculePart = Conjoint.cin and Participation.etat = 1 and Participation.idActivite =" + idActivite + " and Participation.ETATPAYAIMENT=0", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Participation");
+            tab1 = dtst.Tables["Participation"];
+            return tab1;
+        }
+
+        public DataTable selectEnfantNonPayer(int idActivite)
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, idActivite from Enfant , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Enfant.id and Participation.matriculePart = Enfant.id and Participation.etat = 1 and Participation.idActivite =" + idActivite + " and Participation.ETATPAYAIMENT=0", Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Participation");
+            tab1 = dtst.Tables["Participation"];
+            return tab1;
+        }
+
     }
 }

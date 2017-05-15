@@ -446,19 +446,19 @@ namespace AMETAP.View
                     listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                     listEnfant = pc.DemandeListEnfant(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                     pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    paC.afficherNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                 }
                 else
                 {
-                    if(rdConjoint.Checked==true)
+                    if (rdConjoint.Checked == true)
                     {
                         a = new AdherentDA();
                         listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                         pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-
                     }
                     else
                     {
-                        if(rdEnfant.Checked==true)
+                        if (rdEnfant.Checked == true)
                         {
                             a = new AdherentDA();
                             listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
@@ -565,7 +565,7 @@ namespace AMETAP.View
         {
             try
             {
-            //    a = new AdherentDA();
+              //    a = new AdherentDA();
               //  listAll = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                 //pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
             }
@@ -578,6 +578,21 @@ namespace AMETAP.View
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Refresh();
+        }
+
+        private void rdAdherentNonPayer_Click(object sender, EventArgs e)
+        {
+            paC.afficherAdherentNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+        }
+
+        private void rdEnfantNonPayer_Click(object sender, EventArgs e)
+        {
+            paC.afficherEnfantNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+        }
+
+        private void rdConjointNonPayer_Click(object sender, EventArgs e)
+        {
+            paC.afficherConjointNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
         }
     }
 }

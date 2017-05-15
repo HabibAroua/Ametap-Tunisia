@@ -19,5 +19,26 @@ namespace AMETAP.Controller
         {
             d.DataSource = payaimentDA.sellectAll();
         }
+
+        public void afficherNonPayer(DataGridView d, int idActivite)
+        {
+            d.DataSource = payaimentDA.sellectNonPayer(idActivite);
+        }
+
+        public void afficherAdherentNonPayer(DataGridView d,int idActivite)
+        {
+            d.DataSource = payaimentDA.selectAdherentNonPayer(idActivite);
+        }
+
+        public void afficherConjointNonPayer(DataGridView d,int idActivite)
+        {
+            d.DataSource = payaimentDA.selectConjointNonPayer(idActivite);
+        }
+
+        public void afficherEnfantNonPayer(DataGridView d,int idActivite)
+        {
+            d.DataSource = payaimentDA.selectEnfantNonPayer(idActivite);
+        }
+
     }
 }

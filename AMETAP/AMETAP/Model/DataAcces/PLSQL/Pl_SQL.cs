@@ -105,5 +105,20 @@ namespace AMETAP.Model.DataAcces.PLSQL
         {
             return "Begin AccepterDemandeConjoint(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
         }
+
+        public String ConfPayerEnfant(int matricule, int idActivite, int id, int valeur)
+        {
+            return "Begin ConfPayerEnfant(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
+        }
+
+        public String ConfPayerConjoint(int matricule, int idActivite, int id, int valeur)
+        {
+            return "Begin ConfPayerConjoint(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
+        }
+
+        public String ConfPayerAdherent(int matricule, int idActivite, int id, int valeur)
+        {
+            return "Begin ConfPayerAdherent(" + matricule + "," + idActivite + "," + id + "," + valeur + "); END;";
+        }
     }
 }
