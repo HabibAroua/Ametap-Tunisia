@@ -15,7 +15,6 @@ namespace AMETAP.Controller
         private ActiviteDA aDA;
         private BudgetDA bDA;
         private AdherentDA adDA;
-        //TypeActiviteDA taDA;
         private OrganisateurDA oDA;
         Activite a;
         public ActiviteController()
@@ -27,7 +26,7 @@ namespace AMETAP.Controller
             oDA = new OrganisateurDA();
         }
 
-        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin, double prix_unitaire, double montant_prevu, double montant_actuel, String categorie, String nomOrganisateur, String date_debut_inscription, String date_fin_inscription)
+        public void AjouterActivite(String nom_activite, int capacite, String date_debut, String date_fin, double prix_unitaire, double montant_prevu, double montant_actuel, String categorie, String nomOrganisateur, String date_debut_inscription, String date_fin_inscription,int nbr_point)
         {
             DateValue dDebut = new DateValue(date_debut);
             DateValue dFin = new DateValue(date_fin);
@@ -47,7 +46,6 @@ namespace AMETAP.Controller
                 int r1 = DateTime.Compare(debut, fin);
                 int r2 = DateTime.Compare(debutInscription, finInscription);
                 int r3 = DateTime.Compare(finInscription,debut);
-                //MessageBox.Show(" r1 :" + r1 + " r2 :" + r2 + " r3:" + r3);
                 if (r1 != -1)
                 {
                     MessageBox.Show("La date de début d'activité doit être plus tard que la date fin d'activité", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,8 +64,8 @@ namespace AMETAP.Controller
                         }
                         else
                         {
-                            AMETAP.Controller.Script.Mailing m;
-                            a = new Activite(0, nom_activite, capacite, 0, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, getIdBudgetCat(categorie), oDA.findIdByNomOrganisateur(nomOrganisateur), date_debut_inscription, date_fin_inscription);
+                            Mailing m;
+                            a = new Activite(0, nom_activite, capacite, 0, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, getIdBudgetCat(categorie), oDA.findIdByNomOrganisateur(nomOrganisateur), date_debut_inscription, date_fin_inscription,nbr_point);
                             Boolean test = aDA.insert(a);
                             if (test == true)
                             {
@@ -89,8 +87,6 @@ namespace AMETAP.Controller
             }
         }
         
-        
-
         public void findActivityByYear(DataGridView d, String objet)
         {
             d.DataSource = aDA.search(objet);

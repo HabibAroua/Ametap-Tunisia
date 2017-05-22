@@ -31,6 +31,7 @@ namespace AMETAP.View
         private PayaimentController paC;
         private AdminController adC;
         private BudgetController bc;
+        private ContribuesController contribuesController;
         public Index()
         {
             ac = new AdherentController();
@@ -44,6 +45,7 @@ namespace AMETAP.View
             paC = new PayaimentController();
             adC = new AdminController();
             bc = new BudgetController();
+            contribuesController = new ContribuesController();
             InitializeComponent();
             //this.StyleManager = metroStyleManager1;
         }
@@ -137,6 +139,8 @@ namespace AMETAP.View
 
         private void Index_Load(object sender, EventArgs e)
         {
+            lbldate.Text = DateTime.Now.ToShortDateString();
+            timer1.Start();
             ac.affihcer(dataAdherent);
             for (int i = 2006; i < 2050; i++)
             {
@@ -341,7 +345,7 @@ namespace AMETAP.View
             mo.txtNom.Text = dataOrganisation.CurrentRow.Cells[1].Value.ToString();
             mo.txtEmail.Text = dataOrganisation.CurrentRow.Cells[2].Value.ToString();
             mo.txtAdresse.Text = dataOrganisation.CurrentRow.Cells[3].Value.ToString();
-            mo.txtDescription.Text = dataOrganisation.CurrentRow.Cells[4].Value.ToString();
+            mo.txtDescription.Text = dataOrganisation.CurrentRow.Cells[5].Value.ToString();
         }
 
         private void metroTile3_Click(object sender, EventArgs e)
@@ -363,7 +367,7 @@ namespace AMETAP.View
             r1.Enabled = true;
             r2.Enabled = true;
             r3.Enabled = true;
-            oc.affiche(dataOrganisation);
+            oc.recherche(dataOrganisation,metroTextBox1.Text.ToString());
         }
 
         private void r1_Click(object sender, EventArgs e)
@@ -593,6 +597,31 @@ namespace AMETAP.View
         private void rdConjointNonPayer_Click(object sender, EventArgs e)
         {
             paC.afficherConjointNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblheure.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void lblheure_SizeChanged(object sender, EventArgs e)
+        {
+            String time=lblheure.Text;
+            String h = time.Substring(1,2);
+            MessageBox.Show(h);
+            
+        }
+
+        private void lblheure_TextChanged(object sender, EventArgs e)
+        {
+            String time = lblheure.Text;
+            String h = time.Substring(0, 2);
+            String m = time.Substring(3, 2);
+            String s = time.Substring(6,2);
+            if (s.Equals("00"))
+            {
+                //contribuesController.ContribueParMois();
+            }
         }
     }
 }

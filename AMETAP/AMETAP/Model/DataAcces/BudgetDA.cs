@@ -149,6 +149,24 @@ namespace AMETAP.Model.DataAcces
             }
         }
 
-        
+        public void AjouterValeurBudget(int id,int valeur)
+        {
+            //try
+            //{
+                string req = string.Format("update Budget set BUDGET_ACTUEL=BUDGET_ACTUEL+"+valeur+"where id="+id);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+            //}
+            //catch (OleDbException)
+            //{
+                
+            //}
+            //finally
+            //{
+                cn.Close();
+           // }
+        }
     }
 }

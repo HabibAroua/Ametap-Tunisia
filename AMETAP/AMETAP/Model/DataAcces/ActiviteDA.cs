@@ -44,9 +44,9 @@ namespace AMETAP.Model.DataAcces
                 int idOrganisateur = a.idOrganisateur;
                 String date_debut_inscription = a.date_debut_inscription;
                 String date_fin_inscription = a.date_fin_inscription;
+                int nbr_point = a.nbr_point;
                 PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
-                //MessageBox.Show("nom activité :" + nom_activite + " capacité " + capacite + " nombre part :" + nombre_participant + " montant prevu " + montant_prevu + " " + "id type" + id_TypeActivite + " id budget" + idBudget + " id Organisateur" + idOrganisateur);
-                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, idBudgetCategorie, idOrganisateur,date_debut_inscription,date_fin_inscription));
+                string req = string.Format(plSql.AjouterActivite(nom_activite, capacite, date_debut, date_fin, prix_unitaire, montant_prevu, montant_actuel, idBudgetCategorie, idOrganisateur,date_debut_inscription,date_fin_inscription,nbr_point));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;

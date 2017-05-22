@@ -53,5 +53,10 @@ namespace AMETAP.Model.Business
             this.b1 = b1;
             this.b2 = b2;
         }
+
+        public Budget(int id)
+        {
+            this.id = id;
+        }
     }
 }

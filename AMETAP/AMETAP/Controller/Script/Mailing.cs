@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
-using System.Security;
-using System.Net.Mime;
 
 namespace AMETAP.Controller.Script
 {
@@ -16,6 +10,7 @@ namespace AMETAP.Controller.Script
         private String host;
         private String subject;
         private String body;
+
         public Mailing(String host,String subject,String body)
         {
             this.host = host;
@@ -58,18 +53,10 @@ namespace AMETAP.Controller.Script
             try
             {
                 MailMessage mm = new MailMessage("habibha.aroua82@gmail.com",getHost(),getSubject(),getBody());
-                // content
-                // Sending message
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-
-                // our account credentials
                 sc.Credentials = new NetworkCredential("habibha.aroua82@gmail.com", "habib.aroua@hotmail.framour88","");
                 sc.EnableSsl = true;
-
-                // Catching result
-
                 sc.Send(mm);
-                //MessageBox.Show("Message sent");
             }
             catch (Exception ex)
             {

@@ -68,5 +68,10 @@ namespace AMETAP.Model.Business
             this.personnel = personnel;
             this.nombre_point = nombre_point;
         }
+
+        public Adherent(int matriculeEtap)
+        {
+            this.matriculeEtap = matriculeEtap;
+        }
     }
 }

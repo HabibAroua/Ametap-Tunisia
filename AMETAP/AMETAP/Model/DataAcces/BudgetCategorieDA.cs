@@ -108,5 +108,25 @@ namespace AMETAP.Model.DataAcces
             cn.Close();
             return provisoire;
         }
+
+        public void ajouterValeurBudgetCat(int id,int valeur)
+        {
+            //try
+            //{
+                string req = string.Format("update budgetCategorie set PROVISOIRE=PROVISOIRE+" + valeur + " , MONTANT=MONTANT+"+valeur+ " where IDBUDGET=" + id);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+            //}
+            //catch (OleDbException)
+            //{
+
+            //}
+            //finally
+            //{
+                cn.Close();
+            //}
+        }
     }
 }

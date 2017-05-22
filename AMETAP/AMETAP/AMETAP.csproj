@@ -81,6 +81,7 @@
     <Compile Include="Controller\CentreController.cs" />
     <Compile Include="Controller\ClubController.cs" />
     <Compile Include="Controller\ConjointController.cs" />
+    <Compile Include="Controller\ContribuesController.cs" />
     <Compile Include="Controller\EnfantController.cs" />
     <Compile Include="Controller\OrganisateurController.cs" />
     <Compile Include="Controller\ParticipantController.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Model\Business\Centre.cs" />
     <Compile Include="Model\Business\Club.cs" />
     <Compile Include="Model\Business\Conjoint.cs" />
+    <Compile Include="Model\Business\Contribues.cs" />
     <Compile Include="Model\Business\Enfant.cs" />
     <Compile Include="Model\Business\Nature_Agent.cs" />
     <Compile Include="Model\Business\Organisateur.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Model\DataAcces\CentreDA.cs" />
     <Compile Include="Model\DataAcces\ClubDA.cs" />
     <Compile Include="Model\DataAcces\ConjointDA.cs" />
+    <Compile Include="Model\DataAcces\ContribuesDA.cs" />
     <Compile Include="Model\DataAcces\EnfantDA.cs" />
     <Compile Include="Model\DataAcces\IData.cs" />
     <Compile Include="Model\DataAcces\OrganisateurDA.cs" />

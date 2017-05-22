@@ -34,16 +34,16 @@ namespace AMETAP.View.Gestion_des_activites
             {
                 if (rdActiviteCulturel.Checked == true)
                 {
-                    ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString());
+                    ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
 
                 }
                 else
                 {
                     if (rdActiviteLoisir.Checked == true)
                     {
-                        ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString());
+                        ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
                         viewMontant.Text = bcc.getMontantProvisoire("Activité de loisir").ToString();
-                        
+
                     }
                 }
             }
@@ -55,11 +55,17 @@ namespace AMETAP.View.Gestion_des_activites
 
         private void AjouterActivite_Load(object sender, EventArgs e)
         {
-            foreach (Organisateur o in oc.AllOrganisateur() )
+            foreach (Organisateur o in oc.AllOrganisateur())
             {
                 comboOrganisateur.Items.Add(o.nom_organisateur);
             }
             txtMontantPrevu.Enabled = false;
+            comboNbr_point.Items.Add("10");
+            comboNbr_point.Items.Add("20");
+            comboNbr_point.Items.Add("30");
+            comboNbr_point.Items.Add("40");
+            comboNbr_point.Items.Add("50");
+            comboNbr_point.Items.Add("60");
         }
 
         private void txtCapacite_ValueChanged(object sender, EventArgs e)
@@ -122,7 +128,21 @@ namespace AMETAP.View.Gestion_des_activites
 
         private void rdActiviteLoisir_Click(object sender, EventArgs e)
         {
-            viewMontant.Text =""+bcc.getMontantProvisoire("Activité de loisir");
+            viewMontant.Text = "" + bcc.getMontantProvisoire("Activité de loisir").ToString();
+        }
+
+        private void btAnnuler_Click(object sender, EventArgs e)
+        {
+            DialogResult a = MessageBox.Show("Voulez vous quitter ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (a == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                //Continuez
+            }
         }
     }
 }
+

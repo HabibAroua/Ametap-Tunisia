@@ -54,6 +54,9 @@
             this.txtDateDebutInscription = new System.Windows.Forms.DateTimePicker();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.viewMontant = new MetroFramework.Controls.MetroLabel();
+            this.comboNbr_point = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapacite)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +163,7 @@
             // 
             // btAjouter
             // 
-            this.btAjouter.Location = new System.Drawing.Point(53, 542);
+            this.btAjouter.Location = new System.Drawing.Point(46, 612);
             this.btAjouter.Name = "btAjouter";
             this.btAjouter.Size = new System.Drawing.Size(75, 23);
             this.btAjouter.TabIndex = 15;
@@ -170,12 +173,13 @@
             // 
             // btAnnuler
             // 
-            this.btAnnuler.Location = new System.Drawing.Point(161, 542);
+            this.btAnnuler.Location = new System.Drawing.Point(150, 612);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btAnnuler.TabIndex = 16;
             this.btAnnuler.Text = "Annuler";
             this.btAnnuler.UseSelectable = true;
+            this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
             // 
             // metroLabel3
             // 
@@ -335,16 +339,48 @@
             // viewMontant
             // 
             this.viewMontant.AutoSize = true;
-            this.viewMontant.Location = new System.Drawing.Point(245, 111);
+            this.viewMontant.Location = new System.Drawing.Point(269, 111);
             this.viewMontant.Name = "viewMontant";
-            this.viewMontant.Size = new System.Drawing.Size(0, 0);
+            this.viewMontant.Size = new System.Drawing.Size(15, 19);
             this.viewMontant.TabIndex = 30;
+            this.viewMontant.Text = "x";
+            // 
+            // comboNbr_point
+            // 
+            this.comboNbr_point.FormattingEnabled = true;
+            this.comboNbr_point.ItemHeight = 23;
+            this.comboNbr_point.Location = new System.Drawing.Point(196, 546);
+            this.comboNbr_point.Name = "comboNbr_point";
+            this.comboNbr_point.Size = new System.Drawing.Size(264, 29);
+            this.comboNbr_point.TabIndex = 31;
+            this.comboNbr_point.UseSelectable = true;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(15, 556);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(112, 19);
+            this.metroLabel12.TabIndex = 32;
+            this.metroLabel12.Text = "Nombre de point";
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(334, 110);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(24, 19);
+            this.metroLabel13.TabIndex = 33;
+            this.metroLabel13.Text = "DT";
             // 
             // AjouterActivite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 577);
+            this.ClientSize = new System.Drawing.Size(486, 648);
+            this.Controls.Add(this.metroLabel13);
+            this.Controls.Add(this.metroLabel12);
+            this.Controls.Add(this.comboNbr_point);
             this.Controls.Add(this.viewMontant);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.metroLabel9);
@@ -408,5 +444,8 @@
         private System.Windows.Forms.DateTimePicker txtDateDebutInscription;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel viewMontant;
+        private MetroFramework.Controls.MetroComboBox comboNbr_point;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
     }
 }

@@ -202,7 +202,7 @@ namespace AMETAP.Model.DataAcces
         public List<Participation> affich(int idActivite)
         {
             List<Participation> list = new List<Participation>();
-            string req = string.Format("select Personnel.Matricule, Participation.id from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite);
+            string req = string.Format("select Personnel.Matricule, Participation.id from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite+ " order by Adherent.nombre_point desc");
             //string req = string.Format("select distinct Personnel.Matricule,Participation.id , Personnel.Nom , Personnel.Prenom , Personnel.etat_civil , Personnel.DATE_NAISSAINCE , Adherent.NOMBRE_POINT , Activite.nom_Activite , Activite.Id , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite + "order by Adherent.Nombre_Point desc");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
@@ -223,7 +223,7 @@ namespace AMETAP.Model.DataAcces
         public List<Participation> affichConjoint(int idActivite)
         {
             List<Participation> list = new List<Participation>();
-            string req = string.Format("select Conjoint.cin, Participation.id from Conjoint , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Conjoint.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+" and Participation.etat = 0 and Participant.matricule = Conjoint.cin and Participation.matriculePart = Participant.matricule and Participant.matricule = Conjoint.cin");
+            string req = string.Format("select Conjoint.cin, Participation.id from Conjoint , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Conjoint.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+ " and Participation.etat = 0 and Participant.matricule = Conjoint.cin and Participation.matriculePart = Participant.matricule and Participant.matricule = Conjoint.cin order by Adherent.nombre_point desc");
             //string req = string.Format("select distinct Personnel.Matricule,Participation.id , Personnel.Nom , Personnel.Prenom , Personnel.etat_civil , Personnel.DATE_NAISSAINCE , Adherent.NOMBRE_POINT , Activite.nom_Activite , Activite.Id , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite + "order by Adherent.Nombre_Point desc");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
@@ -266,7 +266,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, Adherent.Nombre_point from Conjoint , Adherent, Activite, Participation , Participant where Adherent.matriculeEtap = Conjoint.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+" and Participation.etat = 0 and Participant.matricule=Conjoint.cin and Participation.matriculePart=Participant.matricule and Participant.matricule=Conjoint.cin", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, Adherent.Nombre_point from Conjoint , Adherent, Activite, Participation , Participant where Adherent.matriculeEtap = Conjoint.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+" and Participation.etat = 0 and Participant.matricule=Conjoint.cin and Participation.matriculePart=Participant.matricule and Participant.matricule=Conjoint.cin order by Adherent.nombre_point desc", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
@@ -277,7 +277,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, Adherent.Nombre_point from Enfant , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Enfant.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+" and Participation.etat = 0 and Participant.matricule = Enfant.id and Participation.matriculePart = Participant.matricule and Participant.matricule = Enfant.id", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, Adherent.Nombre_point from Enfant , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Enfant.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+ " and Participation.etat = 0 and Participant.matricule = Enfant.id and Participation.matriculePart = Participant.matricule and Participant.matricule = Enfant.id order by Adherent.nombre_point desc", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];

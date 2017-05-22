@@ -71,9 +71,9 @@ namespace AMETAP.Model.DataAcces.PLSQL
 
         public String AjouterActivite(String nom_activite,int capacite ,String date_debut
             ,String date_fin,double prix_unitaire, double montant_prevu,
-            double montant_actuel,int idBudgetCat,int idOrganisateur,String date_debut_inscription,String date_fin_inscription)
+            double montant_actuel,int idBudgetCat,int idOrganisateur,String date_debut_inscription,String date_fin_inscription,int nbr_point)
         {
-            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel +"," + idBudgetCat + ","+idOrganisateur+",'"+date_debut_inscription+"','"+date_fin_inscription+"'); end;";
+            return "Begin AjouterActivite('" + nom_activite + "'," + capacite + ",'" + date_debut + "','" + date_fin + "',"+prix_unitaire+"," + montant_prevu + "," + montant_actuel +"," + idBudgetCat + ","+idOrganisateur+",'"+date_debut_inscription+"','"+date_fin_inscription+"','"+nbr_point+"'); end;";
         }
 
         public String SupprimerActivite(int id,double montant_prevu)

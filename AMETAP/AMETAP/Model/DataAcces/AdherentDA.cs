@@ -110,6 +110,23 @@ namespace AMETAP.Model.DataAcces
             return list;
         }
 
+        public List<int> listMatricule()
+        {
+            List<int> list = new List<int>();
+            string req = string.Format("select matriculeEtap From Adherent");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                int values = (int)Reader.GetDecimal(0);
+                list.Add(values);
+            }
+            Reader.Close();
+            cn.Close();
+            return list;
+        }
+
         public void InitialiserNombrePoint()
         {
             string req = string.Format("update Adherent set NOMBRE_POINT=100");
