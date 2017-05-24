@@ -845,6 +845,7 @@
             resources.ApplyResources(this.btConfirmerPayer, "btConfirmerPayer");
             this.btConfirmerPayer.Name = "btConfirmerPayer";
             this.btConfirmerPayer.UseSelectable = true;
+            this.btConfirmerPayer.Click += new System.EventHandler(this.btConfirmerPayer_Click);
             // 
             // dataNonPaiment
             // 
@@ -1189,6 +1190,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;

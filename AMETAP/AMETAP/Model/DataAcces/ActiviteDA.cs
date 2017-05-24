@@ -277,7 +277,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Activite.ID , Activite.Nom_activite , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE , Organisateur.nom_organisateur  from Activite , organisateur where (Activite.date_debut_inscription<=sysdate) and (Activite.date_fin_inscription>=sysdate) and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Activite.ID , Activite.Nom_activite , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE , Organisateur.nom_organisateur , Activite.NBR_POINT  from Activite , organisateur where (Activite.date_debut_inscription<=sysdate) and (Activite.date_fin_inscription>=sysdate) and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Activite");
             tab1 = dtst.Tables["Activite"];
@@ -300,5 +300,7 @@ namespace AMETAP.Model.DataAcces
             cn.Close();
             return res;
         }
+
+        
     }
 }

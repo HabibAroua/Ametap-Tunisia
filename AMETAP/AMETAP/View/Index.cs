@@ -481,68 +481,73 @@ namespace AMETAP.View
         {
             try
             {
+
                 ActiviteDA aDA = new ActiviteDA();
                 AdherentDA aDDA = new AdherentDA();
                 ParticipantDA pDA = new ParticipantDA();
                 int reste = aDA.restePlace(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                int i = 0;
-                int nbr = 0;
-                //MessageBox.Show("" + reste);
-                foreach (Participation l in listAdherent)
+                if (reste <= 0)
                 {
-                    //MessageBox.Show(l.participant.matricule + "");
-                    nbr++;
-                }
-                if (nbr <= reste)
-                {
-                    reste = nbr;
+                    MessageBox.Show("Le nombre de place est peline", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-
-                }
-                Mailing m;
-                //while (i != reste)
-
-                foreach (Participation l in listAdherent)
-                {
-                    if ((aDDA.getNombrePoint(l.participant.matricule) <= 0))
+                    int i = 0;
+                    int nbr = 0;
+                    foreach (Participation l in listAdherent)
                     {
-                        pc.refuser(l.id);
-                        MessageBox.Show("Erreur");
-                        MessageBox.Show(aDDA.getNombrePoint(l.participant.matricule) + " " + aDDA.getNombrePoint(pDA.getMatriculeByConjoint(l.participant.matricule)) + " " + aDDA.getNombrePoint(pDA.getMatriculeByEnfant(l.participant.matricule)));
-                        continue;
+                       
+                        nbr++;
+                    }
+                    if (nbr <= reste)
+                    {
+                        reste = nbr;
                     }
                     else
                     {
-                        foreach (String a in a.listAdresse(l.participant.matricule))
-                        {
-                            m = new Mailing(a, "Notification", "Vous etes le bienvenue , nous avons accepte votre demande");
-                            m.sendMail();
-                        }
-                        pc.AccepterAdherent(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
 
-                        if (i == reste)
-                        {
-                            MessageBox.Show("Erreur");
-                            break;
-                        }
-                        i++;
-                        //}
                     }
-                }
+                    Mailing m;
+                    //while (i != reste)
 
-                foreach (Participation l in listConjoint)
-                {
-                    pc.AccepterConjoint(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+                    foreach (Participation l in listAdherent)
+                    {
+                        if ((aDDA.getNombrePoint(l.participant.matricule) <= 0))
+                        {
+                            pc.refuser(l.id);
+                            MessageBox.Show("Demande réfusé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            continue;
+                        }
+                        else
+                        {
+                            foreach (String a in a.listAdresse(l.participant.matricule))
+                            {
+                                m = new Mailing(a, "Notification", "Vous etes le bienvenue , nous avons accepte votre demande");
+                                m.sendMail();
+                            }
+                            pc.AccepterAdherent(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+
+                            if (i == reste)
+                            {
+                                MessageBox.Show("Erreur");
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+
+                    foreach (Participation l in listConjoint)
+                    {
+                        pc.AccepterConjoint(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+                    }
+                    foreach (Participation l in listEnfant)
+                    {
+                        pc.AccepterEnfant(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
+                    }
+                    a = new AdherentDA();
+                    listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                    pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                 }
-                foreach (Participation l in listEnfant)
-                {
-                    pc.AccepterEnfant(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
-                }
-                a = new AdherentDA();
-                listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                pc.AfficheDemandeParActivite(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
             }
             catch (Exception ex)
             {
@@ -621,6 +626,18 @@ namespace AMETAP.View
             if (s.Equals("00"))
             {
                 //contribuesController.ContribueParMois();
+            }
+        }
+
+        private void btConfirmerPayer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pc.confirmerPaiyment(int.Parse(dataNonPaiment.CurrentRow.Cells[0].Value.ToString()), int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, int.Parse(dataActiviteActuel.CurrentRow.Cells[6].Value.ToString()));
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

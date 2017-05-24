@@ -60,7 +60,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select * from Budget", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select * from Budget order by annee desc", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Budget");
             tab1 = dtst.Tables["Budget"];

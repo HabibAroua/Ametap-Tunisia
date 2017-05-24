@@ -1381,7 +1381,7 @@
     <value>2</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 364</value>
+    <value>903, 364</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 43</value>
@@ -1402,7 +1402,7 @@
     <value>2</value>
   </data>
   <data name="btConfirmerPayer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 372</value>
+    <value>709, 372</value>
   </data>
   <data name="btConfirmerPayer.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
@@ -1426,7 +1426,7 @@
     <value>3</value>
   </data>
   <data name="dataNonPaiment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 413</value>
+    <value>709, 413</value>
   </data>
   <data name="dataNonPaiment.Size" type="System.Drawing.Size, System.Drawing">
     <value>480, 203</value>
@@ -1456,7 +1456,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 88</value>
+    <value>261, 345</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 24</value>
@@ -1480,7 +1480,7 @@
     <value>5</value>
   </data>
   <data name="btAccepter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 116</value>
+    <value>491, 373</value>
   </data>
   <data name="btAccepter.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 23</value>
@@ -1510,7 +1510,7 @@
     <value>Microsoft Sans Serif, 14pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 88</value>
+    <value>575, 52</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 24</value>
@@ -1588,7 +1588,7 @@
     <value>1</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>585, 112</value>
+    <value>230, 369</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>254, 27</value>
@@ -1609,7 +1609,7 @@
     <value>8</value>
   </data>
   <data name="dataDemande.Location" type="System.Drawing.Point, System.Drawing">
-    <value>527, 145</value>
+    <value>183, 413</value>
   </data>
   <data name="dataDemande.Size" type="System.Drawing.Size, System.Drawing">
     <value>480, 203</value>
@@ -1657,7 +1657,7 @@
     <value>10</value>
   </data>
   <data name="dataActiviteActuel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 145</value>
+    <value>431, 104</value>
   </data>
   <data name="dataActiviteActuel.Size" type="System.Drawing.Size, System.Drawing">
     <value>479, 203</value>

@@ -132,6 +132,71 @@ namespace AMETAP.Model.DataAcces
             }
         }
 
+        public Boolean confirmePaymentConjoint(int matricule, int idActivite, int id, int valeur)
+        {
+            try
+            {
+                PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
+                string req = string.Format(plSql.ConfPayerConjoint(matricule, idActivite, id, valeur));
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public Boolean confirmePaymentEnfant(int matricule, int idActivite, int id, int valeur)
+        {
+            try
+            {
+                PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
+                string req = string.Format(plSql.ConfPayerEnfant(matricule, idActivite, id, valeur));
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public Boolean confirmePaymentAdherent(int matricule, int idActivite, int id, int valeur)
+        {
+            try
+            {
+                PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
+                string req = string.Format(plSql.ConfPayerAdherent(matricule, idActivite, id, valeur));
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         public Boolean refuser(Participation p)
         {
             try
@@ -159,7 +224,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE ,Adherent.NOMBRE_POINT from Personnel , Adherent , Participation ,Activite where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite=" + idActivite+" and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE ,Adherent.NOMBRE_POINT from Personnel , Adherent , Participation ,Activite where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite=" + idActivite+ " and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1 and Participation.ETATPAYAIMENT=1", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
@@ -170,7 +235,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Personnel.matricule , Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE , Activite.id  from Personnel , Adherent , Participation ,Activite ,Participant where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite="+idActivite+" and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1 and Participant.matricule=Adherent.matriculeEtap and Participation.matriculePart=Participant.matricule union all select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, idActivite from Enfant , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Enfant.id and Participation.matriculePart = Enfant.id and Participation.etat = 1 and Participation.idActivite ="+idActivite+" union all select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, idActivite from Conjoint , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Conjoint.cin and Participation.matriculePart = Conjoint.cin and Participation.etat = 1 and Participation.idActivite ="+idActivite, Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Personnel.matricule , Personnel.Nom , Personnel.prenom ,Personnel.DATE_NAISSAINCE , Activite.id  from Personnel , Adherent , Participation ,Activite ,Participant where Personnel.matricule=Adherent.matriculeEtap and Participation.idActivite=Activite.id and Participation.idActivite="+idActivite+ " and Adherent.matriculeEtap=Participation.MATRICULEPART and Participation.Etat=1 and Participant.matricule=Adherent.matriculeEtap and Participation.matriculePart=Participant.matricule and Participation.ETATPAYAIMENT=1 union all select Enfant.id, Enfant.nom, Enfant.prenom, Enfant.date_naissance, idActivite from Enfant , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Enfant.id and Participation.matriculePart = Enfant.id and Participation.etat = 1 and Participation.idActivite =" + idActivite+ " and Participation.ETATPAYAIMENT=1 union all select Conjoint.cin, Conjoint.nom, Conjoint.prenom, Conjoint.date_naissance, idActivite from Conjoint , Participation, Participant, Activite where Activite.id = Participation.idActivite and Participant.matricule = Conjoint.cin and Participation.matriculePart = Conjoint.cin and Participation.etat = 1 and Participation.idActivite =" + idActivite+ " and Participation.ETATPAYAIMENT=1", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
@@ -181,7 +246,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Enfant.id , Enfant.nom , Enfant.prenom , Enfant.date_naissance , idActivite from Enfant , Participation , Participant , Activite where Activite.id=Participation.idActivite and Participant.matricule=Enfant.id and Participation.matriculePart=Enfant.id and Participation.etat=1 and Participation.idActivite="+idActivite, Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Enfant.id , Enfant.nom , Enfant.prenom , Enfant.date_naissance , idActivite from Enfant , Participation , Participant , Activite where Activite.id=Participation.idActivite and Participant.matricule=Enfant.id and Participation.matriculePart=Enfant.id and Participation.etat=1 and Participation.idActivite="+idActivite+ " and Participation.ETATPAYAIMENT=1", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
@@ -192,7 +257,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Conjoint.cin , Conjoint.nom , Conjoint.prenom , Conjoint.date_naissance , idActivite from Conjoint , Participation , Participant , Activite where Activite.id=Participation.idActivite and Participant.matricule=Conjoint.cin and Participation.matriculePart=Conjoint.cin and Participation.etat=1 and Participation.idActivite="+idActivite, Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Conjoint.cin , Conjoint.nom , Conjoint.prenom , Conjoint.date_naissance , idActivite from Conjoint , Participation , Participant , Activite where Activite.id=Participation.idActivite and Participant.matricule=Conjoint.cin and Participation.matriculePart=Conjoint.cin and Participation.etat=1 and Participation.idActivite="+idActivite+ "  and Participation.ETATPAYAIMENT=1", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
