@@ -40,21 +40,15 @@ namespace AMETAP.Controller
             }
             else
             {
-                if (((aDA.getNombreParticipant(matricule) <= 0)) || (valeur > aDA.getNombreParticipant(matricule)))
+
+                Boolean test1 = pDA.accepterAdherent(matricule, idActivite, 0, 0);
+
+                if (test1 == true)
                 {
-                    MessageBox.Show("Le point de cet adherent " + matricule + "n'est pas suffisant", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Inscription de l'adherent effectué ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-
-                    Boolean test1 = pDA.accepterAdherent(matricule, idActivite, 0, 0);
-
-                    if (test1 == true)
-                    {
-                        MessageBox.Show("Inscription de l'adherent effectué ", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }             
-            }
+            }             
+            
 
         }
 
@@ -106,11 +100,25 @@ namespace AMETAP.Controller
             }
         }
 
-        public void confirmerPaiyment(int matricule, int idActivite, int id, int valeur)
+        public void confirmerPaiymentConjoint(int matricule, int idActivite, int id, int valeur)
+        {
+            //pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
+            pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
+            //pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
+        }
+
+        public void confirmerPaiymentEnfant(int matricule, int idActivite, int id, int valeur)
+        {
+            //pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
+            //pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
+            pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
+        }
+
+        public void confirmerPaiymentAdherent(int matricule, int idActivite, int id, int valeur)
         {
             pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
-            pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
-            pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
+            //pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
+            //pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
         }
 
         public void getAllParticipant(DataGridView d, int idActivite)
@@ -165,5 +173,7 @@ namespace AMETAP.Controller
             }
             return listAll;
         }
+
+        
     }
 }

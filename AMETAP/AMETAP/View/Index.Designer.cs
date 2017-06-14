@@ -30,13 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.dataOrganisation = new System.Windows.Forms.DataGridView();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.r1 = new MetroFramework.Controls.MetroRadioButton();
             this.r2 = new MetroFramework.Controls.MetroRadioButton();
@@ -60,7 +63,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.comboAnnee = new MetroFramework.Controls.MetroComboBox();
             this.dataActivite = new System.Windows.Forms.DataGridView();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.btModifierActivite = new MetroFramework.Controls.MetroTile();
             this.btSupprimerActivite = new MetroFramework.Controls.MetroTile();
             this.btAjouter = new MetroFramework.Controls.MetroTile();
@@ -73,7 +75,6 @@
             this.refreshToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage6 = new MetroFramework.Controls.MetroTabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.btRefresh = new MetroFramework.Controls.MetroTile();
             this.txtChercher = new MetroFramework.Controls.MetroTextBox();
             this.dataAdherent = new System.Windows.Forms.DataGridView();
             this.btSupprimer = new MetroFramework.Controls.MetroTile();
@@ -94,9 +95,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btAccepter = new MetroFramework.Controls.MetroButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rdEnfant = new MetroFramework.Controls.MetroRadioButton();
-            this.rdConjoint = new MetroFramework.Controls.MetroRadioButton();
             this.dataDemande = new System.Windows.Forms.DataGridView();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.dataActiviteActuel = new System.Windows.Forms.DataGridView();
@@ -108,7 +106,6 @@
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dataUtilisateur = new System.Windows.Forms.DataGridView();
-            this.metroTile7 = new MetroFramework.Controls.MetroTile();
             this.metroTile8 = new MetroFramework.Controls.MetroTile();
             this.txtRecherhce = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -119,6 +116,7 @@
             this.applicationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.metroTile9 = new MetroFramework.Controls.MetroTile();
             this.label1 = new System.Windows.Forms.Label();
             this.dataBudget = new System.Windows.Forms.DataGridView();
@@ -157,7 +155,6 @@
             this.metroTabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataNonPaiment)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDemande)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataActiviteActuel)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -165,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataUtilisateur)).BeginInit();
             this.menuStrip3.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBudget)).BeginInit();
             this.menuStrip6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -184,7 +182,6 @@
             // 
             this.metroTabPage5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.metroTabPage5.Controls.Add(this.dataOrganisation);
-            this.metroTabPage5.Controls.Add(this.metroTile3);
             this.metroTabPage5.Controls.Add(this.groupBox2);
             this.metroTabPage5.Controls.Add(this.metroTextBox1);
             this.metroTabPage5.Controls.Add(this.metroLabel3);
@@ -196,8 +193,11 @@
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage5.HorizontalScrollbarSize = 10;
-            resources.ApplyResources(this.metroTabPage5, "metroTabPage5");
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(1306, 611);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "Organisateur";
             this.metroTabPage5.UseCustomBackColor = true;
             this.metroTabPage5.UseStyleColors = true;
             this.metroTabPage5.VerticalScrollbar = true;
@@ -208,25 +208,11 @@
             // dataOrganisation
             // 
             this.dataOrganisation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataOrganisation, "dataOrganisation");
+            this.dataOrganisation.Location = new System.Drawing.Point(323, 278);
             this.dataOrganisation.Name = "dataOrganisation";
             this.dataOrganisation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // metroTile3
-            // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.BackColor = System.Drawing.Color.DimGray;
-            this.metroTile3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            resources.ApplyResources(this.metroTile3, "metroTile3");
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
-            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.metroTile3.UseCustomBackColor = true;
-            this.metroTile3.UseCustomForeColor = true;
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
-            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+            this.dataOrganisation.Size = new System.Drawing.Size(545, 208);
+            this.dataOrganisation.TabIndex = 16;
             // 
             // groupBox2
             // 
@@ -234,15 +220,21 @@
             this.groupBox2.Controls.Add(this.r1);
             this.groupBox2.Controls.Add(this.r2);
             this.groupBox2.Controls.Add(this.r3);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Location = new System.Drawing.Point(323, 209);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(445, 42);
+            this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
             // r1
             // 
-            resources.ApplyResources(this.r1, "r1");
+            this.r1.AutoSize = true;
+            this.r1.Location = new System.Drawing.Point(18, 19);
             this.r1.Name = "r1";
+            this.r1.Size = new System.Drawing.Size(120, 15);
+            this.r1.TabIndex = 2;
             this.r1.TabStop = true;
+            this.r1.Text = "Agence de voyage";
             this.r1.UseCustomBackColor = true;
             this.r1.UseCustomForeColor = true;
             this.r1.UseSelectable = true;
@@ -251,9 +243,13 @@
             // 
             // r2
             // 
-            resources.ApplyResources(this.r2, "r2");
+            this.r2.AutoSize = true;
+            this.r2.Location = new System.Drawing.Point(208, 19);
             this.r2.Name = "r2";
+            this.r2.Size = new System.Drawing.Size(58, 15);
+            this.r2.TabIndex = 1;
             this.r2.TabStop = true;
+            this.r2.Text = "Centre";
             this.r2.UseCustomBackColor = true;
             this.r2.UseCustomForeColor = true;
             this.r2.UseSelectable = true;
@@ -262,10 +258,14 @@
             // 
             // r3
             // 
-            resources.ApplyResources(this.r3, "r3");
+            this.r3.AutoSize = true;
             this.r3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.r3.Location = new System.Drawing.Point(345, 19);
             this.r3.Name = "r3";
+            this.r3.Size = new System.Drawing.Size(48, 15);
+            this.r3.TabIndex = 0;
             this.r3.TabStop = true;
+            this.r3.Text = "Club";
             this.r3.UseCustomBackColor = true;
             this.r3.UseCustomForeColor = true;
             this.r3.UseSelectable = true;
@@ -277,17 +277,17 @@
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.metroTextBox1.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(153, 1);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex")));
+            this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible")));
+            this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            resources.ApplyResources(this.metroTextBox1, "metroTextBox1");
+            this.metroTextBox1.Location = new System.Drawing.Point(431, 160);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -296,15 +296,22 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(175, 23);
+            this.metroTextBox1.TabIndex = 13;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox1.TextChanged += new System.EventHandler(this.metroTextBox1_TextChanged);
+            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // metroLabel3
             // 
-            resources.ApplyResources(this.metroLabel3, "metroLabel3");
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(340, 164);
             this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel3.TabIndex = 12;
+            this.metroLabel3.Text = "Chercher";
             this.metroLabel3.UseCustomBackColor = true;
             this.metroLabel3.UseCustomForeColor = true;
             // 
@@ -313,9 +320,12 @@
             this.metroTile4.ActiveControl = null;
             this.metroTile4.BackColor = System.Drawing.Color.DimGray;
             this.metroTile4.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.metroTile4, "metroTile4");
+            this.metroTile4.Location = new System.Drawing.Point(775, 73);
             this.metroTile4.Name = "metroTile4";
+            this.metroTile4.Size = new System.Drawing.Size(83, 61);
             this.metroTile4.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile4.TabIndex = 10;
+            this.metroTile4.Text = "Modifier";
             this.metroTile4.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile4.TileImage")));
             this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroTile4.UseCustomBackColor = true;
@@ -330,8 +340,11 @@
             this.metroTile5.BackColor = System.Drawing.Color.DimGray;
             this.metroTile5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroTile5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.metroTile5, "metroTile5");
+            this.metroTile5.Location = new System.Drawing.Point(573, 73);
             this.metroTile5.Name = "metroTile5";
+            this.metroTile5.Size = new System.Drawing.Size(73, 61);
+            this.metroTile5.TabIndex = 9;
+            this.metroTile5.Text = "Supprimer";
             this.metroTile5.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile5.TileImage")));
             this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
@@ -348,8 +361,11 @@
             this.metroTile6.BackColor = System.Drawing.Color.DimGray;
             this.metroTile6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroTile6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.metroTile6, "metroTile6");
+            this.metroTile6.Location = new System.Drawing.Point(340, 73);
             this.metroTile6.Name = "metroTile6";
+            this.metroTile6.Size = new System.Drawing.Size(73, 61);
+            this.metroTile6.TabIndex = 8;
+            this.metroTile6.Text = "Ajouter";
             this.metroTile6.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile6.TileImage")));
             this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroTile6.UseCustomBackColor = true;
@@ -364,8 +380,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem2,
             this.applicationToolStripMenuItem3});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1306, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // fichierToolStripMenuItem2
             // 
@@ -373,18 +392,21 @@
             this.déconnexionToolStripMenuItem2,
             this.quitterToolStripMenuItem2});
             this.fichierToolStripMenuItem2.Name = "fichierToolStripMenuItem2";
-            resources.ApplyResources(this.fichierToolStripMenuItem2, "fichierToolStripMenuItem2");
+            this.fichierToolStripMenuItem2.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem2.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem2
             // 
             this.déconnexionToolStripMenuItem2.Name = "déconnexionToolStripMenuItem2";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem2, "déconnexionToolStripMenuItem2");
+            this.déconnexionToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem2.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem2.Click += new System.EventHandler(this.déconnexionToolStripMenuItem2_Click);
             // 
             // quitterToolStripMenuItem2
             // 
             this.quitterToolStripMenuItem2.Name = "quitterToolStripMenuItem2";
-            resources.ApplyResources(this.quitterToolStripMenuItem2, "quitterToolStripMenuItem2");
+            this.quitterToolStripMenuItem2.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem2.Text = "Quitter";
             this.quitterToolStripMenuItem2.Click += new System.EventHandler(this.quitterToolStripMenuItem2_Click);
             // 
             // applicationToolStripMenuItem3
@@ -392,17 +414,24 @@
             this.applicationToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem3});
             this.applicationToolStripMenuItem3.Name = "applicationToolStripMenuItem3";
-            resources.ApplyResources(this.applicationToolStripMenuItem3, "applicationToolStripMenuItem3");
+            this.applicationToolStripMenuItem3.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem3.Text = "Application";
             // 
             // refreshToolStripMenuItem3
             // 
             this.refreshToolStripMenuItem3.Name = "refreshToolStripMenuItem3";
-            resources.ApplyResources(this.refreshToolStripMenuItem3, "refreshToolStripMenuItem3");
+            this.refreshToolStripMenuItem3.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem3.Text = "Refresh";
+            this.refreshToolStripMenuItem3.Click += new System.EventHandler(this.refreshToolStripMenuItem3_Click);
             // 
             // miniToolStrip
             // 
-            resources.ApplyResources(this.miniToolStrip, "miniToolStrip");
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.Location = new System.Drawing.Point(60, 2);
             this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(808, 24);
+            this.miniToolStrip.TabIndex = 2;
             // 
             // metroTabPage7
             // 
@@ -410,7 +439,6 @@
             this.metroTabPage7.Controls.Add(this.metroLabel2);
             this.metroTabPage7.Controls.Add(this.comboAnnee);
             this.metroTabPage7.Controls.Add(this.dataActivite);
-            this.metroTabPage7.Controls.Add(this.metroTile1);
             this.metroTabPage7.Controls.Add(this.btModifierActivite);
             this.metroTabPage7.Controls.Add(this.btSupprimerActivite);
             this.metroTabPage7.Controls.Add(this.btAjouter);
@@ -419,8 +447,12 @@
             this.metroTabPage7.HorizontalScrollbarBarColor = true;
             this.metroTabPage7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.HorizontalScrollbarSize = 10;
-            resources.ApplyResources(this.metroTabPage7, "metroTabPage7");
+            this.metroTabPage7.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage7.Name = "metroTabPage7";
+            this.metroTabPage7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.metroTabPage7.Size = new System.Drawing.Size(1306, 611);
+            this.metroTabPage7.TabIndex = 6;
+            this.metroTabPage7.Text = "Activité";
             this.metroTabPage7.VerticalScrollbarBarColor = true;
             this.metroTabPage7.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage7.VerticalScrollbarSize = 10;
@@ -430,27 +462,36 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.rdActiviteCulturel);
             this.groupBox1.Controls.Add(this.rdActiviteLoisir);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Location = new System.Drawing.Point(743, 122);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(318, 50);
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
             // rdActiviteCulturel
             // 
-            resources.ApplyResources(this.rdActiviteCulturel, "rdActiviteCulturel");
+            this.rdActiviteCulturel.AutoSize = true;
             this.rdActiviteCulturel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rdActiviteCulturel.Location = new System.Drawing.Point(163, 20);
             this.rdActiviteCulturel.Name = "rdActiviteCulturel";
+            this.rdActiviteCulturel.Size = new System.Drawing.Size(106, 15);
+            this.rdActiviteCulturel.TabIndex = 1;
+            this.rdActiviteCulturel.Text = "Activité culturel";
             this.rdActiviteCulturel.UseCustomBackColor = true;
             this.rdActiviteCulturel.UseCustomForeColor = true;
             this.rdActiviteCulturel.UseSelectable = true;
             this.rdActiviteCulturel.UseStyleColors = true;
-            this.rdActiviteCulturel.UseWaitCursor = true;
             this.rdActiviteCulturel.Click += new System.EventHandler(this.rdActiviteCulturel_Click);
             // 
             // rdActiviteLoisir
             // 
-            resources.ApplyResources(this.rdActiviteLoisir, "rdActiviteLoisir");
+            this.rdActiviteLoisir.AutoSize = true;
             this.rdActiviteLoisir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.rdActiviteLoisir.Location = new System.Drawing.Point(28, 21);
             this.rdActiviteLoisir.Name = "rdActiviteLoisir";
+            this.rdActiviteLoisir.Size = new System.Drawing.Size(107, 15);
+            this.rdActiviteLoisir.TabIndex = 0;
+            this.rdActiviteLoisir.Text = "Activité de loisir";
             this.rdActiviteLoisir.UseCustomBackColor = true;
             this.rdActiviteLoisir.UseCustomForeColor = true;
             this.rdActiviteLoisir.UseSelectable = true;
@@ -459,11 +500,15 @@
             // 
             // metroLabel2
             // 
-            resources.ApplyResources(this.metroLabel2, "metroLabel2");
+            this.metroLabel2.AutoSize = true;
             this.metroLabel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel2.Location = new System.Drawing.Point(275, 132);
             this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(181, 25);
+            this.metroLabel2.TabIndex = 16;
+            this.metroLabel2.Text = "Séléctinner une année";
             this.metroLabel2.UseCustomBackColor = true;
             this.metroLabel2.UseCustomForeColor = true;
             this.metroLabel2.UseStyleColors = true;
@@ -471,41 +516,37 @@
             // comboAnnee
             // 
             this.comboAnnee.FormattingEnabled = true;
-            resources.ApplyResources(this.comboAnnee, "comboAnnee");
+            this.comboAnnee.ItemHeight = 23;
+            this.comboAnnee.Location = new System.Drawing.Point(477, 132);
             this.comboAnnee.Name = "comboAnnee";
+            this.comboAnnee.Size = new System.Drawing.Size(214, 29);
+            this.comboAnnee.TabIndex = 15;
             this.comboAnnee.UseSelectable = true;
             this.comboAnnee.TextChanged += new System.EventHandler(this.comboAnnee_TextChanged);
             // 
             // dataActivite
             // 
             this.dataActivite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataActivite, "dataActivite");
+            this.dataActivite.Location = new System.Drawing.Point(56, 178);
             this.dataActivite.Name = "dataActivite";
             this.dataActivite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataActivite.Size = new System.Drawing.Size(1136, 335);
+            this.dataActivite.TabIndex = 14;
+            this.dataActivite.Click += new System.EventHandler(this.dataActivite_Click);
             this.dataActivite.DoubleClick += new System.EventHandler(this.dataActivite_DoubleClick);
-            // 
-            // metroTile1
-            // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.BackColor = System.Drawing.Color.DimGray;
-            this.metroTile1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.metroTile1, "metroTile1");
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.metroTile1.UseCustomBackColor = true;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseStyleColors = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // btModifierActivite
             // 
             this.btModifierActivite.ActiveControl = null;
             this.btModifierActivite.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btModifierActivite, "btModifierActivite");
+            this.btModifierActivite.Enabled = false;
             this.btModifierActivite.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btModifierActivite.Location = new System.Drawing.Point(789, 56);
             this.btModifierActivite.Name = "btModifierActivite";
+            this.btModifierActivite.Size = new System.Drawing.Size(89, 60);
+            this.btModifierActivite.TabIndex = 12;
+            this.btModifierActivite.Text = "Modifier";
+            this.btModifierActivite.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btModifierActivite.TileImage = ((System.Drawing.Image)(resources.GetObject("btModifierActivite.TileImage")));
             this.btModifierActivite.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btModifierActivite.UseCustomBackColor = true;
@@ -519,8 +560,13 @@
             // 
             this.btSupprimerActivite.ActiveControl = null;
             this.btSupprimerActivite.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btSupprimerActivite, "btSupprimerActivite");
+            this.btSupprimerActivite.Enabled = false;
+            this.btSupprimerActivite.Location = new System.Drawing.Point(563, 56);
             this.btSupprimerActivite.Name = "btSupprimerActivite";
+            this.btSupprimerActivite.Size = new System.Drawing.Size(94, 60);
+            this.btSupprimerActivite.TabIndex = 11;
+            this.btSupprimerActivite.Text = "Supprimer";
+            this.btSupprimerActivite.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSupprimerActivite.TileImage = ((System.Drawing.Image)(resources.GetObject("btSupprimerActivite.TileImage")));
             this.btSupprimerActivite.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSupprimerActivite.UseCustomBackColor = true;
@@ -532,8 +578,12 @@
             // 
             this.btAjouter.ActiveControl = null;
             this.btAjouter.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btAjouter, "btAjouter");
+            this.btAjouter.Location = new System.Drawing.Point(335, 56);
             this.btAjouter.Name = "btAjouter";
+            this.btAjouter.Size = new System.Drawing.Size(89, 60);
+            this.btAjouter.TabIndex = 10;
+            this.btAjouter.Text = "Ajouter";
+            this.btAjouter.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btAjouter.TileImage = ((System.Drawing.Image)(resources.GetObject("btAjouter.TileImage")));
             this.btAjouter.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btAjouter.UseCustomBackColor = true;
@@ -549,49 +599,60 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.metroGrid1, "metroGrid1");
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.metroGrid1.ColumnHeadersHeight = 30;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroGrid1.EnableHeadersVisualStyles = false;
+            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.BlanchedAlmond;
             this.metroGrid1.HighLightPercentage = 0.5F;
+            this.metroGrid1.Location = new System.Drawing.Point(0, 29);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(211)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.metroGrid1.RowHeadersVisible = false;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid1.Size = new System.Drawing.Size(1306, 582);
+            this.metroGrid1.TabIndex = 2;
             this.metroGrid1.UseStyleColors = true;
+            this.metroGrid1.Enter += new System.EventHandler(this.metroGrid1_Enter);
+            this.metroGrid1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.metroGrid1_MouseClick);
+            this.metroGrid1.MouseEnter += new System.EventHandler(this.metroGrid1_MouseEnter);
             // 
             // menuStrip4
             // 
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem1,
             this.applicationToolStripMenuItem4});
-            resources.ApplyResources(this.menuStrip4, "menuStrip4");
+            this.menuStrip4.Location = new System.Drawing.Point(0, 5);
             this.menuStrip4.Name = "menuStrip4";
+            this.menuStrip4.Size = new System.Drawing.Size(1306, 24);
+            this.menuStrip4.TabIndex = 3;
+            this.menuStrip4.Text = "menuStrip4";
             // 
             // fichierToolStripMenuItem1
             // 
@@ -599,18 +660,21 @@
             this.déconnexionToolStripMenuItem1,
             this.quitterToolStripMenuItem1});
             this.fichierToolStripMenuItem1.Name = "fichierToolStripMenuItem1";
-            resources.ApplyResources(this.fichierToolStripMenuItem1, "fichierToolStripMenuItem1");
+            this.fichierToolStripMenuItem1.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem1.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem1
             // 
             this.déconnexionToolStripMenuItem1.Name = "déconnexionToolStripMenuItem1";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem1, "déconnexionToolStripMenuItem1");
+            this.déconnexionToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem1.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem1.Click += new System.EventHandler(this.déconnexionToolStripMenuItem1_Click);
             // 
             // quitterToolStripMenuItem1
             // 
             this.quitterToolStripMenuItem1.Name = "quitterToolStripMenuItem1";
-            resources.ApplyResources(this.quitterToolStripMenuItem1, "quitterToolStripMenuItem1");
+            this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem1.Text = "Quitter";
             this.quitterToolStripMenuItem1.Click += new System.EventHandler(this.quitterToolStripMenuItem1_Click);
             // 
             // applicationToolStripMenuItem4
@@ -618,30 +682,37 @@
             this.applicationToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem4});
             this.applicationToolStripMenuItem4.Name = "applicationToolStripMenuItem4";
-            resources.ApplyResources(this.applicationToolStripMenuItem4, "applicationToolStripMenuItem4");
+            this.applicationToolStripMenuItem4.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem4.Text = "Application";
             // 
             // refreshToolStripMenuItem4
             // 
             this.refreshToolStripMenuItem4.Name = "refreshToolStripMenuItem4";
-            resources.ApplyResources(this.refreshToolStripMenuItem4, "refreshToolStripMenuItem4");
+            this.refreshToolStripMenuItem4.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem4.Text = "Refresh";
+            this.refreshToolStripMenuItem4.Click += new System.EventHandler(this.refreshToolStripMenuItem4_Click);
             // 
             // metroTabPage6
             // 
             this.metroTabPage6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            resources.ApplyResources(this.metroTabPage6, "metroTabPage6");
+            this.metroTabPage6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metroTabPage6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.metroTabPage6.Controls.Add(this.label2);
-            this.metroTabPage6.Controls.Add(this.btRefresh);
             this.metroTabPage6.Controls.Add(this.txtChercher);
             this.metroTabPage6.Controls.Add(this.dataAdherent);
             this.metroTabPage6.Controls.Add(this.btSupprimer);
             this.metroTabPage6.Controls.Add(this.menuStrip5);
-            this.metroTabPage6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.metroTabPage6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.metroTabPage6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroTabPage6.HorizontalScrollbarBarColor = true;
             this.metroTabPage6.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage6.HorizontalScrollbarSize = 10;
+            this.metroTabPage6.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage6.Name = "metroTabPage6";
+            this.metroTabPage6.Size = new System.Drawing.Size(1306, 611);
             this.metroTabPage6.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroTabPage6.TabIndex = 5;
+            this.metroTabPage6.Text = "Adhérent";
             this.metroTabPage6.UseCustomBackColor = true;
             this.metroTabPage6.UseCustomForeColor = true;
             this.metroTabPage6.UseStyleColors = true;
@@ -652,40 +723,34 @@
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(321, 108);
             this.label2.Name = "label2";
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.ActiveControl = null;
-            this.btRefresh.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btRefresh, "btRefresh");
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.TileImage = ((System.Drawing.Image)(resources.GetObject("btRefresh.TileImage")));
-            this.btRefresh.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btRefresh.UseCustomBackColor = true;
-            this.btRefresh.UseSelectable = true;
-            this.btRefresh.UseStyleColors = true;
-            this.btRefresh.UseTileImage = true;
+            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Recherche";
             // 
             // txtChercher
             // 
             // 
             // 
             // 
-            this.txtChercher.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.txtChercher.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode")));
-            this.txtChercher.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location1")));
+            this.txtChercher.CustomButton.Image = null;
+            this.txtChercher.CustomButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtChercher.CustomButton.Location = new System.Drawing.Point(171, 1);
             this.txtChercher.CustomButton.Name = "";
-            this.txtChercher.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size1")));
+            this.txtChercher.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtChercher.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtChercher.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex1")));
+            this.txtChercher.CustomButton.TabIndex = 1;
             this.txtChercher.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtChercher.CustomButton.UseSelectable = true;
-            this.txtChercher.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible1")));
+            this.txtChercher.CustomButton.Visible = false;
             this.txtChercher.Lines = new string[0];
-            resources.ApplyResources(this.txtChercher, "txtChercher");
+            this.txtChercher.Location = new System.Drawing.Point(429, 105);
             this.txtChercher.MaxLength = 32767;
             this.txtChercher.Name = "txtChercher";
             this.txtChercher.PasswordChar = '\0';
@@ -694,25 +759,37 @@
             this.txtChercher.SelectionLength = 0;
             this.txtChercher.SelectionStart = 0;
             this.txtChercher.ShortcutsEnabled = true;
+            this.txtChercher.Size = new System.Drawing.Size(193, 23);
+            this.txtChercher.TabIndex = 18;
             this.txtChercher.UseSelectable = true;
             this.txtChercher.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtChercher.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtChercher.TextChanged += new System.EventHandler(this.txtChercher_TextChanged);
             // 
             // dataAdherent
             // 
             this.dataAdherent.AllowUserToOrderColumns = true;
-            resources.ApplyResources(this.dataAdherent, "dataAdherent");
+            this.dataAdherent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataAdherent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataAdherent.Location = new System.Drawing.Point(49, 143);
             this.dataAdherent.Name = "dataAdherent";
             this.dataAdherent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataAdherent.Size = new System.Drawing.Size(1210, 419);
+            this.dataAdherent.TabIndex = 17;
+            this.dataAdherent.DoubleClick += new System.EventHandler(this.dataAdherent_DoubleClick);
             // 
             // btSupprimer
             // 
             this.btSupprimer.ActiveControl = null;
             this.btSupprimer.BackColor = System.Drawing.Color.DimGray;
             this.btSupprimer.ForeColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.btSupprimer, "btSupprimer");
+            this.btSupprimer.Location = new System.Drawing.Point(640, 60);
             this.btSupprimer.Name = "btSupprimer";
+            this.btSupprimer.Size = new System.Drawing.Size(81, 68);
+            this.btSupprimer.TabIndex = 16;
+            this.btSupprimer.Text = "Supprimer";
             this.btSupprimer.TileImage = ((System.Drawing.Image)(resources.GetObject("btSupprimer.TileImage")));
             this.btSupprimer.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSupprimer.UseCustomBackColor = true;
@@ -720,14 +797,18 @@
             this.btSupprimer.UseSelectable = true;
             this.btSupprimer.UseStyleColors = true;
             this.btSupprimer.UseTileImage = true;
+            this.btSupprimer.Click += new System.EventHandler(this.btSupprimer_Click);
             // 
             // menuStrip5
             // 
             this.menuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
             this.applicationToolStripMenuItem5});
-            resources.ApplyResources(this.menuStrip5, "menuStrip5");
+            this.menuStrip5.Location = new System.Drawing.Point(0, 0);
             this.menuStrip5.Name = "menuStrip5";
+            this.menuStrip5.Size = new System.Drawing.Size(1302, 24);
+            this.menuStrip5.TabIndex = 2;
+            this.menuStrip5.Text = "menuStrip5";
             // 
             // fichierToolStripMenuItem
             // 
@@ -735,18 +816,21 @@
             this.déconnexionToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            resources.ApplyResources(this.fichierToolStripMenuItem, "fichierToolStripMenuItem");
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem
             // 
             this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem, "déconnexionToolStripMenuItem");
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem.Click += new System.EventHandler(this.déconnexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            resources.ApplyResources(this.quitterToolStripMenuItem, "quitterToolStripMenuItem");
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // applicationToolStripMenuItem5
@@ -754,12 +838,15 @@
             this.applicationToolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem5});
             this.applicationToolStripMenuItem5.Name = "applicationToolStripMenuItem5";
-            resources.ApplyResources(this.applicationToolStripMenuItem5, "applicationToolStripMenuItem5");
+            this.applicationToolStripMenuItem5.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem5.Text = "Application";
             // 
             // refreshToolStripMenuItem5
             // 
             this.refreshToolStripMenuItem5.Name = "refreshToolStripMenuItem5";
-            resources.ApplyResources(this.refreshToolStripMenuItem5, "refreshToolStripMenuItem5");
+            this.refreshToolStripMenuItem5.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem5.Text = "Refresh";
+            this.refreshToolStripMenuItem5.Click += new System.EventHandler(this.refreshToolStripMenuItem5_Click);
             // 
             // metroTabControl1
             // 
@@ -769,11 +856,15 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            resources.ApplyResources(this.metroTabControl1, "metroTabControl1");
+            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.Size = new System.Drawing.Size(1314, 653);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // metroTabPage1
             // 
@@ -784,7 +875,6 @@
             this.metroTabPage1.Controls.Add(this.label4);
             this.metroTabPage1.Controls.Add(this.btAccepter);
             this.metroTabPage1.Controls.Add(this.label3);
-            this.metroTabPage1.Controls.Add(this.groupBox3);
             this.metroTabPage1.Controls.Add(this.dataDemande);
             this.metroTabPage1.Controls.Add(this.metroLabel6);
             this.metroTabPage1.Controls.Add(this.dataActiviteActuel);
@@ -792,8 +882,11 @@
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
-            resources.ApplyResources(this.metroTabPage1, "metroTabPage1");
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(1306, 611);
+            this.metroTabPage1.TabIndex = 7;
+            this.metroTabPage1.Text = "Inscription";
             this.metroTabPage1.UseCustomBackColor = true;
             this.metroTabPage1.UseCustomForeColor = true;
             this.metroTabPage1.UseStyleColors = true;
@@ -806,14 +899,20 @@
             this.groupBox4.Controls.Add(this.rdConjointNonPayer);
             this.groupBox4.Controls.Add(this.rdEnfantNonPayer);
             this.groupBox4.Controls.Add(this.rdAdherentNonPayer);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Location = new System.Drawing.Point(903, 364);
             this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(286, 43);
+            this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             // 
             // rdConjointNonPayer
             // 
-            resources.ApplyResources(this.rdConjointNonPayer, "rdConjointNonPayer");
+            this.rdConjointNonPayer.AutoSize = true;
+            this.rdConjointNonPayer.Location = new System.Drawing.Point(208, 17);
             this.rdConjointNonPayer.Name = "rdConjointNonPayer";
+            this.rdConjointNonPayer.Size = new System.Drawing.Size(69, 15);
+            this.rdConjointNonPayer.TabIndex = 2;
+            this.rdConjointNonPayer.Text = "Conjoint";
             this.rdConjointNonPayer.UseCustomBackColor = true;
             this.rdConjointNonPayer.UseCustomForeColor = true;
             this.rdConjointNonPayer.UseSelectable = true;
@@ -822,8 +921,12 @@
             // 
             // rdEnfantNonPayer
             // 
-            resources.ApplyResources(this.rdEnfantNonPayer, "rdEnfantNonPayer");
+            this.rdEnfantNonPayer.AutoSize = true;
+            this.rdEnfantNonPayer.Location = new System.Drawing.Point(110, 17);
             this.rdEnfantNonPayer.Name = "rdEnfantNonPayer";
+            this.rdEnfantNonPayer.Size = new System.Drawing.Size(57, 15);
+            this.rdEnfantNonPayer.TabIndex = 1;
+            this.rdEnfantNonPayer.Text = "Enfant";
             this.rdEnfantNonPayer.UseCustomBackColor = true;
             this.rdEnfantNonPayer.UseCustomForeColor = true;
             this.rdEnfantNonPayer.UseSelectable = true;
@@ -832,8 +935,12 @@
             // 
             // rdAdherentNonPayer
             // 
-            resources.ApplyResources(this.rdAdherentNonPayer, "rdAdherentNonPayer");
+            this.rdAdherentNonPayer.AutoSize = true;
+            this.rdAdherentNonPayer.Location = new System.Drawing.Point(7, 17);
             this.rdAdherentNonPayer.Name = "rdAdherentNonPayer";
+            this.rdAdherentNonPayer.Size = new System.Drawing.Size(72, 15);
+            this.rdAdherentNonPayer.TabIndex = 0;
+            this.rdAdherentNonPayer.Text = "Adherent";
             this.rdAdherentNonPayer.UseCustomBackColor = true;
             this.rdAdherentNonPayer.UseCustomForeColor = true;
             this.rdAdherentNonPayer.UseSelectable = true;
@@ -842,86 +949,82 @@
             // 
             // btConfirmerPayer
             // 
-            resources.ApplyResources(this.btConfirmerPayer, "btConfirmerPayer");
+            this.btConfirmerPayer.Location = new System.Drawing.Point(709, 372);
             this.btConfirmerPayer.Name = "btConfirmerPayer";
+            this.btConfirmerPayer.Size = new System.Drawing.Size(146, 23);
+            this.btConfirmerPayer.TabIndex = 20;
+            this.btConfirmerPayer.Text = "Confirmer le Paiement";
             this.btConfirmerPayer.UseSelectable = true;
             this.btConfirmerPayer.Click += new System.EventHandler(this.btConfirmerPayer_Click);
             // 
             // dataNonPaiment
             // 
             this.dataNonPaiment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataNonPaiment, "dataNonPaiment");
+            this.dataNonPaiment.Location = new System.Drawing.Point(709, 413);
             this.dataNonPaiment.Name = "dataNonPaiment";
             this.dataNonPaiment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataNonPaiment.Size = new System.Drawing.Size(480, 203);
+            this.dataNonPaiment.TabIndex = 11;
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(261, 345);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(217, 24);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Les listes des demandes";
             // 
             // btAccepter
             // 
-            resources.ApplyResources(this.btAccepter, "btAccepter");
+            this.btAccepter.Location = new System.Drawing.Point(491, 373);
             this.btAccepter.Name = "btAccepter";
+            this.btAccepter.Size = new System.Drawing.Size(92, 23);
+            this.btAccepter.TabIndex = 18;
+            this.btAccepter.Text = "Accepter";
             this.btAccepter.UseSelectable = true;
             this.btAccepter.Click += new System.EventHandler(this.btAccepter_Click);
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label3.Location = new System.Drawing.Point(575, 52);
             this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(178, 24);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Les activités actutels";
             this.label3.UseWaitCursor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rdEnfant);
-            this.groupBox3.Controls.Add(this.rdConjoint);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
-            // 
-            // rdEnfant
-            // 
-            resources.ApplyResources(this.rdEnfant, "rdEnfant");
-            this.rdEnfant.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdEnfant.Name = "rdEnfant";
-            this.rdEnfant.UseCustomBackColor = true;
-            this.rdEnfant.UseCustomForeColor = true;
-            this.rdEnfant.UseSelectable = true;
-            this.rdEnfant.UseStyleColors = true;
-            this.rdEnfant.Click += new System.EventHandler(this.rdEnfant_Click);
-            // 
-            // rdConjoint
-            // 
-            resources.ApplyResources(this.rdConjoint, "rdConjoint");
-            this.rdConjoint.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.rdConjoint.Name = "rdConjoint";
-            this.rdConjoint.UseCustomBackColor = true;
-            this.rdConjoint.UseCustomForeColor = true;
-            this.rdConjoint.UseSelectable = true;
-            this.rdConjoint.UseStyleColors = true;
-            this.rdConjoint.UseWaitCursor = true;
-            this.rdConjoint.Click += new System.EventHandler(this.rdConjoint_Click);
             // 
             // dataDemande
             // 
             this.dataDemande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataDemande, "dataDemande");
+            this.dataDemande.Location = new System.Drawing.Point(183, 413);
             this.dataDemande.Name = "dataDemande";
             this.dataDemande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataDemande.Size = new System.Drawing.Size(480, 203);
+            this.dataDemande.TabIndex = 10;
             // 
             // metroLabel6
             // 
-            resources.ApplyResources(this.metroLabel6, "metroLabel6");
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(-113, 101);
             this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(92, 19);
+            this.metroLabel6.TabIndex = 9;
+            this.metroLabel6.Text = "Les demandes";
             this.metroLabel6.UseWaitCursor = true;
             // 
             // dataActiviteActuel
             // 
             this.dataActiviteActuel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataActiviteActuel, "dataActiviteActuel");
+            this.dataActiviteActuel.Location = new System.Drawing.Point(431, 104);
             this.dataActiviteActuel.Name = "dataActiviteActuel";
             this.dataActiviteActuel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataActiviteActuel.Size = new System.Drawing.Size(479, 203);
+            this.dataActiviteActuel.TabIndex = 8;
             this.dataActiviteActuel.SelectionChanged += new System.EventHandler(this.dataActiviteActuel_SelectionChanged);
             // 
             // menuStrip2
@@ -929,8 +1032,11 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem3,
             this.applicationToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip2, "menuStrip2");
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1306, 24);
+            this.menuStrip2.TabIndex = 2;
+            this.menuStrip2.Text = "menuStrip2";
             // 
             // fichierToolStripMenuItem3
             // 
@@ -938,18 +1044,21 @@
             this.déconnexionToolStripMenuItem3,
             this.quitterToolStripMenuItem3});
             this.fichierToolStripMenuItem3.Name = "fichierToolStripMenuItem3";
-            resources.ApplyResources(this.fichierToolStripMenuItem3, "fichierToolStripMenuItem3");
+            this.fichierToolStripMenuItem3.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem3.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem3
             // 
             this.déconnexionToolStripMenuItem3.Name = "déconnexionToolStripMenuItem3";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem3, "déconnexionToolStripMenuItem3");
+            this.déconnexionToolStripMenuItem3.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem3.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem3.Click += new System.EventHandler(this.déconnexionToolStripMenuItem3_Click);
             // 
             // quitterToolStripMenuItem3
             // 
             this.quitterToolStripMenuItem3.Name = "quitterToolStripMenuItem3";
-            resources.ApplyResources(this.quitterToolStripMenuItem3, "quitterToolStripMenuItem3");
+            this.quitterToolStripMenuItem3.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem3.Text = "Quitter";
             this.quitterToolStripMenuItem3.Click += new System.EventHandler(this.quitterToolStripMenuItem3_Click);
             // 
             // applicationToolStripMenuItem
@@ -957,29 +1066,33 @@
             this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem});
             this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            resources.ApplyResources(this.applicationToolStripMenuItem, "applicationToolStripMenuItem");
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem.Text = "Application";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            resources.ApplyResources(this.refreshToolStripMenuItem, "refreshToolStripMenuItem");
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // metroTabPage2
             // 
             this.metroTabPage2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.metroTabPage2.Controls.Add(this.dataUtilisateur);
-            this.metroTabPage2.Controls.Add(this.metroTile7);
             this.metroTabPage2.Controls.Add(this.metroTile8);
             this.metroTabPage2.Controls.Add(this.txtRecherhce);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.menuStrip3);
-            this.metroTabPage2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroTabPage2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 10;
-            resources.ApplyResources(this.metroTabPage2, "metroTabPage2");
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(1306, 611);
+            this.metroTabPage2.TabIndex = 8;
+            this.metroTabPage2.Text = "Utilisateur";
             this.metroTabPage2.UseCustomBackColor = true;
             this.metroTabPage2.UseCustomForeColor = true;
             this.metroTabPage2.UseStyleColors = true;
@@ -990,31 +1103,22 @@
             // dataUtilisateur
             // 
             this.dataUtilisateur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataUtilisateur, "dataUtilisateur");
+            this.dataUtilisateur.Location = new System.Drawing.Point(26, 134);
             this.dataUtilisateur.Name = "dataUtilisateur";
             this.dataUtilisateur.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // metroTile7
-            // 
-            this.metroTile7.ActiveControl = null;
-            this.metroTile7.BackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.metroTile7, "metroTile7");
-            this.metroTile7.Name = "metroTile7";
-            this.metroTile7.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile7.TileImage")));
-            this.metroTile7.UseCustomBackColor = true;
-            this.metroTile7.UseCustomForeColor = true;
-            this.metroTile7.UseSelectable = true;
-            this.metroTile7.UseStyleColors = true;
-            this.metroTile7.UseTileImage = true;
-            this.metroTile7.Click += new System.EventHandler(this.metroTile7_Click);
+            this.dataUtilisateur.Size = new System.Drawing.Size(1139, 362);
+            this.dataUtilisateur.TabIndex = 15;
             // 
             // metroTile8
             // 
             this.metroTile8.ActiveControl = null;
             this.metroTile8.BackColor = System.Drawing.Color.DimGray;
             this.metroTile8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            resources.ApplyResources(this.metroTile8, "metroTile8");
+            this.metroTile8.Location = new System.Drawing.Point(277, 65);
             this.metroTile8.Name = "metroTile8";
+            this.metroTile8.Size = new System.Drawing.Size(87, 52);
+            this.metroTile8.TabIndex = 8;
+            this.metroTile8.Text = "Supprimer";
             this.metroTile8.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile8.TileImage")));
             this.metroTile8.TileImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroTile8.UseCustomBackColor = true;
@@ -1028,17 +1132,17 @@
             // 
             // 
             // 
-            this.txtRecherhce.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.txtRecherhce.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location2")));
+            this.txtRecherhce.CustomButton.Image = null;
+            this.txtRecherhce.CustomButton.Location = new System.Drawing.Point(122, 1);
             this.txtRecherhce.CustomButton.Name = "";
-            this.txtRecherhce.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size2")));
+            this.txtRecherhce.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtRecherhce.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtRecherhce.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex2")));
+            this.txtRecherhce.CustomButton.TabIndex = 1;
             this.txtRecherhce.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtRecherhce.CustomButton.UseSelectable = true;
-            this.txtRecherhce.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible2")));
+            this.txtRecherhce.CustomButton.Visible = false;
             this.txtRecherhce.Lines = new string[0];
-            resources.ApplyResources(this.txtRecherhce, "txtRecherhce");
+            this.txtRecherhce.Location = new System.Drawing.Point(102, 94);
             this.txtRecherhce.MaxLength = 32767;
             this.txtRecherhce.Name = "txtRecherhce";
             this.txtRecherhce.PasswordChar = '\0';
@@ -1047,6 +1151,8 @@
             this.txtRecherhce.SelectionLength = 0;
             this.txtRecherhce.SelectionStart = 0;
             this.txtRecherhce.ShortcutsEnabled = true;
+            this.txtRecherhce.Size = new System.Drawing.Size(144, 23);
+            this.txtRecherhce.TabIndex = 7;
             this.txtRecherhce.UseSelectable = true;
             this.txtRecherhce.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtRecherhce.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1054,9 +1160,13 @@
             // 
             // metroLabel4
             // 
-            resources.ApplyResources(this.metroLabel4, "metroLabel4");
+            this.metroLabel4.AutoSize = true;
             this.metroLabel4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel4.Location = new System.Drawing.Point(26, 98);
             this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel4.TabIndex = 6;
+            this.metroLabel4.Text = "Recherche";
             this.metroLabel4.UseCustomBackColor = true;
             this.metroLabel4.UseCustomForeColor = true;
             this.metroLabel4.UseStyleColors = true;
@@ -1066,8 +1176,11 @@
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem4,
             this.applicationToolStripMenuItem1});
-            resources.ApplyResources(this.menuStrip3, "menuStrip3");
+            this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
+            this.menuStrip3.Size = new System.Drawing.Size(1306, 24);
+            this.menuStrip3.TabIndex = 3;
+            this.menuStrip3.Text = "menuStrip3";
             // 
             // fichierToolStripMenuItem4
             // 
@@ -1075,18 +1188,21 @@
             this.déconnexionToolStripMenuItem4,
             this.quitterToolStripMenuItem4});
             this.fichierToolStripMenuItem4.Name = "fichierToolStripMenuItem4";
-            resources.ApplyResources(this.fichierToolStripMenuItem4, "fichierToolStripMenuItem4");
+            this.fichierToolStripMenuItem4.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem4.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem4
             // 
             this.déconnexionToolStripMenuItem4.Name = "déconnexionToolStripMenuItem4";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem4, "déconnexionToolStripMenuItem4");
+            this.déconnexionToolStripMenuItem4.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem4.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem4.Click += new System.EventHandler(this.déconnexionToolStripMenuItem4_Click);
             // 
             // quitterToolStripMenuItem4
             // 
             this.quitterToolStripMenuItem4.Name = "quitterToolStripMenuItem4";
-            resources.ApplyResources(this.quitterToolStripMenuItem4, "quitterToolStripMenuItem4");
+            this.quitterToolStripMenuItem4.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem4.Text = "Quitter";
             this.quitterToolStripMenuItem4.Click += new System.EventHandler(this.quitterToolStripMenuItem4_Click);
             // 
             // applicationToolStripMenuItem1
@@ -1094,16 +1210,20 @@
             this.applicationToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem1});
             this.applicationToolStripMenuItem1.Name = "applicationToolStripMenuItem1";
-            resources.ApplyResources(this.applicationToolStripMenuItem1, "applicationToolStripMenuItem1");
+            this.applicationToolStripMenuItem1.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem1.Text = "Application";
             // 
             // refreshToolStripMenuItem1
             // 
             this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
-            resources.ApplyResources(this.refreshToolStripMenuItem1, "refreshToolStripMenuItem1");
+            this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem1.Text = "Refresh";
+            this.refreshToolStripMenuItem1.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
             // 
             // metroTabPage3
             // 
             this.metroTabPage3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.metroTabPage3.Controls.Add(this.chart1);
             this.metroTabPage3.Controls.Add(this.metroTile9);
             this.metroTabPage3.Controls.Add(this.label1);
             this.metroTabPage3.Controls.Add(this.dataBudget);
@@ -1111,8 +1231,11 @@
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 10;
-            resources.ApplyResources(this.metroTabPage3, "metroTabPage3");
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(1306, 611);
+            this.metroTabPage3.TabIndex = 9;
+            this.metroTabPage3.Text = "Budget";
             this.metroTabPage3.UseCustomBackColor = true;
             this.metroTabPage3.UseCustomForeColor = true;
             this.metroTabPage3.UseStyleColors = true;
@@ -1120,13 +1243,35 @@
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
+            // chart1
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(641, 143);
+            this.chart1.Name = "chart1";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Budget";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(594, 426);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "chart1";
+            title3.Name = "Title1";
+            this.chart1.Titles.Add(title3);
+            // 
             // metroTile9
             // 
             this.metroTile9.ActiveControl = null;
             this.metroTile9.BackColor = System.Drawing.Color.DimGray;
             this.metroTile9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            resources.ApplyResources(this.metroTile9, "metroTile9");
+            this.metroTile9.Location = new System.Drawing.Point(296, 61);
             this.metroTile9.Name = "metroTile9";
+            this.metroTile9.Size = new System.Drawing.Size(95, 43);
+            this.metroTile9.TabIndex = 6;
+            this.metroTile9.Text = "Fixer Budget";
             this.metroTile9.UseCustomBackColor = true;
             this.metroTile9.UseCustomForeColor = true;
             this.metroTile9.UseSelectable = true;
@@ -1136,16 +1281,23 @@
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(56, 84);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Liste des budgets";
             // 
             // dataBudget
             // 
             this.dataBudget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataBudget, "dataBudget");
+            this.dataBudget.Location = new System.Drawing.Point(90, 143);
             this.dataBudget.Name = "dataBudget";
             this.dataBudget.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataBudget.Size = new System.Drawing.Size(439, 426);
+            this.dataBudget.TabIndex = 4;
             this.dataBudget.DoubleClick += new System.EventHandler(this.dataBudget_DoubleClick);
             // 
             // menuStrip6
@@ -1153,8 +1305,11 @@
             this.menuStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem5,
             this.applicationToolStripMenuItem2});
-            resources.ApplyResources(this.menuStrip6, "menuStrip6");
+            this.menuStrip6.Location = new System.Drawing.Point(0, 0);
             this.menuStrip6.Name = "menuStrip6";
+            this.menuStrip6.Size = new System.Drawing.Size(1306, 24);
+            this.menuStrip6.TabIndex = 3;
+            this.menuStrip6.Text = "menuStrip6";
             // 
             // fichierToolStripMenuItem5
             // 
@@ -1162,18 +1317,21 @@
             this.déconnexionToolStripMenuItem5,
             this.quitterToolStripMenuItem5});
             this.fichierToolStripMenuItem5.Name = "fichierToolStripMenuItem5";
-            resources.ApplyResources(this.fichierToolStripMenuItem5, "fichierToolStripMenuItem5");
+            this.fichierToolStripMenuItem5.Size = new System.Drawing.Size(54, 20);
+            this.fichierToolStripMenuItem5.Text = "Fichier";
             // 
             // déconnexionToolStripMenuItem5
             // 
             this.déconnexionToolStripMenuItem5.Name = "déconnexionToolStripMenuItem5";
-            resources.ApplyResources(this.déconnexionToolStripMenuItem5, "déconnexionToolStripMenuItem5");
+            this.déconnexionToolStripMenuItem5.Size = new System.Drawing.Size(143, 22);
+            this.déconnexionToolStripMenuItem5.Text = "Déconnexion";
             this.déconnexionToolStripMenuItem5.Click += new System.EventHandler(this.déconnexionToolStripMenuItem5_Click);
             // 
             // quitterToolStripMenuItem5
             // 
             this.quitterToolStripMenuItem5.Name = "quitterToolStripMenuItem5";
-            resources.ApplyResources(this.quitterToolStripMenuItem5, "quitterToolStripMenuItem5");
+            this.quitterToolStripMenuItem5.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem5.Text = "Quitter";
             this.quitterToolStripMenuItem5.Click += new System.EventHandler(this.quitterToolStripMenuItem5_Click);
             // 
             // applicationToolStripMenuItem2
@@ -1181,20 +1339,26 @@
             this.applicationToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem2});
             this.applicationToolStripMenuItem2.Name = "applicationToolStripMenuItem2";
-            resources.ApplyResources(this.applicationToolStripMenuItem2, "applicationToolStripMenuItem2");
+            this.applicationToolStripMenuItem2.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem2.Text = "Application";
             // 
             // refreshToolStripMenuItem2
             // 
             this.refreshToolStripMenuItem2.Name = "refreshToolStripMenuItem2";
-            resources.ApplyResources(this.refreshToolStripMenuItem2, "refreshToolStripMenuItem2");
+            this.refreshToolStripMenuItem2.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem2.Text = "Refresh";
+            this.refreshToolStripMenuItem2.Click += new System.EventHandler(this.refreshToolStripMenuItem2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-23, 0);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -1205,8 +1369,10 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
-            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Location = new System.Drawing.Point(-4, 1);
             this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1395, 64);
+            this.panel1.TabIndex = 2;
             // 
             // groupBox5
             // 
@@ -1215,53 +1381,90 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.lbldate);
             this.groupBox5.Controls.Add(this.label6);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Location = new System.Drawing.Point(1088, 8);
             this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(304, 53);
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
             // lblheure
             // 
-            resources.ApplyResources(this.lblheure, "lblheure");
+            this.lblheure.AutoSize = true;
+            this.lblheure.Location = new System.Drawing.Point(189, 31);
             this.lblheure.Name = "lblheure";
+            this.lblheure.Size = new System.Drawing.Size(34, 13);
+            this.lblheure.TabIndex = 0;
+            this.lblheure.Text = "heure";
             this.lblheure.TextChanged += new System.EventHandler(this.lblheure_TextChanged);
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(144, 31);
             this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Heure : ";
             // 
             // lbldate
             // 
-            resources.ApplyResources(this.lbldate, "lbldate");
+            this.lbldate.AutoSize = true;
+            this.lbldate.Location = new System.Drawing.Point(54, 31);
             this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(30, 13);
+            this.lbldate.TabIndex = 0;
+            this.lbldate.Text = "Date";
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 31);
             this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Date :";
             // 
             // pictureBox5
             // 
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox5.Location = new System.Drawing.Point(934, 0);
             this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(100, 61);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox4.Location = new System.Drawing.Point(702, 0);
             this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(92, 61);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox3.Location = new System.Drawing.Point(459, 0);
             this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(85, 61);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(209, 0);
             this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 61);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // timer1
@@ -1270,13 +1473,19 @@
             // 
             // Index
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroTabControl1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.miniToolStrip;
             this.Name = "Index";
+            this.Text = "Index";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Index_FormClosed);
             this.Load += new System.EventHandler(this.Index_Load);
@@ -1307,8 +1516,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataNonPaiment)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDemande)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataActiviteActuel)).EndInit();
             this.menuStrip2.ResumeLayout(false);
@@ -1320,6 +1527,7 @@
             this.menuStrip3.PerformLayout();
             this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBudget)).EndInit();
             this.menuStrip6.ResumeLayout(false);
             this.menuStrip6.PerformLayout();
@@ -1345,7 +1553,6 @@
         private System.Windows.Forms.MenuStrip menuStrip4;
         private MetroFramework.Controls.MetroTabPage metroTabPage6;
         private System.Windows.Forms.MenuStrip menuStrip5;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem2;
@@ -1360,12 +1567,10 @@
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem3;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem4;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private System.Windows.Forms.MenuStrip menuStrip6;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem5;
@@ -1376,11 +1581,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroComboBox comboAnnee;
         private System.Windows.Forms.DataGridView dataActivite;
-        private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile btModifierActivite;
         private MetroFramework.Controls.MetroTile btSupprimerActivite;
         private MetroFramework.Controls.MetroTile btAjouter;
-        private MetroFramework.Controls.MetroTile metroTile3;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroRadioButton r1;
         private MetroFramework.Controls.MetroRadioButton r2;
@@ -1390,27 +1593,17 @@
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile5;
         private MetroFramework.Controls.MetroTile metroTile6;
-        private MetroFramework.Controls.MetroTile metroTile7;
-        private MetroFramework.Controls.MetroTile metroTile8;
-        private MetroFramework.Controls.MetroTextBox txtRecherhce;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private System.Windows.Forms.DataGridView dataBudget;
         private System.Windows.Forms.DataGridView dataDemande;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.DataGridView dataActiviteActuel;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private MetroFramework.Controls.MetroRadioButton rdEnfant;
-        private MetroFramework.Controls.MetroRadioButton rdConjoint;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroTile btRefresh;
         private MetroFramework.Controls.MetroTextBox txtChercher;
         private System.Windows.Forms.DataGridView dataAdherent;
         private MetroFramework.Controls.MetroTile btSupprimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataOrganisation;
-        private System.Windows.Forms.DataGridView dataUtilisateur;
-        private MetroFramework.Controls.MetroTile metroTile9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -1443,5 +1636,14 @@
         private System.Windows.Forms.Label lbldate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer timer1;
+        public MetroFramework.Controls.MetroTabControl metroTabControl1;
+        public MetroFramework.Controls.MetroTabPage metroTabPage2;
+        public MetroFramework.Controls.MetroTabPage metroTabPage3;
+        public MetroFramework.Controls.MetroTile metroTile8;
+        public MetroFramework.Controls.MetroTextBox txtRecherhce;
+        public System.Windows.Forms.DataGridView dataUtilisateur;
+        public System.Windows.Forms.DataGridView dataBudget;
+        public MetroFramework.Controls.MetroTile metroTile9;
+        public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

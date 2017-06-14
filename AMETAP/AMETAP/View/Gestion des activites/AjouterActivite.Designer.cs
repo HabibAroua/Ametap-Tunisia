@@ -56,9 +56,14 @@
             this.viewMontant = new MetroFramework.Controls.MetroLabel();
             this.comboNbr_point = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.dt = new MetroFramework.Controls.MetroLabel();
+            this.txtNomActivite = new MetroFramework.Controls.MetroTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdList = new MetroFramework.Controls.MetroRadioButton();
+            this.rdManuel = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapacite)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -72,16 +77,16 @@
             // 
             // txtCapacite
             // 
-            this.txtCapacite.Location = new System.Drawing.Point(196, 191);
+            this.txtCapacite.Location = new System.Drawing.Point(233, 219);
             this.txtCapacite.Name = "txtCapacite";
-            this.txtCapacite.Size = new System.Drawing.Size(264, 20);
+            this.txtCapacite.Size = new System.Drawing.Size(288, 20);
             this.txtCapacite.TabIndex = 2;
             this.txtCapacite.ValueChanged += new System.EventHandler(this.txtCapacite_ValueChanged);
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 192);
+            this.metroLabel2.Location = new System.Drawing.Point(7, 220);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(60, 19);
             this.metroLabel2.TabIndex = 3;
@@ -90,15 +95,15 @@
             // txtDateDebut
             // 
             this.txtDateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateDebut.Location = new System.Drawing.Point(196, 320);
+            this.txtDateDebut.Location = new System.Drawing.Point(233, 343);
             this.txtDateDebut.Name = "txtDateDebut";
-            this.txtDateDebut.Size = new System.Drawing.Size(264, 20);
+            this.txtDateDebut.Size = new System.Drawing.Size(288, 20);
             this.txtDateDebut.TabIndex = 6;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(8, 321);
+            this.metroLabel4.Location = new System.Drawing.Point(8, 343);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(74, 19);
             this.metroLabel4.TabIndex = 8;
@@ -107,7 +112,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(8, 358);
+            this.metroLabel5.Location = new System.Drawing.Point(8, 387);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(54, 19);
             this.metroLabel5.TabIndex = 10;
@@ -116,15 +121,15 @@
             // txtDatefin
             // 
             this.txtDatefin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDatefin.Location = new System.Drawing.Point(196, 357);
+            this.txtDatefin.Location = new System.Drawing.Point(233, 386);
             this.txtDatefin.Name = "txtDatefin";
-            this.txtDatefin.Size = new System.Drawing.Size(264, 20);
+            this.txtDatefin.Size = new System.Drawing.Size(288, 20);
             this.txtDatefin.TabIndex = 9;
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(4, 400);
+            this.metroLabel7.Location = new System.Drawing.Point(4, 436);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(78, 19);
             this.metroLabel7.TabIndex = 13;
@@ -136,7 +141,7 @@
             // 
             // 
             this.txtPrixUnitaire.CustomButton.Image = null;
-            this.txtPrixUnitaire.CustomButton.Location = new System.Drawing.Point(242, 1);
+            this.txtPrixUnitaire.CustomButton.Location = new System.Drawing.Point(266, 1);
             this.txtPrixUnitaire.CustomButton.Name = "";
             this.txtPrixUnitaire.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtPrixUnitaire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -145,7 +150,7 @@
             this.txtPrixUnitaire.CustomButton.UseSelectable = true;
             this.txtPrixUnitaire.CustomButton.Visible = false;
             this.txtPrixUnitaire.Lines = new string[0];
-            this.txtPrixUnitaire.Location = new System.Drawing.Point(196, 400);
+            this.txtPrixUnitaire.Location = new System.Drawing.Point(233, 432);
             this.txtPrixUnitaire.MaxLength = 32767;
             this.txtPrixUnitaire.Name = "txtPrixUnitaire";
             this.txtPrixUnitaire.PasswordChar = '\0';
@@ -154,7 +159,7 @@
             this.txtPrixUnitaire.SelectionLength = 0;
             this.txtPrixUnitaire.SelectionStart = 0;
             this.txtPrixUnitaire.ShortcutsEnabled = true;
-            this.txtPrixUnitaire.Size = new System.Drawing.Size(264, 23);
+            this.txtPrixUnitaire.Size = new System.Drawing.Size(288, 23);
             this.txtPrixUnitaire.TabIndex = 14;
             this.txtPrixUnitaire.UseSelectable = true;
             this.txtPrixUnitaire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -184,7 +189,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 448);
+            this.metroLabel3.Location = new System.Drawing.Point(8, 479);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(95, 19);
             this.metroLabel3.TabIndex = 17;
@@ -196,7 +201,7 @@
             // 
             // 
             this.txtMontantPrevu.CustomButton.Image = null;
-            this.txtMontantPrevu.CustomButton.Location = new System.Drawing.Point(242, 1);
+            this.txtMontantPrevu.CustomButton.Location = new System.Drawing.Point(266, 1);
             this.txtMontantPrevu.CustomButton.Name = "";
             this.txtMontantPrevu.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtMontantPrevu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -205,7 +210,7 @@
             this.txtMontantPrevu.CustomButton.UseSelectable = true;
             this.txtMontantPrevu.CustomButton.Visible = false;
             this.txtMontantPrevu.Lines = new string[0];
-            this.txtMontantPrevu.Location = new System.Drawing.Point(196, 448);
+            this.txtMontantPrevu.Location = new System.Drawing.Point(233, 475);
             this.txtMontantPrevu.MaxLength = 32767;
             this.txtMontantPrevu.Name = "txtMontantPrevu";
             this.txtMontantPrevu.PasswordChar = '\0';
@@ -214,11 +219,12 @@
             this.txtMontantPrevu.SelectionLength = 0;
             this.txtMontantPrevu.SelectionStart = 0;
             this.txtMontantPrevu.ShortcutsEnabled = true;
-            this.txtMontantPrevu.Size = new System.Drawing.Size(264, 23);
+            this.txtMontantPrevu.Size = new System.Drawing.Size(288, 23);
             this.txtMontantPrevu.TabIndex = 18;
             this.txtMontantPrevu.UseSelectable = true;
             this.txtMontantPrevu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMontantPrevu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontantPrevu.TextChanged += new System.EventHandler(this.txtMontantPrevu_TextChanged);
             // 
             // metroLabel6
             // 
@@ -233,16 +239,16 @@
             // 
             this.comboOrganisateur.FormattingEnabled = true;
             this.comboOrganisateur.ItemHeight = 23;
-            this.comboOrganisateur.Location = new System.Drawing.Point(196, 485);
+            this.comboOrganisateur.Location = new System.Drawing.Point(233, 522);
             this.comboOrganisateur.Name = "comboOrganisateur";
-            this.comboOrganisateur.Size = new System.Drawing.Size(264, 29);
+            this.comboOrganisateur.Size = new System.Drawing.Size(288, 29);
             this.comboOrganisateur.TabIndex = 21;
             this.comboOrganisateur.UseSelectable = true;
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(8, 495);
+            this.metroLabel8.Location = new System.Drawing.Point(6, 532);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(85, 19);
             this.metroLabel8.TabIndex = 22;
@@ -252,7 +258,7 @@
             // 
             this.groupBox1.Controls.Add(this.rdActiviteLoisir);
             this.groupBox1.Controls.Add(this.rdActiviteCulturel);
-            this.groupBox1.Location = new System.Drawing.Point(196, 63);
+            this.groupBox1.Location = new System.Drawing.Point(233, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(264, 40);
             this.groupBox1.TabIndex = 23;
@@ -273,7 +279,7 @@
             // rdActiviteCulturel
             // 
             this.rdActiviteCulturel.AutoSize = true;
-            this.rdActiviteCulturel.Location = new System.Drawing.Point(6, 19);
+            this.rdActiviteCulturel.Location = new System.Drawing.Point(6, 15);
             this.rdActiviteCulturel.Name = "rdActiviteCulturel";
             this.rdActiviteCulturel.Size = new System.Drawing.Size(115, 15);
             this.rdActiviteCulturel.TabIndex = 0;
@@ -286,16 +292,17 @@
             // 
             this.comboNomActivite.FormattingEnabled = true;
             this.comboNomActivite.ItemHeight = 23;
-            this.comboNomActivite.Location = new System.Drawing.Point(196, 141);
+            this.comboNomActivite.Location = new System.Drawing.Point(384, 176);
             this.comboNomActivite.Name = "comboNomActivite";
-            this.comboNomActivite.Size = new System.Drawing.Size(264, 29);
+            this.comboNomActivite.Size = new System.Drawing.Size(137, 29);
             this.comboNomActivite.TabIndex = 24;
             this.comboNomActivite.UseSelectable = true;
+            this.comboNomActivite.Click += new System.EventHandler(this.comboNomActivite_Click);
             // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(8, 284);
+            this.metroLabel9.Location = new System.Drawing.Point(8, 302);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(128, 19);
             this.metroLabel9.TabIndex = 28;
@@ -304,15 +311,15 @@
             // dateFinInscription
             // 
             this.dateFinInscription.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFinInscription.Location = new System.Drawing.Point(196, 284);
+            this.dateFinInscription.Location = new System.Drawing.Point(233, 302);
             this.dateFinInscription.Name = "dateFinInscription";
-            this.dateFinInscription.Size = new System.Drawing.Size(264, 20);
+            this.dateFinInscription.Size = new System.Drawing.Size(288, 20);
             this.dateFinInscription.TabIndex = 27;
             // 
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(7, 245);
+            this.metroLabel10.Location = new System.Drawing.Point(7, 260);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(148, 19);
             this.metroLabel10.TabIndex = 26;
@@ -322,15 +329,15 @@
             // 
             this.txtDateDebutInscription.Enabled = false;
             this.txtDateDebutInscription.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateDebutInscription.Location = new System.Drawing.Point(196, 244);
+            this.txtDateDebutInscription.Location = new System.Drawing.Point(233, 259);
             this.txtDateDebutInscription.Name = "txtDateDebutInscription";
-            this.txtDateDebutInscription.Size = new System.Drawing.Size(264, 20);
+            this.txtDateDebutInscription.Size = new System.Drawing.Size(288, 20);
             this.txtDateDebutInscription.TabIndex = 25;
             // 
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(8, 111);
+            this.metroLabel11.Location = new System.Drawing.Point(7, 111);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(113, 19);
             this.metroLabel11.TabIndex = 29;
@@ -339,46 +346,109 @@
             // viewMontant
             // 
             this.viewMontant.AutoSize = true;
-            this.viewMontant.Location = new System.Drawing.Point(269, 111);
+            this.viewMontant.Location = new System.Drawing.Point(294, 111);
             this.viewMontant.Name = "viewMontant";
-            this.viewMontant.Size = new System.Drawing.Size(15, 19);
+            this.viewMontant.Size = new System.Drawing.Size(0, 0);
             this.viewMontant.TabIndex = 30;
-            this.viewMontant.Text = "x";
             // 
             // comboNbr_point
             // 
             this.comboNbr_point.FormattingEnabled = true;
             this.comboNbr_point.ItemHeight = 23;
-            this.comboNbr_point.Location = new System.Drawing.Point(196, 546);
+            this.comboNbr_point.Location = new System.Drawing.Point(233, 580);
             this.comboNbr_point.Name = "comboNbr_point";
-            this.comboNbr_point.Size = new System.Drawing.Size(264, 29);
+            this.comboNbr_point.Size = new System.Drawing.Size(288, 29);
             this.comboNbr_point.TabIndex = 31;
             this.comboNbr_point.UseSelectable = true;
             // 
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(15, 556);
+            this.metroLabel12.Location = new System.Drawing.Point(15, 580);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(112, 19);
             this.metroLabel12.TabIndex = 32;
             this.metroLabel12.Text = "Nombre de point";
             // 
-            // metroLabel13
+            // dt
             // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(334, 110);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(24, 19);
-            this.metroLabel13.TabIndex = 33;
-            this.metroLabel13.Text = "DT";
+            this.dt.AutoSize = true;
+            this.dt.Location = new System.Drawing.Point(344, 111);
+            this.dt.Name = "dt";
+            this.dt.Size = new System.Drawing.Size(24, 19);
+            this.dt.TabIndex = 33;
+            this.dt.Text = "DT";
+            // 
+            // txtNomActivite
+            // 
+            // 
+            // 
+            // 
+            this.txtNomActivite.CustomButton.Image = null;
+            this.txtNomActivite.CustomButton.Location = new System.Drawing.Point(95, 1);
+            this.txtNomActivite.CustomButton.Name = "";
+            this.txtNomActivite.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNomActivite.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNomActivite.CustomButton.TabIndex = 1;
+            this.txtNomActivite.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNomActivite.CustomButton.UseSelectable = true;
+            this.txtNomActivite.CustomButton.Visible = false;
+            this.txtNomActivite.Lines = new string[0];
+            this.txtNomActivite.Location = new System.Drawing.Point(233, 182);
+            this.txtNomActivite.MaxLength = 32767;
+            this.txtNomActivite.Name = "txtNomActivite";
+            this.txtNomActivite.PasswordChar = '\0';
+            this.txtNomActivite.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNomActivite.SelectedText = "";
+            this.txtNomActivite.SelectionLength = 0;
+            this.txtNomActivite.SelectionStart = 0;
+            this.txtNomActivite.ShortcutsEnabled = true;
+            this.txtNomActivite.Size = new System.Drawing.Size(117, 23);
+            this.txtNomActivite.TabIndex = 34;
+            this.txtNomActivite.UseSelectable = true;
+            this.txtNomActivite.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNomActivite.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rdList);
+            this.groupBox2.Controls.Add(this.rdManuel);
+            this.groupBox2.Location = new System.Drawing.Point(233, 133);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(288, 37);
+            this.groupBox2.TabIndex = 35;
+            this.groupBox2.TabStop = false;
+            // 
+            // rdList
+            // 
+            this.rdList.AutoSize = true;
+            this.rdList.Location = new System.Drawing.Point(125, 14);
+            this.rdList.Name = "rdList";
+            this.rdList.Size = new System.Drawing.Size(41, 15);
+            this.rdList.TabIndex = 1;
+            this.rdList.Text = "List";
+            this.rdList.UseSelectable = true;
+            this.rdList.Click += new System.EventHandler(this.rdList_Click);
+            // 
+            // rdManuel
+            // 
+            this.rdManuel.AutoSize = true;
+            this.rdManuel.Location = new System.Drawing.Point(6, 14);
+            this.rdManuel.Name = "rdManuel";
+            this.rdManuel.Size = new System.Drawing.Size(63, 15);
+            this.rdManuel.TabIndex = 0;
+            this.rdManuel.Text = "Manuel";
+            this.rdManuel.UseSelectable = true;
+            this.rdManuel.Click += new System.EventHandler(this.rdManuel_Click);
             // 
             // AjouterActivite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 648);
-            this.Controls.Add(this.metroLabel13);
+            this.ClientSize = new System.Drawing.Size(608, 648);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.txtNomActivite);
+            this.Controls.Add(this.dt);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.comboNbr_point);
             this.Controls.Add(this.viewMontant);
@@ -405,12 +475,16 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.txtCapacite);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AjouterActivite";
             this.Text = "Ajouter une activité";
             this.Load += new System.EventHandler(this.AjouterActivite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtCapacite)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,6 +520,10 @@
         private MetroFramework.Controls.MetroLabel viewMontant;
         private MetroFramework.Controls.MetroComboBox comboNbr_point;
         private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel dt;
+        private MetroFramework.Controls.MetroTextBox txtNomActivite;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroRadioButton rdList;
+        private MetroFramework.Controls.MetroRadioButton rdManuel;
     }
 }

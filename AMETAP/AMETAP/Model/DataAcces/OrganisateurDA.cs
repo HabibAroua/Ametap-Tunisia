@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
 using System.Data;
+using AMETAP.Model.DataAcces.PLSQL;
 namespace AMETAP.Model.DataAcces
 {
     public class OrganisateurDA :IData
@@ -59,8 +60,8 @@ namespace AMETAP.Model.DataAcces
             try
             {
                 int id = (int)o;
-             
-                string req = string.Format("delete Organisateur where id="+id+" ");
+                Pl_SQL plsql = new Pl_SQL();
+                string req = string.Format(plsql.SupprimerOrganisateur(id));
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
@@ -81,7 +82,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select * from Organisateur", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Organisateur.id , Organisateur.nom_organisateur , Organisateur.Email , Organisateur.Adresse , Club.Description from Organisateur , Club where Organisateur.id=Club.id Union ALL Select Organisateur.id, Organisateur.nom_organisateur, Organisateur.Email, Organisateur.Adresse, Centre.Description from Organisateur , Centre where Organisateur.id = Centre.id Union All Select Organisateur.id, Organisateur.nom_organisateur, Organisateur.Email, Organisateur.Adresse, Agence_Voyage.Description from Organisateur , Agence_Voyage where Organisateur.id = Agence_Voyage.id ", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Organisateur");
             tab1 = dtst.Tables["Organisateur"];

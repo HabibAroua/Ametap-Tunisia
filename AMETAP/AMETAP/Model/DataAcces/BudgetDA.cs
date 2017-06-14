@@ -13,8 +13,6 @@ namespace AMETAP.Model.DataAcces
     {
         OleDbConnection cn;
         OleDbCommand cmd;
-        OleDbDataAdapter adap1;
-        DataTable tab1;
         public BudgetDA()
         {
             cn = new OleDbConnection(Properties.Settings.Default.ch);
@@ -151,22 +149,38 @@ namespace AMETAP.Model.DataAcces
 
         public void AjouterValeurBudget(int id,int valeur)
         {
-            //try
-            //{
+            try
+            {
                 string req = string.Format("update Budget set BUDGET_ACTUEL=BUDGET_ACTUEL+"+valeur+"where id="+id);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
                 cmd.ExecuteNonQuery();
-            //}
-            //catch (OleDbException)
-            //{
+            }
+            catch (OleDbException)
+            {
                 
-            //}
-            //finally
-            //{
+            }
+            finally
+            {
                 cn.Close();
-           // }
+            }
+        }
+
+        public List<Budget>listBudget()
+        {
+            List<Budget> list = new List<Budget>();
+            string req = string.Format("Select  annee , Budget_Actuel from Budget order by Annee asc");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                list.Add(new Budget((int)Reader.GetDecimal(0),(double)Reader.GetDecimal(1)));
+            }
+            Reader.Close();
+            cn.Close();
+            return list;
         }
     }
 }

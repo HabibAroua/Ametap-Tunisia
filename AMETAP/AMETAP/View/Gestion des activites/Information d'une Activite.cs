@@ -50,7 +50,6 @@ namespace AMETAP.View.Gestion_des_activites
             List<Participation> list = new List<Participation>();
             list= pc.DemandeListAdherent(getIdActivite());
             int reste = int.Parse(viewReste.Text.ToString());
-            int i = 0;
             int nbr = 0;
             foreach (Participation l in list)
             {
@@ -65,7 +64,7 @@ namespace AMETAP.View.Gestion_des_activites
             {
                 
             }
-            Mailing m;
+      
             //while (i != reste)
             //{
                 //foreach (Participation l in list)

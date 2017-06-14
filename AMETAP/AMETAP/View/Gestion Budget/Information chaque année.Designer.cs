@@ -42,6 +42,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information_chaque_année));
             this.label1 = new System.Windows.Forms.Label();
             this.viewAnnee = new System.Windows.Forms.Label();
             this.btAfficher = new MetroFramework.Controls.MetroButton();
@@ -293,6 +294,9 @@
             this.Controls.Add(this.btAfficher);
             this.Controls.Add(this.viewAnnee);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Information_chaque_année";
             this.Text = "Information chaque année";
             ((System.ComponentModel.ISupportInitialize)(this.dataActivite)).EndInit();

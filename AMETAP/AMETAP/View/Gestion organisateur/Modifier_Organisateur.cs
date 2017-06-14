@@ -51,6 +51,9 @@ namespace AMETAP.View.Gestion_organisateur
             else
             {
                 oc.modifier(id, txtNom.Text.ToString(), txtEmail.Text.ToString(), txtAdresse.Text.ToString(), txtDescription.Text.ToString());
+                Index i = new Index();
+                i.Index_Load(sender, e);
+                this.Close();
             }
         }
     }

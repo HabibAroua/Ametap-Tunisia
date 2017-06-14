@@ -9,8 +9,20 @@ namespace AMETAP.Model.DataAcces
 {
     public class ConjointDA :IData
     {
+        OleDbConnection cn;
+        OleDbCommand cmd;
         public ConjointDA()
         {
+            try
+            {
+                cn = new OleDbConnection(Properties.Settings.Default.ch);
+                cmd = new OleDbCommand();
+            }
+            catch (OleDbException)
+            {
+
+            }
+
 
         }
 
@@ -24,7 +36,24 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean delete(Object o)
         {
-            return false;
+            try
+            {
+                int cin = (int)o;
+                string req = string.Format("delete Conjoint where cin=" + cin);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public DataTable sellectAll()
         {
@@ -39,6 +68,22 @@ namespace AMETAP.Model.DataAcces
             adap1.Fill(dtst, "Conjoint");
             tab1 = dtst.Tables["Conjoint"];
             return tab1;
+        }
+
+        public int findCinByMatricule(int matricule)
+        {
+            int cin = 0;
+            string req = string.Format("select Conjoint.cin from Conjoint where matricule="+matricule);
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                cin = (int)Reader.GetDecimal(0);
+            }
+            Reader.Close();
+            cn.Close();
+            return cin;
         }
 
     }

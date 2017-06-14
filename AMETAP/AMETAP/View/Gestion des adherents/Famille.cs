@@ -16,6 +16,7 @@ namespace AMETAP.View.Gestion_des_adherents
         public String matricule;
         EnfantController ec;
         ConjointController cc;
+        ParticipantController pC;
 
         public void setMatricule(String matricule)
         {
@@ -30,12 +31,13 @@ namespace AMETAP.View.Gestion_des_adherents
         {
             ec = new EnfantController();
             cc = new ConjointController();
+            pC = new ParticipantController();
             InitializeComponent();
         }
 
         private void Famille_MouseLeave(object sender, EventArgs e)
         {
-            //this.Close();
+            
         }
 
         private void rdConjoint_Click(object sender, EventArgs e)
@@ -46,6 +48,11 @@ namespace AMETAP.View.Gestion_des_adherents
         private void rdEnfant_Click(object sender, EventArgs e)
         {
             ec.afficheEnfant(dataFamille, matricule);
+        }
+
+        private void rdTous_Click(object sender, EventArgs e)
+        {
+            pC.getAllMembreFamilleByMatricule(dataFamille, int.Parse(matricule));
         }
     }
 }

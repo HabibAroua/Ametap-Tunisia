@@ -19,7 +19,12 @@ namespace AMETAP.Model.DataAcces.PLSQL
 
         public String SupprimerClub(int id)
         {
-            return "Begin SupprimerClub("+id+"); end;  ";
+            return "Begin SupprimerClub(" + id + "); end;  ";
+        }
+
+        public String SupprimerOrganisateur(int id)
+        {
+            return "Begin SupprimerOrganisateur(" + id+"); end;  ";
         }
 
         public String SupprimerAgence(int id)
@@ -81,9 +86,11 @@ namespace AMETAP.Model.DataAcces.PLSQL
             return "Begin SupprimerActivite(" + id + "," + montant_prevu + "); end;";
         }
 
-        public String ModifierActivite(int id, String nomActivite, int capacite, int idTypeActivite, int idOrganisateur)
+        public String ModifierActivite(int id, String nom_activite, int capacite, String date_fin_inscription,
+            String date_debut, String date_fin, double prix_unitaire, double montant_prevu, int nbr_point, int idBudgetCat,
+            double provisoire_ajouter, int idOldBudgetCat)
         {
-            return "Begin ModifierActivite(" + id + ",'" + nomActivite + "'," + capacite + "," + idTypeActivite + "," + idOrganisateur + "); end;";
+            return "Begin ModifierActivite(" + id + ",'" + nom_activite + "'," + capacite + ",'" + date_fin_inscription + "','" + date_debut + "' ,'"+date_fin+"',"+prix_unitaire+","+montant_prevu+","+nbr_point+","+idBudgetCat+","+ provisoire_ajouter+","+ idOldBudgetCat+"); end;";
         }
 
         public String AccepterDemandeAdherent(int matricule,int idActivite,int id,int valeur)

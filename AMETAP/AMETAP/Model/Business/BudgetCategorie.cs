@@ -27,5 +27,10 @@ namespace AMETAP.Model.Business
             this.id = id;
             this.montant = montant;
         }
+
+        public BudgetCategorie()
+        {
+
+        }
     }
 }

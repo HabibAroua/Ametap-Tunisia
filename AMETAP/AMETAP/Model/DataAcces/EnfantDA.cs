@@ -10,9 +10,19 @@ namespace AMETAP.Model.DataAcces
 {
     public class EnfantDA :IData
     {
+        OleDbConnection cn;
+        OleDbCommand cmd;
         public EnfantDA()
         {
+            try
+            {
+                cn = new OleDbConnection(Properties.Settings.Default.ch);
+                cmd = new OleDbCommand();
+            }
+            catch (OleDbException)
+            {
 
+            }
         }
 
         public Boolean insert(Object o)
@@ -25,7 +35,24 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean delete(Object o)
         {
-            return true;
+            try
+            {
+                int id = (int)o;
+                string req = string.Format("delete enfant where id="+id);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public DataTable sellectAll()
         {
@@ -40,6 +67,22 @@ namespace AMETAP.Model.DataAcces
             adap1.Fill(dtst, "Enfant");
             tab1 = dtst.Tables["Enfant"];
             return tab1;
+        }
+
+        public List<int> findIdByMatricule(int matricule)
+        {
+            List<int> list = new List<int>();
+            string req = string.Format("select distinct Enfant.id from Enfant where matricule=" + matricule);
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                list.Add((int)Reader.GetDecimal(0));
+            }
+            Reader.Close();
+            cn.Close();
+            return list;
         }
     }
 }

@@ -75,3 +75,4 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debu
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Gestion_des_activites.Information_d_une_Activite.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.Index.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\obj\Debug\AMETAP.View.SplashScreen.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\SMS\AMETAP\AMETAP\bin\Debug\Tulpep.NotificationWindow.dll

@@ -73,16 +73,10 @@ namespace AMETAP
         private void btConnexion_Click(object sender, EventArgs e)
         {
             Boolean test= ac.Connecter(txtLogin.Text.ToString(),txtPassword.Text.ToString());
-            if(test==true)
+            if (test == true)
             {
-                View.Index m = new View.Index();
-                m.Show();
                 this.Hide();
-            }
-            else
-            {
-                Application.Restart();
-            }
+            }  
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

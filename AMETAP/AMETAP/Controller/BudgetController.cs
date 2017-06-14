@@ -51,6 +51,11 @@ namespace AMETAP.Controller
             return bDA.getBudget(annee);
         }
 
+        public List<Budget>listBudget()
+        {
+            return bDA.listBudget();
+        }
+
 
     }
 }

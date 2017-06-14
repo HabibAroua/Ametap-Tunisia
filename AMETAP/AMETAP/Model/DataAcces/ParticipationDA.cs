@@ -36,7 +36,24 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean delete(Object o)
         {
-            return false;
+            try
+            {
+                int matricule = (int)o;
+                string req = string.Format("delete participation where matriculePart="+matricule);
+                cmd.Connection = cn;
+                cn.Open();
+                cmd.CommandText = req;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OleDbException)
+            {
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
 
         public DataTable sellectAll()
@@ -347,6 +364,8 @@ namespace AMETAP.Model.DataAcces
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
             return tab1;
-        }   
+        }
+        
+           
     }
 }

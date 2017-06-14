@@ -35,6 +35,7 @@ namespace AMETAP.View
             {
                 Cryptage c = new Cryptage();
                 ac.Inscrire(int.Parse(txtMatricule.Text.ToString()), txtLogin.Text.ToString(),c.Encrypt(txtPassword.Text.ToString()));
+                this.Close();
             }
             else
             {
@@ -98,7 +99,7 @@ namespace AMETAP.View
 
         private void Inscription_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+           
         }
     }
 }

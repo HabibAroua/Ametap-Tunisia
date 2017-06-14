@@ -83,14 +83,14 @@ namespace AMETAP.Model.DataAcces
         public Admin Verif(String login)
         {
             Admin a=null;
-            string req = string.Format("SELECT login , password  FROM admin where login='"+login+"'");
+            string req = string.Format("SELECT login , password , estAdmin  FROM admin where login='"+login+"'");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
             while (Reader.Read())
             {
                 Personnel p = new Personnel();
-                a = new Admin(null,Reader.GetString(0), Reader.GetString(1));
+                a = new Admin(null,Reader.GetString(0), Reader.GetString(1),Reader.GetString(2));
             }
             Reader.Close();
             cn.Close();
@@ -112,7 +112,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Admin.login from Personnel , Admin where (Personnel.matricule=Admin.matricule) AND ((Admin.login LIKE LOWER('" + objet + "%') or Admin.login LIKE UPPER('" + objet + "%')) )", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.cin, Personnel.nom, Personnel.prenom, Personnel.ETAT_CIVIL, Personnel.NBR_ENFANT, Personnel.DATE_NAISSAINCE,Personnel.lieu,Personnel.adresse,Personnel.Tel , Admin.login from Personnel , Admin where (Personnel.matricule=Admin.matricule) AND ((Personnel.nom LIKE LOWER('" + objet + "%') or Personnel.nom LIKE UPPER('" + objet + "%')) )", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Adherent");
             tab1 = dtst.Tables["Adherent"];

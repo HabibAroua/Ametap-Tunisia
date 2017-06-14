@@ -15,12 +15,14 @@ namespace AMETAP.Controller
         Agence_VoyageController avc;
         ClubController cc;
         OrganisateurDA oDA;
+        ActiviteDA aDA;
         public OrganisateurController()
         {
             cec = new CentreController();
             avc = new Agence_VoyageController();
             cc = new ClubController();
             oDA = new OrganisateurDA();
+            aDA = new ActiviteDA();
 
         }
         public void AjouterOrganisateur(String type, int id, String nom, String email, String adresse, String description)
@@ -76,35 +78,38 @@ namespace AMETAP.Controller
             d.DataSource = oDA.sellectAll();
         }
 
+        private Boolean OrganismActivite(int id)
+        {
+            List<int> list = aDA.getListIdOrganisateur();
+            Boolean test = false;
+            foreach (int l in list)
+            {
+                if (l == id)
+                {
+                    test = true;
+                    break;
+                }
+            }
+            return test;
+        }
+
         public void supprimerOrganisateur(int id)
         {
-            Boolean test1 = false;
-            Boolean test2 = false;
-            Boolean test3 = false;
-            test1 = avc.isDeleted(id);
-            test2 = cec.isDeleted(id);
-            test3 = cc.isDeleted(id);
-            if (test1 == true)
+
+            if (OrganismActivite(id) == true)
             {
-                MessageBox.Show("Cet organisateur est déjà supprimé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vous ne puvez pas supprimer cet organisme car il organise des activités avec notre Amicale !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (test2 == true)
+                Boolean test = oDA.delete(id);
+                if (test == true)
                 {
                     MessageBox.Show("Cet organisateur est déjà supprimé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    if (test3 == true)
-                    {
-                        MessageBox.Show("Cet organisateur est déjà supprimé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Erreur de suppression", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
+                    MessageBox.Show("Erreur de suppression", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

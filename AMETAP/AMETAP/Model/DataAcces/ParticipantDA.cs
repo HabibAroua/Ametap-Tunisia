@@ -39,17 +39,18 @@ namespace AMETAP.Model.DataAcces
             try
             {
                 int matricule = (int)o;
-
                 Pl_SQL plsql = new Pl_SQL();
-                string req = string.Format(plsql.SupprimerParticipant(matricule));
+                string req = string.Format("delete participant where matricule="+matricule);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
                 cmd.ExecuteNonQuery();
                 return true;
+            
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -99,6 +100,33 @@ namespace AMETAP.Model.DataAcces
             Reader.Close();
             cn.Close();
             return res;
+        }
+
+        public DataTable findAllMembreFamilleByMatricule(int matricule)
+        {
+            OleDbDataAdapter adap1;
+            DataTable tab1;
+            adap1 = new OleDbDataAdapter("select cin as identifiant , nom ,prenom,date_naissance, Metier as Metier_Ecole   from Conjoint where matricule="+matricule+" Union all select id as identifiant , nom ,prenom,date_naissance , ecole  from Enfant where matricule="+matricule, Properties.Settings.Default.ch);
+            DataSet dtst = new DataSet();
+            adap1.Fill(dtst, "Participant");
+            tab1 = dtst.Tables["Participant"];
+            return tab1;
+        }
+
+        public List<int> find_List_MatPart_byMatricule_Adherent(int matricule)
+        {
+            List<int> list = new List<int>();
+            string req = string.Format("select participant.matricule from Participant , adherent , conjoint , enfant where Adherent.matriculeEtap=conjoint.matricule and Adherent.matriculeEtap=enfant.matricule and Adherent.matriculeEtap="+matricule+" and enfant.matricule="+matricule+" and conjoint.matricule="+matricule+" and participant.matricule=enfant.id union all select distinct participant.matricule from Participant , adherent, conjoint, enfant where Adherent.matriculeEtap = conjoint.matricule and Adherent.matriculeEtap = enfant.matricule and Adherent.matriculeEtap = "+matricule+" and enfant.matricule ="+matricule+" and conjoint.matricule ="+matricule+" and participant.matricule = conjoint.cin");
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                list.Add((int)Reader.GetDouble(0));
+            }
+            Reader.Close();
+            cn.Close();
+            return list;
         }
     }
 }

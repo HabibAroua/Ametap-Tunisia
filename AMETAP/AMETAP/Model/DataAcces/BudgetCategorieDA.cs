@@ -75,7 +75,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur from Activite , BudgetCategorie , Budget ,Organisateur where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité culturel' and Budget.id=BudgetCategorie.idbudget and Budget.annee=" + annee+ " and Activite.IdBudgetCat = BudgetCategorie.id and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur ,Activite.date_fin_inscription , Activite.PRIX_UINITAIRE , Activite.NBR_POINT as Point from Activite , BudgetCategorie , Budget ,Organisateur where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité culturel' and Budget.id=BudgetCategorie.idbudget and Budget.annee=" + annee+ " and Activite.IdBudgetCat = BudgetCategorie.id and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Budget");
             tab1 = dtst.Tables["Budget"];
@@ -86,7 +86,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur from Activite , BudgetCategorie , Budget , Organisateur where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité de loisir' and Budget.id=BudgetCategorie.idbudget and Budget.annee=" + annee + " and Activite.IdBudgetCat = BudgetCategorie.id and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur ,Activite.date_fin_inscription , Activite.PRIX_UINITAIRE , Activite.NBR_POINT as Point from Activite , BudgetCategorie , Budget , Organisateur where Activite.IdBudgetCat=BudgetCategorie.id and BudgetCategorie.Categorie='Activité de loisir' and Budget.id=BudgetCategorie.idbudget and Budget.annee=" + annee + " and Activite.IdBudgetCat = BudgetCategorie.id and Organisateur.id=Activite.idOrganisateur", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Budget");
             tab1 = dtst.Tables["Budget"];
@@ -127,6 +127,21 @@ namespace AMETAP.Model.DataAcces
             //{
                 cn.Close();
             //}
+        }
+        public BudgetCategorie getBudgetCategorieByIdActivite(int idActivite)
+        {
+            BudgetCategorie budgetCategorie=new BudgetCategorie();
+            string req = string.Format("select budgetCategorie.id , budgetCategorie.provisoire  from budgetCategorie , Activite where budgetCategorie.id=Activite.idBudgetCat and Activite.id="+idActivite);
+            cn.Open();
+            cmd = new OleDbCommand(req, cn);
+            OleDbDataReader Reader = cmd.ExecuteReader();
+            while (Reader.Read())
+            {
+                budgetCategorie = new BudgetCategorie((int)Reader.GetDecimal(0), Reader.GetDouble(1));
+            }
+            Reader.Close();
+            cn.Close();
+            return budgetCategorie;
         }
     }
 }

@@ -140,9 +140,9 @@ namespace AMETAP.View.Gestion_Budget
                         txtBudgetCulturel.Text = "" + res;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    // MessageBox.Show("Il faut saisie caractére numérique", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
                 }
             
         }
@@ -164,9 +164,8 @@ namespace AMETAP.View.Gestion_Budget
                     txtBudgetLoisir.Text = "" + res;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //MessageBox.Show("Il faut saisie caractére numérique", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -203,9 +202,6 @@ namespace AMETAP.View.Gestion_Budget
 
         private void btAnnuler_Click(object sender, EventArgs e)
         {
-            //AMETAP.Model.DataAcces.BudgetDA b = new Model.DataAcces.BudgetDA();
-            //MessageBox.Show("Le max est :" + b.maxID());
-            //this.Close();
             DateValue d = new DateValue("29/04/2017");
             int month = int.Parse(d.getMonth());
             MessageBox.Show("convert "+month+" "+d.getDay()+"/"+d.getMonth()+"/"+d.getYear()+ "Today is :"+d.getToday());

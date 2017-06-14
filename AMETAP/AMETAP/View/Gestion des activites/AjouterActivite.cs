@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
 using AMETAP.Model.Business;
+using Tulpep.NotificationWindow;
+using AMETAP.Model.DataAcces;
 
 namespace AMETAP.View.Gestion_des_activites
 {
@@ -30,42 +32,100 @@ namespace AMETAP.View.Gestion_des_activites
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            if (int.Parse(viewMontant.Text.ToString()) - int.Parse(txtMontantPrevu.Text.ToString()) >= 0)
+            try
             {
-                if (rdActiviteCulturel.Checked == true)
+                if(rdList.Checked==true)
                 {
-                    ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
-
+                    if (int.Parse(viewMontant.Text.ToString()) - int.Parse(txtMontantPrevu.Text.ToString()) >= 0)
+                    {
+                        if (rdActiviteCulturel.Checked == true)
+                        {
+                            ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
+                            PopupNotifier pn = new PopupNotifier();
+                            pn.Image = Properties.Resources.Information;
+                            pn.TitleText = "Information";
+                            pn.ContentText = "Les emails sont envoyées avec succes pour s'informer les adhérents";
+                            pn.Popup();
+                        }
+                        else
+                        {
+                            if (rdActiviteLoisir.Checked == true)
+                            {
+                                ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
+                                viewMontant.Text = bcc.getMontantProvisoire("Activité de loisir").ToString();
+                                PopupNotifier pn = new PopupNotifier();
+                                pn.Image = Properties.Resources.Information;
+                                pn.TitleText = "Information";
+                                pn.ContentText = "Les emails sont envoyées avec succes pour s'informer les adhérents";
+                                pn.Popup();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vous n'avez pas ajouter une nouvelle activité car le budget est inssuffisant !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
                 }
                 else
                 {
-                    if (rdActiviteLoisir.Checked == true)
+                    if(rdManuel.Checked==true)
                     {
-                        ac.AjouterActivite(comboNomActivite.SelectedItem.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
-                        viewMontant.Text = bcc.getMontantProvisoire("Activité de loisir").ToString();
+                        if (int.Parse(viewMontant.Text.ToString()) - int.Parse(txtMontantPrevu.Text.ToString()) >= 0)
+                        {
+                            if (rdActiviteCulturel.Checked == true)
+                            {
+                                ac.AjouterActivite(txtNomActivite.Text.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité culturel", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
 
+                            }
+                            else
+                            {
+                                if (rdActiviteLoisir.Checked == true)
+                                {
+                                    ac.AjouterActivite(txtNomActivite.Text.ToString(), int.Parse(txtCapacite.Text.ToString()), txtDateDebut.Text.ToString(), txtDatefin.Text.ToString(), double.Parse(txtPrixUnitaire.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), double.Parse(txtMontantPrevu.Text.ToString()), "Activité de loisir", comboOrganisateur.SelectedItem.ToString(), txtDateDebutInscription.Text.ToString(), dateFinInscription.Text.ToString(), int.Parse(comboNbr_point.SelectedItem.ToString()));
+                                    viewMontant.Text = bcc.getMontantProvisoire("Activité de loisir").ToString();
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vous n'avez pas ajouter une nouvelle activité car le budget est inssuffisant !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
                     }
+                 
                 }
+                this.Close();
+                
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Vous n'avez pas ajouter une nouvelle activité car le budget est inssuffisant !", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Il y a des champs vides", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void AjouterActivite_Load(object sender, EventArgs e)
         {
-            foreach (Organisateur o in oc.AllOrganisateur())
+            try
             {
-                comboOrganisateur.Items.Add(o.nom_organisateur);
+                txtNomActivite.Enabled = false;
+                comboNomActivite.Enabled = false;
+                dt.Hide();
+                foreach (Organisateur o in oc.AllOrganisateur())
+                {
+                    comboOrganisateur.Items.Add(o.nom_organisateur);
+                }
+                txtMontantPrevu.Enabled = false;
+                comboNbr_point.Items.Add("10");
+                comboNbr_point.Items.Add("20");
+                comboNbr_point.Items.Add("30");
+                comboNbr_point.Items.Add("40");
+                comboNbr_point.Items.Add("50");
+                comboNbr_point.Items.Add("60");
             }
-            txtMontantPrevu.Enabled = false;
-            comboNbr_point.Items.Add("10");
-            comboNbr_point.Items.Add("20");
-            comboNbr_point.Items.Add("30");
-            comboNbr_point.Items.Add("40");
-            comboNbr_point.Items.Add("50");
-            comboNbr_point.Items.Add("60");
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtCapacite_ValueChanged(object sender, EventArgs e)
@@ -124,15 +184,23 @@ namespace AMETAP.View.Gestion_des_activites
         private void rdActiviteCulturel_Click(object sender, EventArgs e)
         {
             viewMontant.Text = bcc.getMontantProvisoire("Activité culturel").ToString();
+            dt.Show();
         }
 
         private void rdActiviteLoisir_Click(object sender, EventArgs e)
         {
             viewMontant.Text = "" + bcc.getMontantProvisoire("Activité de loisir").ToString();
+            dt.Show();
         }
 
         private void btAnnuler_Click(object sender, EventArgs e)
         {
+            AdherentDA aa = new AdherentDA();
+            List<String> list = aa.listAdresse();
+            foreach(String c in list)
+            {
+                MessageBox.Show(c);
+            }
             DialogResult a = MessageBox.Show("Voulez vous quitter ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (a == DialogResult.Yes)
             {
@@ -140,8 +208,35 @@ namespace AMETAP.View.Gestion_des_activites
             }
             else
             {
+             
+
                 //Continuez
             }
+        }
+
+        private void comboNomActivite_Click(object sender, EventArgs e)
+        {
+            if((rdActiviteCulturel.Checked==false)&&(rdActiviteLoisir.Checked==false))
+            {
+                MessageBox.Show("Vous devez séléctionner la catégorie", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void rdManuel_Click(object sender, EventArgs e)
+        {
+            txtNomActivite.Enabled = true;
+            comboNomActivite.Enabled = false;
+        }
+
+        private void rdList_Click(object sender, EventArgs e)
+        {
+            comboNomActivite.Enabled = true;
+            txtNomActivite.Enabled = false;
+        }
+
+        private void txtMontantPrevu_TextChanged(object sender, EventArgs e)
+        {
+     
         }
     }
 }

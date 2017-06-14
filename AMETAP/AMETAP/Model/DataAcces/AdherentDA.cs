@@ -71,7 +71,7 @@ namespace AMETAP.Model.DataAcces
         {
             OleDbDataAdapter adap1;
             DataTable tab1;
-            adap1 = new OleDbDataAdapter("Select Personnel.matricule , Personnel.nom , Personnel.prenom , Adherent.login, Adherent.NOMBRE_POINT from Personnel , Adherent where (Personnel.matricule=Adherent.matriculeAmetap) AND ((Adherent.login LIKE LOWER('" + objet+"%') or Adherent.login LIKE UPPER('"+objet+"%')) )", Properties.Settings.Default.ch);
+            adap1 = new OleDbDataAdapter("Select Personnel.matricule,Personnel.cin, Personnel.nom, Personnel.prenom, Personnel.ETAT_CIVIL, Personnel.NBR_ENFANT, Personnel.DATE_NAISSAINCE,Personnel.lieu,Personnel.adresse,Personnel.Tel, Adherent.login, Adherent.NOMBRE_POINT as Point from Personnel , Adherent where (Personnel.matricule=Adherent.matriculeAmetap) AND ((Adherent.login LIKE LOWER('" + objet+"%') or Adherent.login LIKE UPPER('"+objet+"%')) )", Properties.Settings.Default.ch);
             DataSet dtst = new DataSet();
             adap1.Fill(dtst, "Adherent");
             tab1 = dtst.Tables["Adherent"];
@@ -80,14 +80,17 @@ namespace AMETAP.Model.DataAcces
 
         public List<String> listAdresse()
         {
-            List<String> list = new List<string>();
-            string req = string.Format("select Personnel.EMAIL from personnel , adherent where Personnel.matricule=Adherent.matriculeEtap");
+
+            List<String> list = new List<String>();
+            
+            string req = string.Format("select Personnel.EMAIL from personnel , adherent where Personnel.matricule=Adherent.matriculeEtap and LENGTH(Personnel.Email)!=0");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
             while (Reader.Read())
             {
-                list.Add(Reader.GetString(0));
+                String r = Reader.GetString(0).ToString();
+                list.Add(r);
             }
             Reader.Close();
             cn.Close();
@@ -97,7 +100,7 @@ namespace AMETAP.Model.DataAcces
         public List<String> listAdresse(int matricule)
         {
             List<String> list = new List<string>();
-            string req = string.Format("select Personnel.EMAIL from personnel , adherent where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap="+matricule);
+            string req = string.Format("select Personnel.EMAIL from personnel , adherent where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap="+matricule+ " and LENGTH(Personnel.Email)!=0");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();

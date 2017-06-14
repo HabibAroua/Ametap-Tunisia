@@ -39,6 +39,8 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.txtNom = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescription
@@ -47,7 +49,7 @@
             // 
             // 
             this.txtDescription.CustomButton.Image = null;
-            this.txtDescription.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtDescription.CustomButton.Location = new System.Drawing.Point(193, 1);
             this.txtDescription.CustomButton.Name = "";
             this.txtDescription.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -65,7 +67,7 @@
             this.txtDescription.SelectionLength = 0;
             this.txtDescription.SelectionStart = 0;
             this.txtDescription.ShortcutsEnabled = true;
-            this.txtDescription.Size = new System.Drawing.Size(203, 23);
+            this.txtDescription.Size = new System.Drawing.Size(215, 23);
             this.txtDescription.TabIndex = 27;
             this.txtDescription.UseSelectable = true;
             this.txtDescription.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -106,7 +108,7 @@
             // 
             // 
             this.txtAdresse.CustomButton.Image = null;
-            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(193, 1);
             this.txtAdresse.CustomButton.Name = "";
             this.txtAdresse.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtAdresse.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -124,7 +126,7 @@
             this.txtAdresse.SelectionLength = 0;
             this.txtAdresse.SelectionStart = 0;
             this.txtAdresse.ShortcutsEnabled = true;
-            this.txtAdresse.Size = new System.Drawing.Size(203, 23);
+            this.txtAdresse.Size = new System.Drawing.Size(215, 23);
             this.txtAdresse.TabIndex = 21;
             this.txtAdresse.UseSelectable = true;
             this.txtAdresse.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -145,7 +147,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(193, 1);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -163,7 +165,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(203, 23);
+            this.txtEmail.Size = new System.Drawing.Size(215, 23);
             this.txtEmail.TabIndex = 19;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -184,7 +186,7 @@
             // 
             // 
             this.txtNom.CustomButton.Image = null;
-            this.txtNom.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtNom.CustomButton.Location = new System.Drawing.Point(193, 1);
             this.txtNom.CustomButton.Name = "";
             this.txtNom.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -202,7 +204,7 @@
             this.txtNom.SelectionLength = 0;
             this.txtNom.SelectionStart = 0;
             this.txtNom.ShortcutsEnabled = true;
-            this.txtNom.Size = new System.Drawing.Size(203, 23);
+            this.txtNom.Size = new System.Drawing.Size(215, 23);
             this.txtNom.TabIndex = 17;
             this.txtNom.UseSelectable = true;
             this.txtNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -217,11 +219,22 @@
             this.metroLabel2.TabIndex = 16;
             this.metroLabel2.Text = "Nom organisateur";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(447, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // Modifier_Organisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 393);
+            this.ClientSize = new System.Drawing.Size(556, 393);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.btAnnuler);
@@ -237,6 +250,7 @@
             this.MinimizeBox = false;
             this.Name = "Modifier_Organisateur";
             this.Text = "Modifier Organisateur";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +267,6 @@
         public MetroFramework.Controls.MetroTextBox txtAdresse;
         public MetroFramework.Controls.MetroTextBox txtEmail;
         public MetroFramework.Controls.MetroTextBox txtNom;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

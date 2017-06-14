@@ -48,19 +48,37 @@ namespace AMETAP.Controller.Script
             this.body = body;
         }
 
-        public void sendMail()
+        public void sendMail(System.Collections.Generic.List<String> list)
         {
             try
             {
                 MailMessage mm = new MailMessage("habibha.aroua82@gmail.com",getHost(),getSubject(),getBody());
+                //foreach(String l in list)
+                //{
+                  //  mm.CC.Add(l);
+                //}
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
                 sc.Credentials = new NetworkCredential("habibha.aroua82@gmail.com", "habib.aroua@hotmail.framour88","");
                 sc.EnableSsl = true;
                 sc.Send(mm);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        public void sendMail()
+        {
+            try
+            {
+                MailMessage mm = new MailMessage("habibha.aroua82@gmail.com", getHost(), getSubject(), getBody());
+                SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+                sc.Credentials = new NetworkCredential("habibha.aroua82@gmail.com", "habib.aroua@hotmail.framour88", "");
+                sc.EnableSsl = true;
+                sc.Send(mm);
+            }
+            catch (Exception)
+            {
             }
         }
     }

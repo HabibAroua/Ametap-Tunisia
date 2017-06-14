@@ -25,12 +25,19 @@ namespace AMETAP.Model.Business
             set;
         }
 
+        public String estAdmin
+        {
+            get;
+            set;
+        }
+
         //Constructeur
-        public Admin(Personnel personnel, String login, String password)
+        public Admin(Personnel personnel, String login, String password,String estAdmin)
         {
             this.personnel = personnel;
             this.login = login;
             this.password = password;
+            this.estAdmin = estAdmin;
         }
     }
 }

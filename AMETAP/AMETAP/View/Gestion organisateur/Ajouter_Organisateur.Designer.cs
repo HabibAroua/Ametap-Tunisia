@@ -41,6 +41,8 @@
             this.comboOrganisateur = new System.Windows.Forms.ComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txtDescription = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNom
@@ -67,7 +69,7 @@
             this.txtNom.SelectionLength = 0;
             this.txtNom.SelectionStart = 0;
             this.txtNom.ShortcutsEnabled = true;
-            this.txtNom.Size = new System.Drawing.Size(203, 23);
+            this.txtNom.Size = new System.Drawing.Size(227, 23);
             this.txtNom.TabIndex = 3;
             this.txtNom.UseSelectable = true;
             this.txtNom.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -106,7 +108,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
-            this.txtEmail.Size = new System.Drawing.Size(203, 23);
+            this.txtEmail.Size = new System.Drawing.Size(227, 23);
             this.txtEmail.TabIndex = 5;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -145,7 +147,7 @@
             this.txtAdresse.SelectionLength = 0;
             this.txtAdresse.SelectionStart = 0;
             this.txtAdresse.ShortcutsEnabled = true;
-            this.txtAdresse.Size = new System.Drawing.Size(203, 23);
+            this.txtAdresse.Size = new System.Drawing.Size(227, 23);
             this.txtAdresse.TabIndex = 7;
             this.txtAdresse.UseSelectable = true;
             this.txtAdresse.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -185,9 +187,9 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(24, 214);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(36, 19);
             this.metroLabel5.TabIndex = 10;
-            this.metroLabel5.Text = "Organisateur";
+            this.metroLabel5.Text = "Type";
             // 
             // comboOrganisateur
             // 
@@ -200,7 +202,7 @@
             "Centre"});
             this.comboOrganisateur.Location = new System.Drawing.Point(164, 212);
             this.comboOrganisateur.Name = "comboOrganisateur";
-            this.comboOrganisateur.Size = new System.Drawing.Size(203, 21);
+            this.comboOrganisateur.Size = new System.Drawing.Size(227, 21);
             this.comboOrganisateur.TabIndex = 11;
             // 
             // metroLabel6
@@ -236,17 +238,28 @@
             this.txtDescription.SelectionLength = 0;
             this.txtDescription.SelectionStart = 0;
             this.txtDescription.ShortcutsEnabled = true;
-            this.txtDescription.Size = new System.Drawing.Size(203, 23);
+            this.txtDescription.Size = new System.Drawing.Size(227, 23);
             this.txtDescription.TabIndex = 13;
             this.txtDescription.UseSelectable = true;
             this.txtDescription.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDescription.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(428, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // Ajouter_Organisateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 379);
+            this.ClientSize = new System.Drawing.Size(551, 379);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.comboOrganisateur);
@@ -260,11 +273,13 @@
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.metroLabel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "Ajouter_Organisateur";
             this.Text = "Ajouter Organisateur";
             this.Load += new System.EventHandler(this.Ajouter_Organisateur_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +298,6 @@
         private System.Windows.Forms.ComboBox comboOrganisateur;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroTextBox txtDescription;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

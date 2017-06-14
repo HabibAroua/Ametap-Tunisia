@@ -58,5 +58,11 @@ namespace AMETAP.Model.Business
         {
             this.id = id;
         }
+
+        public Budget(int annee, double montant_final)
+        {
+            this.annee = annee;
+            this.montant_final = montant_final;
+        }
     }
 }

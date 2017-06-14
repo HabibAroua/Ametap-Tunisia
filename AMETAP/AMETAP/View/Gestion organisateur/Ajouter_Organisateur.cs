@@ -61,6 +61,7 @@ namespace AMETAP.View.Gestion_organisateur
                         else
                         {
                             oc.AjouterOrganisateur(comboOrganisateur.SelectedItem.ToString(), 0, txtNom.Text.ToString(), txtEmail.Text.ToString(), txtAdresse.Text.ToString(), txtDescription.Text.ToString());
+                        this.Close();
                         }
                     }
                 }

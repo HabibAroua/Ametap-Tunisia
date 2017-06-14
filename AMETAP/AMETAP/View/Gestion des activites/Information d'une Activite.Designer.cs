@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information_d_une_Activite));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -47,8 +48,10 @@
             this.viewActivite = new MetroFramework.Controls.MetroLabel();
             this.viewPrixUnitaire = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -232,11 +235,22 @@
             this.metroLabel5.TabIndex = 16;
             this.metroLabel5.Text = "Prix unitaire";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(565, 53);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // Information_d_une_Activite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 485);
+            this.ClientSize = new System.Drawing.Size(693, 485);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.viewPrixUnitaire);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.viewActivite);
@@ -252,12 +266,15 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Information_d_une_Activite";
             this.Text = "Information d\'une Activite";
             this.Load += new System.EventHandler(this.Information_d_une_Activite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +301,6 @@
         public MetroFramework.Controls.MetroLabel viewActivite;
         public MetroFramework.Controls.MetroLabel viewPrixUnitaire;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -20,7 +20,7 @@ namespace AMETAP.Controller
         {
             Personnel p=new Personnel();
             p.matricule = matricule;
-            Admin a = new Admin(p, login, password);
+            Admin a = new Admin(p, login, password,"");
             Boolean test= ad.insert(a);
             if(test==true)
             {
@@ -37,12 +37,30 @@ namespace AMETAP.Controller
         {
             try
             {
+                Index i = new Index();
                 Boolean test = false;
                 Admin a = ad.Verif(login);
                 AMETAP.View.Script.Cryptage c = new View.Script.Cryptage();
-                if ((a.login.Equals(login)) && (c.Descrypt(a.password).Equals(password)))
+                if ((a.login.Equals(login)) && (c.Descrypt(a.password).Equals(password))&&(a.estAdmin.Equals("V")))
                 {
                     test = true ;
+                    i.Show();
+                }
+                else
+                {
+                    if ((a.login.Equals(login)) && (c.Descrypt(a.password).Equals(password)) && (a.estAdmin.Equals("F")))
+                    {
+                        test = true;
+
+                        i.txtRecherhce.Enabled = false;
+                        i.metroTile8.Enabled = false;
+                        i.dataUtilisateur.Enabled = false;
+                        i.metroTile9.Enabled = false;
+                        i.dataBudget.Enabled = false;
+                        i.chart1.Enabled = false;
+                        i.Show();
+                    }
+
                 }
                 return test;
             }
@@ -83,8 +101,6 @@ namespace AMETAP.Controller
             {
                 MessageBox.Show("Vous annulez cette suppression !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            
         }
     }
 }
