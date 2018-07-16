@@ -58,7 +58,7 @@ namespace AMETAP.Controller.Script
                   //  mm.CC.Add(l);
                 //}
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-                sc.Credentials = new NetworkCredential("habibha.aroua82@gmail.com", "habib.aroua@hotmail.framour88","");
+                sc.Credentials = new NetworkCredential("myEmail@ex.com", "my_password","");
                 sc.EnableSsl = true;
                 sc.Send(mm);
             }
