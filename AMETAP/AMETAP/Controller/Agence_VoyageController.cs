@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AMETAP.Model.Business;
 using AMETAP.Model.DataAcces;
+
 namespace AMETAP.Controller
 {
     public class Agence_VoyageController
