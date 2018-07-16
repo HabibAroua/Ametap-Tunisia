@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AMETAP.Model.Business
 {
     public class Agence_Voyage
     {
-        //Implemment attribut
+      
         public int id
         {
             get;
@@ -19,7 +15,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
-        //Constructeur
+        
         public Agence_Voyage(int id,String description)
         {
             this.id = id;
