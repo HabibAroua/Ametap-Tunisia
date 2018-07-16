@@ -7,7 +7,6 @@ namespace AMETAP.Controller
 {
     public class AdherentController
     {
-        //Adherent a;
         AdherentDA aDA;
         ParticipantDA participantDA;
         ParticipationDA participationDA;
@@ -51,8 +50,6 @@ namespace AMETAP.Controller
             {
                 MessageBox.Show("Erreur de suppression !", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         public void recherche(DataGridView d,String recherche)
