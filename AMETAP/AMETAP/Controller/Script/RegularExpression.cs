@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace AMETAP.View.Script
@@ -10,8 +6,8 @@ namespace AMETAP.View.Script
     public class RegularExpression
     {
         public RegularExpression()
-        {
-        }
+        {}
+
         public Boolean VerifMail(String email)
         {
             bool isTrue = false;
