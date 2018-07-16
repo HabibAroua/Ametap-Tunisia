@@ -16,6 +16,7 @@ namespace AMETAP.Controller
         private OrganisateurDA oDA;
         private BudgetCategorieDA bcDA;
         Activite a;
+
         public ActiviteController()
         {
             aDA = new ActiviteDA();
