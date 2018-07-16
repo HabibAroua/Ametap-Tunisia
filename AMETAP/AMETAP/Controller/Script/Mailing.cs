@@ -52,18 +52,15 @@ namespace AMETAP.Controller.Script
         {
             try
             {
-                MailMessage mm = new MailMessage("habibha.aroua82@gmail.com",getHost(),getSubject(),getBody());
-                //foreach(String l in list)
-                //{
-                  //  mm.CC.Add(l);
-                //}
+                MailMessage mm = new MailMessage("my_email@ex.com",getHost(),getSubject(),getBody());
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
                 sc.Credentials = new NetworkCredential("myEmail@ex.com", "my_password","");
                 sc.EnableSsl = true;
                 sc.Send(mm);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine(ex.Message);
             }
         }
 
@@ -77,8 +74,9 @@ namespace AMETAP.Controller.Script
                 sc.EnableSsl = true;
                 sc.Send(mm);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine(ex.Message);
             }
         }
     }
