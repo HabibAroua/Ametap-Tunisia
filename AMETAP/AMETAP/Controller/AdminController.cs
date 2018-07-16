@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AMETAP.Model.DataAcces;
 using AMETAP.Model.Business;
 using AMETAP.View;
+
 namespace AMETAP.Controller
 {
     public class AdminController
