@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AMETAP.Controller.Script
 {
@@ -16,9 +13,7 @@ namespace AMETAP.Controller.Script
         }
 
         public DateValue()
-        {
-
-        }
+        {}
 
         public String getDateValue()
         {
