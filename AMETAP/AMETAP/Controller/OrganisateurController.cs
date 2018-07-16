@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AMETAP.Model.Business;
 using AMETAP.Model.DataAcces;
 using System.Windows.Forms;
@@ -149,7 +146,6 @@ namespace AMETAP.Controller
                     else
                     {
                         MessageBox.Show("Erreur de la mise à jour", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
                 }
             }
