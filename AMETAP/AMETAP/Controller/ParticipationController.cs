@@ -88,7 +88,7 @@ namespace AMETAP.Controller
             Boolean test = pDA.refuser(new Participation(id));
             if(test==true)
             {
-                //MessageBox.Show("Votre demande est réfusé", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Console.WriteLine("Accepter");
             }
             else
             {
@@ -98,23 +98,17 @@ namespace AMETAP.Controller
 
         public void confirmerPaiymentConjoint(int matricule, int idActivite, int id, int valeur)
         {
-            //pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
             pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
-            //pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
         }
 
         public void confirmerPaiymentEnfant(int matricule, int idActivite, int id, int valeur)
         {
-            //pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
-            //pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
             pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
         }
 
         public void confirmerPaiymentAdherent(int matricule, int idActivite, int id, int valeur)
         {
             pDA.confirmePaymentAdherent(matricule, idActivite, id, valeur);
-            //pDA.confirmePaymentConjoint(matricule, idActivite, id, valeur);
-            //pDA.confirmePaymentEnfant(matricule, idActivite, id, valeur);
         }
 
         public void getAllParticipant(DataGridView d, int idActivite)
@@ -170,6 +164,5 @@ namespace AMETAP.Controller
             return listAll;
         }
 
-        
     }
 }
