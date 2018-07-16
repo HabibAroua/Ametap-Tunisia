@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AMETAP.Model.Business
 {
     public class Admin
     {
-        //Implemment attribut
         public String login
         {
             get;
@@ -31,7 +26,7 @@ namespace AMETAP.Model.Business
             set;
         }
 
-        //Constructeur
+        
         public Admin(Personnel personnel, String login, String password,String estAdmin)
         {
             this.personnel = personnel;
