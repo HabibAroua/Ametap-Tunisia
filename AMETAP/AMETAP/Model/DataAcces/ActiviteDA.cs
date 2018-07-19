@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
-using System.Windows.Forms;
+
 namespace AMETAP.Model.DataAcces
 {
     public class ActiviteDA : IData
@@ -21,9 +18,9 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
-
+                System.Console.WriteLine("Error :"+ex.Message);
             }
         }
         public Boolean insert(Object o)
@@ -53,8 +50,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -64,31 +62,7 @@ namespace AMETAP.Model.DataAcces
         }
         public Boolean update(Object o1, Object o2)
         {
-            //  try
-            //{
-            //  int id = (int)o1;
-            //Activite a = (Activite)o2;
-            //String nom_activite = a.nom_Activite;
-            //int capacite = a.capacite;
-            //int id_TypeActivite = a.id_TypeActivite;
-            //int idOrganisateur = a.idOrganisateur;
-            //PLSQL.Pl_SQL plSql = new PLSQL.Pl_SQL();
-            //string req = string.Format(plSql.ModifierActivite(id, nom_activite, capacite, id_TypeActivite, idOrganisateur));
-            //cmd.Connection = cn;
-            //cn.Open();
-            //cmd.CommandText = req;
-            //cmd.ExecuteNonQuery();
-            //cn.Close();
-            //return true;
-            //}
-            //catch (OleDbException)
-            //{
             return false;
-            //}
-            //finally
-            //{
-            //  cn.Close(); 
-            //}
         }
 
         public Boolean ModifierActivite(int id, String nom_activite, int capacite, String date_fin_inscription,
@@ -105,8 +79,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -129,8 +104,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -228,6 +204,7 @@ namespace AMETAP.Model.DataAcces
             cn.Close();
             return listActivite;
         }
+
         public int getId(String typeActivite, int annee)
         {
             int res = 0;
@@ -369,8 +346,9 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
                 return res;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return 0;
             }
         }
@@ -391,8 +369,9 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
                 return list;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return null;
             }
         }
