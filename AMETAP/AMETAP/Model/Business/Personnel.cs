@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AMETAP.Model.Business
 {
     public class Personnel
     {
-        //Constructeur sans paramétre
+        
         public Personnel()
         { }
-        //Les attribute avec les getters and setters
+        
         public int matricule
         {
             get;
@@ -126,7 +122,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
-        //Constructeur
+        
         public Personnel(int matricule, String nom, String prenom, int ID_NATURAGENT, int CODE_FONC, int PERS_CET,
             String sex, String Etat_Civil, int nombre_enfant, String date_naissance, String Lieu, String cin,
             String adresse, String tel, String date_recrutement, String pers_affect, String ocuupation, int code_banque
