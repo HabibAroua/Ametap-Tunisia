@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
 
@@ -21,9 +17,9 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch(OleDbException)
+            catch(OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
         public Boolean delete(object o)
@@ -33,26 +29,6 @@ namespace AMETAP.Model.DataAcces
 
         public Boolean insert(object o)
         {
-            //try
-            //{
-                //BudgetCategorie b = (BudgetCategorie)o;
-                //double montant = b.montant;
-                //int idBudget = b.budget.id;
-                //string req = string.Format(plSql.Inscrire(matricule, login, password));
-                //cmd.Connection = cn;
-                //cn.Open();
-                //cmd.CommandText = req;
-                //cmd.ExecuteNonQuery();
-              //  return true;
-            //}
-            //catch (OleDbException)
-            //{
-            //  return false;
-            //}
-            //finally
-            //{
-            //  cn.Close();
-            //}
             return false;
         }
 
@@ -111,23 +87,24 @@ namespace AMETAP.Model.DataAcces
 
         public void ajouterValeurBudgetCat(int id,int valeur)
         {
-            //try
-            //{
+            try
+            {
                 string req = string.Format("update budgetCategorie set PROVISOIRE=PROVISOIRE+" + valeur + " , MONTANT=MONTANT+"+valeur+ " where IDBUDGET=" + id);
                 cmd.Connection = cn;
                 cn.Open();
                 cmd.CommandText = req;
                 cmd.ExecuteNonQuery();
-            //}
-            //catch (OleDbException)
-            //{
-
-            //}
-            //finally
-            //{
+            }
+            catch (OleDbException ex)
+            {
+                System.Console.WriteLine("error :" + ex.Message);
+            }
+            finally
+            {
                 cn.Close();
-            //}
+            }
         }
+
         public BudgetCategorie getBudgetCategorieByIdActivite(int idActivite)
         {
             BudgetCategorie budgetCategorie=new BudgetCategorie();
