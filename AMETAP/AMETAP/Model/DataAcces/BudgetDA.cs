@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
@@ -15,9 +12,17 @@ namespace AMETAP.Model.DataAcces
         OleDbCommand cmd;
         public BudgetDA()
         {
-            cn = new OleDbConnection(Properties.Settings.Default.ch);
-            cmd = new OleDbCommand();
+            try
+            {
+                cn = new OleDbConnection(Properties.Settings.Default.ch);
+                cmd = new OleDbCommand();
+            }
+            catch(OleDbException ex)
+            {
+                System.Console.WriteLine("error :" + ex.Message);
+            }
         }
+
         public Boolean insert(Object o)
         {
             try
@@ -37,8 +42,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -46,14 +52,17 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+
         public Boolean update(Object o1, Object o2)
         {
             return true;
         }
+
         public Boolean delete(Object o)
         {
             return true;
         }
+
         public DataTable sellectAll()
         {
             OleDbDataAdapter adap1;
@@ -64,6 +73,7 @@ namespace AMETAP.Model.DataAcces
             tab1 = dtst.Tables["Budget"];
             return tab1;
         }
+
         public DataTable search(String objet)
         {
             return null;
@@ -81,8 +91,9 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
                 return (int)r;
             }
-            catch(Exception)
+            catch(Exception ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return 2005;
             }
         }
@@ -128,7 +139,6 @@ namespace AMETAP.Model.DataAcces
         {
             try
             {
-                //cn.Open();
                 cmd = cn.CreateCommand();
                 cmd.CommandText = "select MAX(id) from Budget";
                 cn.Open();
@@ -137,8 +147,9 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
                 return (int)r;
             }
-            catch (InvalidCastException)
+            catch (InvalidCastException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return 0;
             }
             finally
@@ -157,9 +168,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.CommandText = req;
                 cmd.ExecuteNonQuery();
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
-                
+                System.Console.WriteLine("error :" + ex.Message);
             }
             finally
             {
