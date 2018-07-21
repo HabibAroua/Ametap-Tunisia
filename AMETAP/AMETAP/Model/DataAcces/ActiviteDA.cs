@@ -335,7 +335,6 @@ namespace AMETAP.Model.DataAcces
             {
                 int res = 0;
                 string req = string.Format("select Activite.id , Activite.nom_Activite , Activite.montant_prevu , Activite.date_debut,Activite.date_fin, Activite.capacite , Activite.nombre_participant ,Organisateur.Nom_Organisateur ,Activite.date_fin_inscription , Activite.PRIX_UINITAIRE , Activite.NBR_POINT as Point from Activite,Organisateur,Budget,BudgetCategorie  where Activite.idOrganisateur=Organisateur.id and Budget.id=BudgetCategorie.IDBUDGET and Activite.IDBUDGETCAT=BudgetCategorie.id and date_debut_inscription<=sysdate and date_fin_inscription>=sysdate");
-                //        cn.Open();
                 cmd = new OleDbCommand(req, cn);
                 OleDbDataReader Reader = cmd.ExecuteReader();
                 while (Reader.Read())
