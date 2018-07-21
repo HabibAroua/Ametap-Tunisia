@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using AMETAP.Model.Business;
 using System.Data;
 using System.Data.OleDb;
@@ -40,8 +39,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally

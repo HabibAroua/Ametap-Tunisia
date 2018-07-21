@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
 using System.Data;
@@ -22,9 +18,9 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch(OleDbException)
+            catch(OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
         public Boolean insert(Object o)
@@ -41,8 +37,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -69,8 +66,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -92,8 +90,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
