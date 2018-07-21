@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data;
 using AMETAP.Model.Business;
 using AMETAP.Model.DataAcces.PLSQL;
+
 namespace AMETAP.Model.DataAcces
 {
     public class CentreDA : IData
     {
         OleDbConnection cn;
         OleDbCommand cmd;
+
         public CentreDA()
         {
             try
@@ -20,11 +18,12 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch(OleDbException)
+            catch(OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
+
         public Boolean insert(Object o)
         {
             try
@@ -39,8 +38,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -48,6 +48,7 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+
         public Boolean update(Object o1, Object o2)
         {
             try
@@ -67,8 +68,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -76,6 +78,7 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+
         public Boolean delete(Object o)
         {
             try
@@ -90,8 +93,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
