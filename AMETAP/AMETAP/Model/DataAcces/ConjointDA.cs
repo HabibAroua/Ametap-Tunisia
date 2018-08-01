@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
+
 namespace AMETAP.Model.DataAcces
 {
     public class ConjointDA :IData
@@ -18,22 +15,22 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
-
-
         }
 
         public Boolean insert(Object o)
         {
             return true;
         }
+
         public Boolean update(Object o1, Object o2)
         {
             return false;
         }
+
         public Boolean delete(Object o)
         {
             try
@@ -46,8 +43,9 @@ namespace AMETAP.Model.DataAcces
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException)
+            catch (OleDbException ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
                 return false;
             }
             finally
@@ -55,10 +53,12 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+
         public DataTable sellectAll()
         {
             return null;
         }
+
         public DataTable search(String objet)
         {
             OleDbDataAdapter adap1;
@@ -85,6 +85,6 @@ namespace AMETAP.Model.DataAcces
             cn.Close();
             return cin;
         }
-
     }
+
 }
