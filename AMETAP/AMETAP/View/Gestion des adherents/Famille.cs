@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
+
 namespace AMETAP.View.Gestion_des_adherents
 {
     public partial class Famille : MetroForm
@@ -33,11 +26,6 @@ namespace AMETAP.View.Gestion_des_adherents
             cc = new ConjointController();
             pC = new ParticipantController();
             InitializeComponent();
-        }
-
-        private void Famille_MouseLeave(object sender, EventArgs e)
-        {
-            
         }
 
         private void rdConjoint_Click(object sender, EventArgs e)

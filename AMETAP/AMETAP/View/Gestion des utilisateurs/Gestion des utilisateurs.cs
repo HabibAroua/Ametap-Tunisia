@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
+
 namespace AMETAP.View.Gestion_des_utilisateurs
 {
     public partial class Gestion_des_utilisateurs : MetroForm
@@ -23,6 +17,7 @@ namespace AMETAP.View.Gestion_des_utilisateurs
                 return myCp;
             }
         }
+
         AdminController ac;
         public Gestion_des_utilisateurs()
         {

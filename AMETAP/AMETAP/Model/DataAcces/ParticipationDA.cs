@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.OleDb;
 using AMETAP.Model.Business;
-using AMETAP.Model.DataAcces.PLSQL;
-using System.Windows.Forms;
+
 namespace AMETAP.Model.DataAcces
 {
     public class ParticipationDA : IData
     {
         private OleDbConnection cn;
         private  OleDbCommand cmd;
+
         public ParticipationDA()
         {
             try
@@ -21,19 +18,22 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch(OleDbException)
+            catch(OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
+
         public Boolean insert(Object o)
         {
             return false;
         }
+
         public Boolean update(Object o1, Object o2)
         {
             return false;
         }
+
         public Boolean delete(Object o)
         {
             try
@@ -285,7 +285,6 @@ namespace AMETAP.Model.DataAcces
         {
             List<Participation> list = new List<Participation>();
             string req = string.Format("select Personnel.Matricule, Participation.id from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite+ " order by Adherent.nombre_point desc");
-            //string req = string.Format("select distinct Personnel.Matricule,Participation.id , Personnel.Nom , Personnel.Prenom , Personnel.etat_civil , Personnel.DATE_NAISSAINCE , Adherent.NOMBRE_POINT , Activite.nom_Activite , Activite.Id , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite + "order by Adherent.Nombre_Point desc");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
@@ -294,7 +293,6 @@ namespace AMETAP.Model.DataAcces
             Activite activite = new Activite();
             while (Reader.Read())
             {
-                //MessageBox.Show((int)Reader.GetDecimal(0) + "");
                 list.Add(new Participation((int)Reader.GetDecimal(1), new Participant((int)Reader.GetDecimal(0))));
             }
             Reader.Close();
@@ -306,7 +304,6 @@ namespace AMETAP.Model.DataAcces
         {
             List<Participation> list = new List<Participation>();
             string req = string.Format("select Conjoint.cin, Participation.id from Conjoint , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Conjoint.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+ " and Participation.etat = 0 and Participant.matricule = Conjoint.cin and Participation.matriculePart = Participant.matricule and Participant.matricule = Conjoint.cin order by Adherent.nombre_point desc");
-            //string req = string.Format("select distinct Personnel.Matricule,Participation.id , Personnel.Nom , Personnel.Prenom , Personnel.etat_civil , Personnel.DATE_NAISSAINCE , Adherent.NOMBRE_POINT , Activite.nom_Activite , Activite.Id , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite + "order by Adherent.Nombre_Point desc");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
@@ -315,7 +312,6 @@ namespace AMETAP.Model.DataAcces
             Activite activite = new Activite();
             while (Reader.Read())
             {
-                //MessageBox.Show((int)Reader.GetDecimal(0) + "");
                 list.Add(new Participation((int)Reader.GetDecimal(1), new Participant((int)Reader.GetDecimal(0))));
             }
             Reader.Close();
@@ -327,7 +323,6 @@ namespace AMETAP.Model.DataAcces
         {
             List<Participation> list = new List<Participation>();
             string req = string.Format("select Enfant.id, Participation.id from Enfant , Adherent, Activite, Participation, Participant where Adherent.matriculeEtap = Enfant.matricule and Activite.id = Participation.idActivite and idActivite ="+idActivite+" and Participation.etat = 0 and Participant.matricule = Enfant.id and Participation.matriculePart = Participant.matricule and Participant.matricule = Enfant.id");
-            //string req = string.Format("select distinct Personnel.Matricule,Participation.id , Personnel.Nom , Personnel.Prenom , Personnel.etat_civil , Personnel.DATE_NAISSAINCE , Adherent.NOMBRE_POINT , Activite.nom_Activite , Activite.Id , Activite.date_debut , Activite.date_fin , Activite.PRIX_UINITAIRE from Personnel , Adherent ,Activite , Participant , Participation where Personnel.matricule=Adherent.matriculeEtap and Adherent.matriculeEtap=Participant.matricule and Personnel.matricule=Participant.matricule and Activite.id=Participation.idActivite and Participant.matricule=Participation.matriculePart and Participation.etat=0 and Participation.idActivite=" + idActivite + "order by Adherent.Nombre_Point desc");
             cn.Open();
             cmd = new OleDbCommand(req, cn);
             OleDbDataReader Reader = cmd.ExecuteReader();
@@ -336,7 +331,6 @@ namespace AMETAP.Model.DataAcces
             Activite activite = new Activite();
             while (Reader.Read())
             {
-                //MessageBox.Show((int)Reader.GetDecimal(0) + "");
                 list.Add(new Participation((int)Reader.GetDecimal(1), new Participant((int)Reader.GetDecimal(0))));
             }
             Reader.Close();
@@ -364,8 +358,6 @@ namespace AMETAP.Model.DataAcces
             adap1.Fill(dtst, "Participation");
             tab1 = dtst.Tables["Participation"];
             return tab1;
-        }
-        
-           
+        }           
     }
 }

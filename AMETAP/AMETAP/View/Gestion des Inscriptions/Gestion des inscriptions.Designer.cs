@@ -88,7 +88,6 @@
             this.btAccepter.TabIndex = 4;
             this.btAccepter.Text = "Accepter";
             this.btAccepter.UseSelectable = true;
-            this.btAccepter.Click += new System.EventHandler(this.btAccepter_Click);
             // 
             // metroButton2
             // 

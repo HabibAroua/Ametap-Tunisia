@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AMETAP.Model.DataAcces
 {
@@ -20,11 +16,12 @@ namespace AMETAP.Model.DataAcces
                 cn = new OleDbConnection(Properties.Settings.Default.ch);
                 cmd = new OleDbCommand();
             }
-            catch(OleDbException)
+            catch(OleDbException ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
+
         public bool delete(object o)
         {
             throw new NotImplementedException();

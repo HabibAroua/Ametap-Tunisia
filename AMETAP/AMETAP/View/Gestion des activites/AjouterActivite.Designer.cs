@@ -224,7 +224,6 @@
             this.txtMontantPrevu.UseSelectable = true;
             this.txtMontantPrevu.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMontantPrevu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontantPrevu.TextChanged += new System.EventHandler(this.txtMontantPrevu_TextChanged);
             // 
             // metroLabel6
             // 

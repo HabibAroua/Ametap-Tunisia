@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
@@ -206,12 +200,6 @@ namespace AMETAP.View.Gestion_des_activites
             {
                 this.Close();
             }
-            else
-            {
-             
-
-                //Continuez
-            }
         }
 
         private void comboNomActivite_Click(object sender, EventArgs e)
@@ -232,11 +220,6 @@ namespace AMETAP.View.Gestion_des_activites
         {
             comboNomActivite.Enabled = true;
             txtNomActivite.Enabled = false;
-        }
-
-        private void txtMontantPrevu_TextChanged(object sender, EventArgs e)
-        {
-     
         }
     }
 }

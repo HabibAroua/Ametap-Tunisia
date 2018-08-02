@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Famille));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdTous = new MetroFramework.Controls.MetroRadioButton();
             this.rdConjoint = new MetroFramework.Controls.MetroRadioButton();
             this.rdEnfant = new MetroFramework.Controls.MetroRadioButton();
             this.dataFamille = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rdTous = new MetroFramework.Controls.MetroRadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFamille)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,6 +50,17 @@
             this.groupBox1.Size = new System.Drawing.Size(293, 35);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // rdTous
+            // 
+            this.rdTous.AutoSize = true;
+            this.rdTous.Location = new System.Drawing.Point(29, 14);
+            this.rdTous.Name = "rdTous";
+            this.rdTous.Size = new System.Drawing.Size(48, 15);
+            this.rdTous.TabIndex = 3;
+            this.rdTous.Text = "Tous";
+            this.rdTous.UseSelectable = true;
+            this.rdTous.Click += new System.EventHandler(this.rdTous_Click);
             // 
             // rdConjoint
             // 
@@ -90,17 +101,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // rdTous
-            // 
-            this.rdTous.AutoSize = true;
-            this.rdTous.Location = new System.Drawing.Point(29, 14);
-            this.rdTous.Name = "rdTous";
-            this.rdTous.Size = new System.Drawing.Size(48, 15);
-            this.rdTous.TabIndex = 3;
-            this.rdTous.Text = "Tous";
-            this.rdTous.UseSelectable = true;
-            this.rdTous.Click += new System.EventHandler(this.rdTous_Click);
-            // 
             // Famille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,7 +114,6 @@
             this.MinimizeBox = false;
             this.Name = "Famille";
             this.Text = "Famille";
-            this.MouseLeave += new System.EventHandler(this.Famille_MouseLeave);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFamille)).EndInit();

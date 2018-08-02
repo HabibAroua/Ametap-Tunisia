@@ -270,7 +270,6 @@
             this.MinimizeBox = false;
             this.Name = "Information_d_une_Activite";
             this.Text = "Information d\'une Activite";
-            this.Load += new System.EventHandler(this.Information_d_une_Activite_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

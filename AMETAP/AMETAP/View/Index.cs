@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
@@ -49,7 +43,6 @@ namespace AMETAP.View
             participantController = new ParticipantController();
             contribuesController = new ContribuesController();
             InitializeComponent();
-            //this.StyleManager = metroStyleManager1;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -160,37 +153,27 @@ namespace AMETAP.View
             adC.afficher(dataUtilisateur);
             bc.AfficherBudget(dataBudget);
             acc.ActiviteActuel(dataActiviteActuel);
-            // if (rdConjoint.Checked == true)
-            
-                try
-                {
-                    a = new AdherentDA();
-                    listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                    pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                }
-                catch (Exception)
-                {
-
-                }
-            
-            
-               // if (rdEnfant.Checked == true)
-                {
-                    try
-                    {
-                        a = new AdherentDA();
-                        listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                        listEnfant = pc.DemandeListEnfant(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                        listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                        pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-
-                
-
+            try
+            {
+                a = new AdherentDA();
+                listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("error :" + ex.Message);
+            }
+            try
+            {
+                a = new AdherentDA();
+                listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                listEnfant = pc.DemandeListEnfant(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+                pc.getParticipationEnfant(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine("error :" + ex.Message);
             }
             foreach (Budget b in bc.listBudget())
             {
@@ -215,7 +198,6 @@ namespace AMETAP.View
                 rdActiviteCulturel.Checked = false;
                 rdActiviteLoisir.Checked = false;
             }
- 
         }
 
         private void dataActivite_DoubleClick(object sender, EventArgs e)
@@ -326,7 +308,6 @@ namespace AMETAP.View
             {
                 oc.supprimerOrganisateur(int.Parse(dataOrganisation.CurrentRow.Cells[0].Value.ToString()));
                 oc.affiche(dataOrganisation);
-
             }
             else
             {
@@ -448,7 +429,6 @@ namespace AMETAP.View
         {
             try
             {
-              
                     a = new AdherentDA();
                     listAdherent = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
                     listConjoint = pc.DemandeListConjoint(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
@@ -457,17 +437,16 @@ namespace AMETAP.View
                     paC.afficherNonPayer(dataNonPaiment, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
               
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
 
         private void btAccepter_Click(object sender, EventArgs e)
         {
             try
-            {
-
+            { 
                 ActiviteDA aDA = new ActiviteDA();
                 AdherentDA aDDA = new AdherentDA();
                 ParticipantDA pDA = new ParticipantDA();
@@ -481,8 +460,7 @@ namespace AMETAP.View
                     int i = 0;
                     int nbr = 0;
                     foreach (Participation l in listAdherent)
-                    {
-                       
+                    {  
                         nbr++;
                     }
                     if (nbr <= reste)
@@ -494,8 +472,6 @@ namespace AMETAP.View
 
                     }
                     Mailing m;
-                    //while (i != reste)
-
                     foreach (Participation l in listAdherent)
                     {
                         if ((aDDA.getNombrePoint(l.participant.matricule) <= 0))
@@ -521,7 +497,6 @@ namespace AMETAP.View
                             i++;
                         }
                     }
-
                     foreach (Participation l in listConjoint)
                     {
                         pc.AccepterConjoint(l.participant.matricule, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()), 0, 0);
@@ -538,31 +513,6 @@ namespace AMETAP.View
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void rdConjoint_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            //    a = new AdherentDA();
-            //    listAll = pc.DemandeListAdherent(int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-            //    pc.getParticipationConjoint(dataDemande, int.Parse(dataActiviteActuel.CurrentRow.Cells[0].Value.ToString()));
-            }
-            catch (Exception)
-            {
-
-            }
-            
-        }
-
-        private void rdEnfant_Click(object sender, EventArgs e)
-        {
-            try
-            {
-            }
-            catch(Exception)
-            {
             }
         }
 
@@ -611,7 +561,6 @@ namespace AMETAP.View
             }
             else
             {
-
                 if ((s.Equals("00")) || (s.Equals("30")) || (s.Equals("15")) || s.Equals("45"))
                 {
                     acc.ActiviteActuel(dataActiviteActuel);
@@ -623,26 +572,12 @@ namespace AMETAP.View
                         }
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
+                        System.Console.WriteLine("error :" + ex.Message);
                     }
                 }
-
-                //contribuesController.ContribueParMois();
             }
-            // try
-            //{
-            //  if (comboAnnee.SelectedItem.ToString().Equals("Les activité actuelle"))
-            //{
-            //  acc.getActuelActivity(dataActivite);
-            // }
-            //}
-            //catch(Exception)
-            //{ }
-
-
-
         }
 
         private void btConfirmerPayer_Click(object sender, EventArgs e)
@@ -678,9 +613,9 @@ namespace AMETAP.View
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
 
@@ -698,7 +633,7 @@ namespace AMETAP.View
         {
             refresh();
         }
-        //Pour le sommaire automatique "insérer une légende"
+        
         private void refreshToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             refresh();
@@ -716,13 +651,6 @@ namespace AMETAP.View
             f.Show();
         }
 
-        private void dataActivite_Click(object sender, EventArgs e)
-        {
-            //acc.getActuelActivity(dataActivite);
-            //btSupprimerActivite.Enabled = true;
-            //btModifierActivite.Enabled = true;
-        }
-
         private void metroGrid1_Enter(object sender, EventArgs e)
         {
             try
@@ -734,9 +662,9 @@ namespace AMETAP.View
                     //btModifierActivite.Enabled = true;
                 }
             }
-            catch(Exception )
+            catch(Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
 
@@ -751,9 +679,9 @@ namespace AMETAP.View
                     //btModifierActivite.Enabled = true;
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
 
@@ -801,9 +729,9 @@ namespace AMETAP.View
                     acc.getActuelActivity(dataActivite);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
     }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
@@ -15,7 +8,6 @@ namespace AMETAP
 {
     public partial class Authentification : MetroForm
     {
-        
         AdminController ac;
         
         public Authentification()

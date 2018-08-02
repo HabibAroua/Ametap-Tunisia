@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using AMETAP.Controller;
@@ -26,7 +19,6 @@ namespace AMETAP.View.Gestion_Budget
 
         private void Fixer_Budget_Load(object sender, EventArgs e)
         {
-            //first year is 2006
             txtMontantProvisoire.Enabled = false;
             txtBudgetCulturel.Enabled = false;
             txtBudgetLoisir.Enabled = false;
@@ -34,16 +26,13 @@ namespace AMETAP.View.Gestion_Budget
             viewResteBudget.Text = "" + (bcc.getMontantProvisoire("Activité culturel") + bcc.getMontantProvisoire("Activité de loisir"));
             btFixer.Enabled = false;
             DateValue d = new DateValue();
-            //MessageBox.Show(d.getDayToday());
             if((d.getDayToday().Equals("29")) && (d.getMonthToday().Equals("04")))
             {
-                //MessageBox.Show("Vrai");
+                //"Vrai"
             }
             else
             {
-                //MessageBox.Show("", "Errur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              //  txtMontantFinal.Enabled = false;
-                //comboAnnee.Enabled = false;
+                //faux
             }
             if ((d.getDayToday().Equals("29")==true) && (!d.getMonthToday().Equals("04"))==true)
             {
@@ -55,7 +44,6 @@ namespace AMETAP.View.Gestion_Budget
             }
             else
             {
-                //MessageBox.Show(d.getDayToday() + "  month" + d.getMonthToday());
                 txtMontantFinal.Enabled = false;
                 txtBudgetCulturel.Enabled = false;
                 txtBudgetLoisir.Enabled = false;
@@ -71,8 +59,7 @@ namespace AMETAP.View.Gestion_Budget
                 {
                     txtBudgetCulturel.Enabled = true;
                     txtBudgetLoisir.Enabled = true;
-                    txtMontantProvisoire.Text = "" + (int.Parse(txtMontantFinal.Text.ToString()) + int.Parse(viewResteBudget.Text.ToString()));
-                    
+                    txtMontantProvisoire.Text = "" + (int.Parse(txtMontantFinal.Text.ToString()) + int.Parse(viewResteBudget.Text.ToString()));    
                 }
                 else
                 {
@@ -87,13 +74,11 @@ namespace AMETAP.View.Gestion_Budget
                 {
                     btFixer.Enabled = true;
                 }
-
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-
+                System.Console.WriteLine("error :" + ex.Message);
             }
-
         }
 
         private void btFixer_Click(object sender, EventArgs e)
@@ -140,9 +125,9 @@ namespace AMETAP.View.Gestion_Budget
                         txtBudgetCulturel.Text = "" + res;
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                      System.Console.WriteLine("error :" + ex.Message);
                 }
             
         }
@@ -164,8 +149,9 @@ namespace AMETAP.View.Gestion_Budget
                     txtBudgetLoisir.Text = "" + res;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine("error :" + ex.Message);
             }
         }
 
@@ -177,7 +163,6 @@ namespace AMETAP.View.Gestion_Budget
                 txtBudgetCulturel.Enabled = false;
                 txtBudgetLoisir.Enabled = false;
             }
-
             if ((!txtBudgetCulturel.Text.ToString().Equals("")) && (!txtBudgetLoisir.Text.ToString().Equals("")) && (!txtMontantProvisoire.Text.ToString().Equals("") && (!txtMontantFinal.Text.ToString().Equals(""))))
             {
                 btFixer.Enabled = true;

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
+
 namespace AMETAP.Model.DataAcces
 {
     public interface IData
@@ -13,6 +10,5 @@ namespace AMETAP.Model.DataAcces
         Boolean delete(Object o);
         DataTable sellectAll();
         DataTable search(String objet);
-
     }
 }

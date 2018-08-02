@@ -51,7 +51,7 @@
             // 
             // 
             this.txtNom.CustomButton.Image = null;
-            this.txtNom.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtNom.CustomButton.Location = new System.Drawing.Point(205, 1);
             this.txtNom.CustomButton.Name = "";
             this.txtNom.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtNom.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -90,7 +90,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(205, 1);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -129,7 +129,7 @@
             // 
             // 
             this.txtAdresse.CustomButton.Image = null;
-            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtAdresse.CustomButton.Location = new System.Drawing.Point(205, 1);
             this.txtAdresse.CustomButton.Name = "";
             this.txtAdresse.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtAdresse.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -220,7 +220,7 @@
             // 
             // 
             this.txtDescription.CustomButton.Image = null;
-            this.txtDescription.CustomButton.Location = new System.Drawing.Point(181, 1);
+            this.txtDescription.CustomButton.Location = new System.Drawing.Point(205, 1);
             this.txtDescription.CustomButton.Name = "";
             this.txtDescription.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -278,7 +278,6 @@
             this.Movable = false;
             this.Name = "Ajouter_Organisateur";
             this.Text = "Ajouter Organisateur";
-            this.Load += new System.EventHandler(this.Ajouter_Organisateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

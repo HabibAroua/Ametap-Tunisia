@@ -12,9 +12,17 @@ namespace AMETAP.Model.DataAcces
 
         public PayaimentDA()
         {
-            cn = new OleDbConnection(Properties.Settings.Default.ch);
-            cmd = new OleDbCommand();
+            try
+            {
+                cn = new OleDbConnection(Properties.Settings.Default.ch);
+                cmd = new OleDbCommand();
+            }
+            catch(OleDbException ex)
+            {
+                System.Console.WriteLine("error :" + ex.Message);
+            }
         }
+
         public bool delete(object o)
         {
             throw new NotImplementedException();
@@ -89,6 +97,5 @@ namespace AMETAP.Model.DataAcces
             tab1 = dtst.Tables["Participation"];
             return tab1;
         }
-
     }
 }

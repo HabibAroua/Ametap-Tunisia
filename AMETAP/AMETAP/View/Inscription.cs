@@ -30,16 +30,23 @@ namespace AMETAP.View
 
         private void btInscrire_Click(object sender, EventArgs e)
         {
-            AdminController ac = new AdminController();
-            if(txtPassword.Text.ToString().Equals(txtConfirmPassword.Text.ToString()))
+            try
             {
-                Cryptage c = new Cryptage();
-                ac.Inscrire(int.Parse(txtMatricule.Text.ToString()), txtLogin.Text.ToString(),c.Encrypt(txtPassword.Text.ToString()));
-                this.Close();
+                AdminController ac = new AdminController();
+                if (txtPassword.Text.ToString().Equals(txtConfirmPassword.Text.ToString()))
+                {
+                    Cryptage c = new Cryptage();
+                    ac.Inscrire(int.Parse(txtMatricule.Text.ToString()), txtLogin.Text.ToString(), c.Encrypt(txtPassword.Text.ToString()));
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Vérifier le mot de passe", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Vérifier le mot de passe", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error :" + ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
