@@ -1,347 +1,551 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59A6420B-134D-481F-9512-152E047C4411}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AMETAP</RootNamespace>
-    <AssemblyName>AMETAP</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Mvvm, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Mvvm.UI, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Tulpep.NotificationWindow, Version=1.1.23.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.23\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Controller\ActiviteController.cs" />
-    <Compile Include="Controller\AdherentController.cs" />
-    <Compile Include="Controller\AdminController.cs" />
-    <Compile Include="Controller\Agence_VoyageController.cs" />
-    <Compile Include="Controller\BudgetCategorieController.cs" />
-    <Compile Include="Controller\BudgetController.cs" />
-    <Compile Include="Controller\CentreController.cs" />
-    <Compile Include="Controller\ClubController.cs" />
-    <Compile Include="Controller\ConjointController.cs" />
-    <Compile Include="Controller\ContribuesController.cs" />
-    <Compile Include="Controller\EnfantController.cs" />
-    <Compile Include="Controller\OrganisateurController.cs" />
-    <Compile Include="Controller\ParticipantController.cs" />
-    <Compile Include="Controller\ParticipationController.cs" />
-    <Compile Include="Controller\PayaimentController.cs" />
-    <Compile Include="Controller\Script\DateValue.cs" />
-    <Compile Include="Controller\Script\Mailing.cs" />
-    <Compile Include="Controller\TypeActiviteController.cs" />
-    <Compile Include="Model\Business\Activite.cs" />
-    <Compile Include="Model\Business\Adherent.cs" />
-    <Compile Include="Model\Business\Admin.cs" />
-    <Compile Include="Model\Business\Agence_Voyage.cs" />
-    <Compile Include="Model\Business\Budget.cs" />
-    <Compile Include="Model\Business\BudgetCategorie.cs" />
-    <Compile Include="Model\Business\Categorie.cs" />
-    <Compile Include="Model\Business\Centre.cs" />
-    <Compile Include="Model\Business\Club.cs" />
-    <Compile Include="Model\Business\Conjoint.cs" />
-    <Compile Include="Model\Business\Contribues.cs" />
-    <Compile Include="Model\Business\Enfant.cs" />
-    <Compile Include="Model\Business\Nature_Agent.cs" />
-    <Compile Include="Model\Business\Organisateur.cs" />
-    <Compile Include="Model\Business\Participant.cs" />
-    <Compile Include="Model\Business\Participation.cs" />
-    <Compile Include="Model\Business\Payaiment.cs" />
-    <Compile Include="Model\Business\Personnel.cs" />
-    <Compile Include="Model\Business\TypeActivite.cs" />
-    <Compile Include="Model\DataAcces\ActiviteDA.cs" />
-    <Compile Include="Model\DataAcces\AdherentDA.cs" />
-    <Compile Include="Model\DataAcces\AdminDA.cs" />
-    <Compile Include="Model\DataAcces\Agence_VoyageDA.cs" />
-    <Compile Include="Model\DataAcces\BudgetCategorieDA.cs" />
-    <Compile Include="Model\DataAcces\BudgetDA.cs" />
-    <Compile Include="Model\DataAcces\CentreDA.cs" />
-    <Compile Include="Model\DataAcces\ClubDA.cs" />
-    <Compile Include="Model\DataAcces\ConjointDA.cs" />
-    <Compile Include="Model\DataAcces\ContribuesDA.cs" />
-    <Compile Include="Model\DataAcces\EnfantDA.cs" />
-    <Compile Include="Model\DataAcces\IData.cs" />
-    <Compile Include="Model\DataAcces\OrganisateurDA.cs" />
-    <Compile Include="Model\DataAcces\ParticipantDA.cs" />
-    <Compile Include="Model\DataAcces\ParticipationDA.cs" />
-    <Compile Include="Model\DataAcces\PayaimentDA.cs" />
-    <Compile Include="Model\DataAcces\PersonnelDA.cs" />
-    <Compile Include="Model\DataAcces\PLSQL\Pl_SQL.cs" />
-    <Compile Include="View\Authentification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Authentification.Designer.cs">
-      <DependentUpon>Authentification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Gestion Budget\Afficher Budget.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion Budget\Afficher Budget.Designer.cs">
-      <DependentUpon>Afficher Budget.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion Budget\Fixer Budget.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion Budget\Fixer Budget.Designer.cs">
-      <DependentUpon>Fixer Budget.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion Budget\Information chaque année.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion Budget\Information chaque année.Designer.cs">
-      <DependentUpon>Information chaque année.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des activites\AjouterActivite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des activites\AjouterActivite.Designer.cs">
-      <DependentUpon>AjouterActivite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des activites\GestionActivite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des activites\GestionActivite.Designer.cs">
-      <DependentUpon>GestionActivite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des activites\Information d%27une Activite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des activites\Information d%27une Activite.Designer.cs">
-      <DependentUpon>Information d%27une Activite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des activites\Modifier Activite.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des activites\Modifier Activite.Designer.cs">
-      <DependentUpon>Modifier Activite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des adherents\Famille.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des adherents\Famille.Designer.cs">
-      <DependentUpon>Famille.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des adherents\Gestion_Adherent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des adherents\Gestion_Adherent.Designer.cs">
-      <DependentUpon>Gestion_Adherent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.Designer.cs">
-      <DependentUpon>Gestion des inscriptions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion des utilisateurs\Gestion des utilisateurs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion des utilisateurs\Gestion des utilisateurs.Designer.cs">
-      <DependentUpon>Gestion des utilisateurs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\Ajouter_Organisateur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\Ajouter_Organisateur.Designer.cs">
-      <DependentUpon>Ajouter_Organisateur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\GestionOrganisateur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\GestionOrganisateur.Designer.cs">
-      <DependentUpon>GestionOrganisateur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\Modifier_Organisateur.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Gestion organisateur\Modifier_Organisateur.Designer.cs">
-      <DependentUpon>Modifier_Organisateur.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Index.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Index.Designer.cs">
-      <DependentUpon>Index.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Inscription.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Inscription.Designer.cs">
-      <DependentUpon>Inscription.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controller\Script\Cryptage.cs" />
-    <Compile Include="Controller\Script\RegularExpression.cs" />
-    <Compile Include="View\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="View\Authentification.resx">
-      <DependentUpon>Authentification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="View\Gestion Budget\Afficher Budget.resx">
-      <DependentUpon>Afficher Budget.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion Budget\Fixer Budget.resx">
-      <DependentUpon>Fixer Budget.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion Budget\Information chaque année.resx">
-      <DependentUpon>Information chaque année.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des activites\AjouterActivite.resx">
-      <DependentUpon>AjouterActivite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des activites\GestionActivite.resx">
-      <DependentUpon>GestionActivite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des activites\Information d%27une Activite.resx">
-      <DependentUpon>Information d%27une Activite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des activites\Modifier Activite.resx">
-      <DependentUpon>Modifier Activite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des adherents\Famille.resx">
-      <DependentUpon>Famille.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des adherents\Gestion_Adherent.resx">
-      <DependentUpon>Gestion_Adherent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des Inscriptions\Gestion des inscriptions.resx">
-      <DependentUpon>Gestion des inscriptions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion des utilisateurs\Gestion des utilisateurs.resx">
-      <DependentUpon>Gestion des utilisateurs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion organisateur\Ajouter_Organisateur.resx">
-      <DependentUpon>Ajouter_Organisateur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion organisateur\GestionOrganisateur.resx">
-      <DependentUpon>GestionOrganisateur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Gestion organisateur\Modifier_Organisateur.resx">
-      <DependentUpon>Modifier_Organisateur.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Index.resx">
-      <DependentUpon>Index.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Inscription.resx">
-      <DependentUpon>Inscription.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MetroFramework.txt" />
-    <None Include="Picture\Information.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">
+		    Debug
+		</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">
+		    AnyCPU
+		</Platform>
+        <ProjectGuid>
+		    {59A6420B-134D-481F-9512-152E047C4411}
+		</ProjectGuid>
+        <OutputType>
+		    WinExe
+		</OutputType>
+        <AppDesignerFolder>
+		    Properties
+		</AppDesignerFolder>
+        <RootNamespace>
+		    AMETAP
+		</RootNamespace>
+        <AssemblyName>
+		    AMETAP
+		</AssemblyName>
+        <TargetFrameworkVersion>
+		    v4.5.2
+		</TargetFrameworkVersion>
+        <FileAlignment>
+		    512
+		</FileAlignment>
+        <AutoGenerateBindingRedirects>
+		    true
+		</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>
+		    AnyCPU
+		</PlatformTarget>
+        <DebugSymbols>
+		    true
+		</DebugSymbols>
+        <DebugType>
+		    full
+		</DebugType>
+        <Optimize>
+		    false
+		</Optimize>
+        <OutputPath>
+		    bin\Debug\
+		</OutputPath>
+        <DefineConstants>
+		    DEBUG;TRACE
+		</DefineConstants>
+        <ErrorReport>
+		    prompt
+		</ErrorReport>
+        <WarningLevel>
+		    4
+		</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>
+		    AnyCPU
+		</PlatformTarget>
+        <DebugType>
+		    pdbonly
+		</DebugType>
+        <Optimize>
+		    true
+		</Optimize>
+        <OutputPath>
+		    bin\Release\
+		</OutputPath>
+        <DefineConstants>
+		    TRACE
+		</DefineConstants>
+        <ErrorReport>
+		    prompt
+		</ErrorReport>
+        <WarningLevel>
+		    4
+		</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+        <Reference Include="DevExpress.Mvvm, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+            <HintPath>
+		        ..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.dll
+		    </HintPath>
+            <Private>
+		        True
+		    </Private>
+        </Reference>
+        <Reference Include="DevExpress.Mvvm.UI, Version=16.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+            <HintPath>
+		        ..\packages\DevExpressMvvm.16.2.3.0\lib\net40-client\DevExpress.Mvvm.UI.dll
+		    </HintPath>
+            <Private>
+		        True
+		    </Private>
+        </Reference>
+        <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+        <Reference Include="DevExpress.Utils.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+        <Reference Include="DevExpress.XtraBars.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+        <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+        <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+            <HintPath>
+		        ..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll
+		    </HintPath>
+            <Private>
+		        True
+		    </Private>
+        </Reference>
+        <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+            <HintPath>
+			    ..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll
+			</HintPath>
+            <Private>
+			    True
+			</Private>
+        </Reference>
+        <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+            <HintPath>
+			    ..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll
+			</HintPath>
+            <Private>
+			    True
+			</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Windows.Forms.DataVisualization" />
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Deployment" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Net.Http" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="Tulpep.NotificationWindow, Version=1.1.23.0, Culture=neutral, processorArchitecture=MSIL">
+            <HintPath>
+		        ..\packages\Tulpep.NotificationWindow.1.1.23\lib\net40\Tulpep.NotificationWindow.dll
+		    </HintPath>
+            <Private>
+		        True
+		    </Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Controller\ActiviteController.cs" />
+        <Compile Include="Controller\AdherentController.cs" />
+        <Compile Include="Controller\AdminController.cs" />
+        <Compile Include="Controller\Agence_VoyageController.cs" />
+        <Compile Include="Controller\BudgetCategorieController.cs" />
+        <Compile Include="Controller\BudgetController.cs" />
+        <Compile Include="Controller\CentreController.cs" />
+        <Compile Include="Controller\ClubController.cs" />
+        <Compile Include="Controller\ConjointController.cs" />
+        <Compile Include="Controller\ContribuesController.cs" />
+        <Compile Include="Controller\EnfantController.cs" />
+        <Compile Include="Controller\OrganisateurController.cs" />
+        <Compile Include="Controller\ParticipantController.cs" />
+        <Compile Include="Controller\ParticipationController.cs" />
+        <Compile Include="Controller\PayaimentController.cs" />
+        <Compile Include="Controller\Script\DateValue.cs" />
+        <Compile Include="Controller\Script\Mailing.cs" />
+        <Compile Include="Controller\TypeActiviteController.cs" />
+        <Compile Include="Model\Business\Activite.cs" />
+        <Compile Include="Model\Business\Adherent.cs" />
+        <Compile Include="Model\Business\Admin.cs" />
+        <Compile Include="Model\Business\Agence_Voyage.cs" />
+        <Compile Include="Model\Business\Budget.cs" />
+        <Compile Include="Model\Business\BudgetCategorie.cs" />
+        <Compile Include="Model\Business\Categorie.cs" />
+        <Compile Include="Model\Business\Centre.cs" />
+        <Compile Include="Model\Business\Club.cs" />
+        <Compile Include="Model\Business\Conjoint.cs" />
+        <Compile Include="Model\Business\Contribues.cs" />
+        <Compile Include="Model\Business\Enfant.cs" />
+        <Compile Include="Model\Business\Nature_Agent.cs" />
+        <Compile Include="Model\Business\Organisateur.cs" />
+        <Compile Include="Model\Business\Participant.cs" />
+        <Compile Include="Model\Business\Participation.cs" />
+        <Compile Include="Model\Business\Payaiment.cs" />
+        <Compile Include="Model\Business\Personnel.cs" />
+        <Compile Include="Model\Business\TypeActivite.cs" />
+        <Compile Include="Model\DataAcces\ActiviteDA.cs" />
+        <Compile Include="Model\DataAcces\AdherentDA.cs" />
+        <Compile Include="Model\DataAcces\AdminDA.cs" />
+        <Compile Include="Model\DataAcces\Agence_VoyageDA.cs" />
+        <Compile Include="Model\DataAcces\BudgetCategorieDA.cs" />
+        <Compile Include="Model\DataAcces\BudgetDA.cs" />
+        <Compile Include="Model\DataAcces\CentreDA.cs" />
+        <Compile Include="Model\DataAcces\ClubDA.cs" />
+        <Compile Include="Model\DataAcces\ConjointDA.cs" />
+        <Compile Include="Model\DataAcces\ContribuesDA.cs" />
+        <Compile Include="Model\DataAcces\EnfantDA.cs" />
+        <Compile Include="Model\DataAcces\IData.cs" />
+        <Compile Include="Model\DataAcces\OrganisateurDA.cs" />
+        <Compile Include="Model\DataAcces\ParticipantDA.cs" />
+        <Compile Include="Model\DataAcces\ParticipationDA.cs" />
+        <Compile Include="Model\DataAcces\PayaimentDA.cs" />
+        <Compile Include="Model\DataAcces\PersonnelDA.cs" />
+        <Compile Include="Model\DataAcces\PLSQL\Pl_SQL.cs" />
+        <Compile Include="View\Authentification.cs">
+            <SubType>
+		        Form
+		    </SubType>
+        </Compile>
+        <Compile Include="View\Authentification.Designer.cs">
+            <DependentUpon>
+			    Authentification.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="View\Gestion Budget\Afficher Budget.cs">
+            <SubType>
+		        Form
+		    </SubType>
+        </Compile>
+        <Compile Include="View\Gestion Budget\Afficher Budget.Designer.cs">
+            <DependentUpon>
+			    Afficher Budget.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion Budget\Fixer Budget.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion Budget\Fixer Budget.Designer.cs">
+            <DependentUpon>
+			    Fixer Budget.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion Budget\Information chaque année.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion Budget\Information chaque année.Designer.cs">
+            <DependentUpon>
+			    Information chaque année.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des activites\AjouterActivite.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des activites\AjouterActivite.Designer.cs">
+            <DependentUpon>
+			    AjouterActivite.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des activites\GestionActivite.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des activites\GestionActivite.Designer.cs">
+            <DependentUpon>
+			    GestionActivite.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des activites\Information d%27une Activite.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des activites\Information d%27une Activite.Designer.cs">
+            <DependentUpon>
+			    Information d%27une Activite.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des activites\Modifier Activite.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des activites\Modifier Activite.Designer.cs">
+             <DependentUpon>Modifier Activite.cs</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des adherents\Famille.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des adherents\Famille.Designer.cs">
+            <DependentUpon>
+			    Famille.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des adherents\Gestion_Adherent.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des adherents\Gestion_Adherent.Designer.cs">
+            <DependentUpon>
+		        Gestion_Adherent.cs
+		    </DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des Inscriptions\Gestion des inscriptions.Designer.cs">
+            <DependentUpon>
+			    Gestion des inscriptions.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion des utilisateurs\Gestion des utilisateurs.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion des utilisateurs\Gestion des utilisateurs.Designer.cs">
+            <DependentUpon>
+			    Gestion des utilisateurs.cs
+			</DependentUpon>
+        </Compile>
+       <Compile Include="View\Gestion organisateur\Ajouter_Organisateur.cs">
+            <SubType>Form</SubType>
+       </Compile>
+        <Compile Include="View\Gestion organisateur\Ajouter_Organisateur.Designer.cs">
+            <DependentUpon>
+			    Ajouter_Organisateur.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion organisateur\GestionOrganisateur.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion organisateur\GestionOrganisateur.Designer.cs">
+            <DependentUpon>
+			    GestionOrganisateur.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Gestion organisateur\Modifier_Organisateur.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Gestion organisateur\Modifier_Organisateur.Designer.cs">
+            <DependentUpon>
+			    Modifier_Organisateur.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Index.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Index.Designer.cs">
+            <DependentUpon>
+			    Index.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Inscription.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Inscription.Designer.cs">
+            <DependentUpon>
+			    Inscription.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="View\Menu.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\Menu.Designer.cs">
+            <DependentUpon>
+			    Menu.cs
+			</DependentUpon>
+        </Compile>
+        <Compile Include="Controller\Script\Cryptage.cs" />
+        <Compile Include="Controller\Script\RegularExpression.cs" />
+        <Compile Include="View\SplashScreen.cs">
+            <SubType>
+			    Form
+			</SubType>
+        </Compile>
+        <Compile Include="View\SplashScreen.Designer.cs">
+            <DependentUpon>
+			    SplashScreen.cs
+			</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Properties\licenses.licx" />
+        <EmbeddedResource Include="View\Authentification.resx">
+            <DependentUpon>
+		        Authentification.cs
+		    </DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>
+			    ResXFileCodeGenerator
+			</Generator>
+            <LastGenOutput>
+			    Resources.Designer.cs
+			</LastGenOutput>
+            <SubType>
+			    Designer
+			</SubType>
+        </EmbeddedResource>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>
+			    True
+			</AutoGen>
+            <DependentUpon>
+			    Resources.resx
+			</DependentUpon>
+            <DesignTime>
+			    True
+			</DesignTime>
+        </Compile>
+        <EmbeddedResource Include="View\Gestion Budget\Afficher Budget.resx">
+            <DependentUpon>
+			    Afficher Budget.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion Budget\Fixer Budget.resx">
+            <DependentUpon>
+			    Fixer Budget.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion Budget\Information chaque année.resx">
+            <DependentUpon>
+			    Information chaque année.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des activites\AjouterActivite.resx">
+            <DependentUpon>
+			    AjouterActivite.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des activites\GestionActivite.resx">
+            <DependentUpon>
+			    GestionActivite.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des activites\Information d%27une Activite.resx">
+            <DependentUpon>
+			    Information d%27une Activite.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des activites\Modifier Activite.resx">
+            <DependentUpon>
+			    Modifier Activite.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des adherents\Famille.resx">
+            <DependentUpon>
+			    Famille.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des adherents\Gestion_Adherent.resx">
+            <DependentUpon>
+			    Gestion_Adherent.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des Inscriptions\Gestion des inscriptions.resx">
+            <DependentUpon>
+		        Gestion des inscriptions.cs
+		    </DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion des utilisateurs\Gestion des utilisateurs.resx">
+            <DependentUpon>
+			    Gestion des utilisateurs.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion organisateur\Ajouter_Organisateur.resx">
+            <DependentUpon>
+			    Ajouter_Organisateur.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion organisateur\GestionOrganisateur.resx">
+            <DependentUpon>
+			    GestionOrganisateur.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Gestion organisateur\Modifier_Organisateur.resx">
+            <DependentUpon>
+			    Modifier_Organisateur.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Index.resx">
+            <DependentUpon>
+			    Index.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Inscription.resx">
+            <DependentUpon>
+			    Inscription.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="View\Menu.resx">
+            <DependentUpon>
+	            Menu.cs
+		    </DependentUpon>
+       </EmbeddedResource>
+       <EmbeddedResource Include="View\SplashScreen.resx">
+            <DependentUpon>
+			    SplashScreen.cs
+			</DependentUpon>
+        </EmbeddedResource>
+        <None Include="packages.config" />
+        <None Include="Properties\Settings.settings">
+            <Generator>
+			    SettingsSingleFileGenerator
+			</Generator>
+            <LastGenOutput>
+			    Settings.Designer.cs
+			</LastGenOutput>
+        </None>
+        <Compile Include="Properties\Settings.Designer.cs">
+            <AutoGen>
+			    True
+			</AutoGen>
+            <DependentUpon>
+			    Settings.settings
+			</DependentUpon>
+            <DesignTimeSharedInput>
+			    True
+			</DesignTimeSharedInput>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="MetroFramework.txt" />
+        <None Include="Picture\Information.png" />
+    </ItemGroup>
+    <ItemGroup />
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+     <Target Name="BeforeBuild">
+     </Target>
+     <Target Name="AfterBuild">
+     </Target>
+     -->
 </Project>

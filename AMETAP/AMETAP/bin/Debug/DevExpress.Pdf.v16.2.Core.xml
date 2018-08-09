@@ -7,444 +7,498 @@
         <member name="T:DevExpress.Pdf.PdfMetadata">
 
             <summary>
-                <para>Represents global information about the document such as the document's title, author, and creation and modification dates.
-</para>
+                <para>Represents global information about the document such as the document's title, author, and creation and modification dates.</para>
             </summary>
 
         </member>
         <member name="P:DevExpress.Pdf.PdfMetadata.Data">
             <summary>
-                <para>Gets the data for the document components.
-</para>
+                <para>Gets the data for the document components.</para>
             </summary>
-            <value>A string value that represents the data of document components.
-</value>
+            <value>
+			    A string value that represents the data of document components.
+            </value>
 
 
         </member>
         <member name="T:DevExpress.Pdf.PdfWord">
-
             <summary>
-                <para>An individual word in a document.
-</para>
+                <para>An individual word in a document.</para>
             </summary>
-
         </member>
         <member name="P:DevExpress.Pdf.PdfWord.Characters">
             <summary>
-                <para>Returns a list of the word's characters.
-</para>
+                <para>Returns a list of the word's characters.</para>
             </summary>
-            <value>A collection of <see cref="T:DevExpress.Pdf.PdfCharacter"/> values.
-</value>
-
-
+            <value>
+			    A collection of 
+				<see cref="T:DevExpress.Pdf.PdfCharacter"/> 
+				values.
+            </value>
         </member>
         <member name="P:DevExpress.Pdf.PdfWord.Rectangles">
             <summary>
-                <para>Returns rectangles surrounding the word.
-</para>
+                <para>Returns rectangles surrounding the word.</para>
             </summary>
-            <value>A collection of <see cref="T:DevExpress.Pdf.PdfOrientedRectangle"/> values.
-</value>
-
-
+            <value>A collection of <see cref="T:DevExpress.Pdf.PdfOrientedRectangle"/>
+			    values.
+            </value>
         </member>
         <member name="P:DevExpress.Pdf.PdfWord.Text">
             <summary>
-                <para>Returns a Unicode representation of the word's characters.
-</para>
+                <para>Returns a Unicode representation of the word's characters.</para>
             </summary>
-            <value>A <see cref="T:System.String"/> value.
-</value>
-
-
+            <value>A <see cref="T:System.String"/>
+			    value.
+			</value>
         </member>
         <member name="T:DevExpress.Pdf.PdfTextSearchDirection">
-
             <summary>
-                <para>Lists the available text search direction modes.
-</para>
+                <para>
+				    Lists the available text search direction modes.
+                </para>
             </summary>
-
         </member>
         <member name="F:DevExpress.Pdf.PdfTextSearchDirection.Backward">
             <summary>
-                <para>Specifies a backward search in the document.
-
-</para>
+                <para>
+				    Specifies a backward search in the document.
+				</para>
             </summary>
-
-
         </member>
         <member name="F:DevExpress.Pdf.PdfTextSearchDirection.Forward">
             <summary>
-                <para>Specifies a forward search in the document.
-
-</para>
+                <para>
+				    Specifies a forward search in the document.
+				</para>
             </summary>
-
-
         </member>
         <member name="T:DevExpress.Pdf.PdfOrientedRectangle">
-
             <summary>
-                <para>A rectangle that delimits a page area around a specific document element.
-
-</para>
+                <para>
+				    A rectangle that delimits a page area around a specific document element.
+				</para>
             </summary>
-
         </member>
         <member name="P:DevExpress.Pdf.PdfOrientedRectangle.Angle">
             <summary>
-                <para>Specifies the rotation angle of the rectangle
-</para>
+                <para>
+				    Specifies the rotation angle of the rectangle
+				</para>
             </summary>
-            <value>A <see cref="T:System.Double"/> value, specifying the rotation angle of the rectangle.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:System.Double"/> 
+				value, specifying the rotation angle of the rectangle.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfOrientedRectangle.Height">
             <summary>
-                <para>Gets the rectangle height.
-</para>
+                <para>
+				    Gets the rectangle height.
+				</para>
             </summary>
-            <value>A <see cref="T:System.Double"/> value that is the rectangle height.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:System.Double"/> 
+				value that is the rectangle height.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfOrientedRectangle.Left">
             <summary>
-                <para>Specifies the rectangle position in relation to the left edge of the PDF page.
-</para>
+                <para>
+				    Specifies the rectangle position in relation to the left edge of the PDF page.
+				</para>
             </summary>
-            <value>A <see cref="T:System.Double"/> value.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:System.Double"/> 
+				value.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfOrientedRectangle.Top">
             <summary>
-                <para>Specifies the rectangle position in relation to the top edge of the PDF page.
-</para>
+                <para>Specifies the rectangle position in relation to the top edge of the PDF page.</para>
             </summary>
-            <value>A <see cref="T:System.Double"/> value.
-</value>
-
-
+            <value>
+			     A <see cref="T:System.Double"/> 
+				 value.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfOrientedRectangle.Width">
             <summary>
-                <para>Gets the rectangle width.
-</para>
+                <para>
+				    Gets the rectangle width.
+				</para>
             </summary>
-            <value>A <see cref="T:System.Double"/> value that is the rectangle width.
-</value>
-
-
+            <value>
+			    A <see cref="T:System.Double"/> 
+				value that is the rectangle width.
+			</value>
         </member>
         <member name="T:DevExpress.Pdf.PdfQuadrilateral">
-
             <summary>
-                <para>Represents a quadrilateral (in default user space) that comprises the region in which the link should be activated.
-</para>
+                <para>
+				    Represents a quadrilateral (in default user space) that comprises the region in which the link should be activated.
+                </para>
             </summary>
-
         </member>
         <member name="M:DevExpress.Pdf.PdfQuadrilateral.#ctor(DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint)">
             <summary>
-                <para>Initializes a new instance of the PdfQuadrilateral class with the specified settings.
-</para>
+                <para>
+				    Initializes a new instance of the PdfQuadrilateral class with the specified settings.
+				</para>
             </summary>
             <param name="p1">
-		A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that represents the coordinates of the first quadrilateral point.  
-
-
+			    A <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that represents the coordinates of the first quadrilateral point.  
             </param>
             <param name="p2">
-		A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that represents the coordinates of the second quadrilateral point. 
-
-
+		        A <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+			    object that represents the coordinates of the second quadrilateral point. 
             </param>
             <param name="p3">
-		A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that represents the coordinates of the third quadrilateral point. 
-
+			    A <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that represents the coordinates of the third quadrilateral point. 
             </param>
             <param name="p4">
-		A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that represents the coordinates of the fourth quadrilateral point. 
-
-
+			    A <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that represents the coordinates of the fourth quadrilateral point. 
             </param>
-
-
         </member>
         <member name="P:DevExpress.Pdf.PdfQuadrilateral.P1">
             <summary>
-                <para>Gets the first quadrilateral point in the default user space.
-
-</para>
+                <para>
+				    Gets the first quadrilateral point in the default user space.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that is the first quadrilateral point in the default user space.
-
-</value>
-
-
+            <value>
+			     A 
+				 <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				 object that is the first quadrilateral point in the default user space.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfQuadrilateral.P2">
             <summary>
-                <para>Gets the second quadrilateral point in the default user space.
-
-</para>
+                <para>
+				    Gets the second quadrilateral point in the default user space.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that represents the second quadrilateral point in the default user space.
-
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that represents the second quadrilateral point in the default user space.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfQuadrilateral.P3">
             <summary>
-                <para>Gets the third quadrilateral point in the default user space.
-
-</para>
+                <para>
+				    Gets the third quadrilateral point in the default user space.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that is the third quadrilateral point in the default user space.
-
-</value>
-
-
-        </member>
+            <value>
+			    A <see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that is the third quadrilateral point in the default user space.
+			</value>
+		</member>
         <member name="P:DevExpress.Pdf.PdfQuadrilateral.P4">
             <summary>
-                <para>Gets the fourth quadrilateral point in the default user space.
-
-</para>
+                <para>
+				    Gets the fourth quadrilateral point in the default user space.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfPoint"/> object that is the fourth quadrilateral point in the default user space.
-
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:DevExpress.Pdf.PdfPoint"/> 
+				object that is the fourth quadrilateral point in the default user space.
+            </value>
         </member>
         <member name="T:DevExpress.Pdf.PdfIconFit">
-
             <summary>
-                <para>Contains properties that define how to display the button's icon within the annotation rectangle of its widget annotation.
-</para>
+                <para>
+				    Contains properties that define how to display the button's icon within the annotation rectangle of its widget annotation.
+                </para>
             </summary>
-
         </member>
         <member name="P:DevExpress.Pdf.PdfIconFit.FitToAnnotationBounds">
             <summary>
-                <para>Gets a value that indicates whether the button appearance is scaled to fit fully within the bounds of the annotation without taking into consideration the line width of the border.
-</para>
+                <para>
+				    Gets a value that indicates whether the button appearance is scaled to fit fully within the bounds of the annotation 
+					without taking into consideration the line width of the border.
+				</para>
             </summary>
-            <value><b>true</b>, to fit fully within the bounds of the annotation otherwise, <b>false</b>. The default value is <b>false.</b>
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b>
+				, to fit fully within the bounds of the annotation otherwise, <b>false</b>.
+				The default value is <b>false.</b>
+            </value>
         </member>
         <member name="P:DevExpress.Pdf.PdfIconFit.HorizontalPosition">
             <summary>
-                <para>Gets the horizontal leftover of the icon within an annotation rectangle.
-
-</para>
+                <para>
+				    Gets the horizontal leftover of the icon within an annotation rectangle.
+				</para>
             </summary>
-            <value>A double value that is the horizontal leftover of the icon within an annotation rectangle.
-
-</value>
-
-
+            <value>
+			    A double value that is the horizontal leftover of the icon within an annotation rectangle.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfIconFit.ScalingCircumstances">
             <summary>
-                <para>Gets the circumstances under which the icon shall be scaled inside the annotation rectangle.
-</para>
+                <para>
+				    Gets the circumstances under which the icon shall be scaled inside the annotation rectangle.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfIconScalingCircumstances"/> enumeration value that lists the circumstances for scaling an icon.
-
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:DevExpress.Pdf.PdfIconScalingCircumstances"/> 
+				enumeration value that lists the circumstances for scaling an icon.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfIconFit.ScalingType">
             <summary>
-                <para>Get the type of icon scaling.
-</para>
+                <para>
+				    Get the type of icon scaling.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfIconScalingType"/> enumeration value that is the icon scaling type.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:DevExpress.Pdf.PdfIconScalingType"/> 
+				enumeration value that is the icon scaling type.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfIconFit.VerticalPosition">
             <summary>
-                <para>Gets the vertical leftover of the icon within an annotation rectangle.
-
-
-</para>
+                <para>
+				    Gets the vertical leftover of the icon within an annotation rectangle.
+				</para>
             </summary>
-            <value>A double value that is the vertical icon leftover within the annotation rectangle.
-
-</value>
-
-
+            <value>
+			    A double value that is the vertical icon leftover within the annotation rectangle.
+			</value>
         </member>
         <member name="T:DevExpress.Pdf.PdfDocument">
-
             <summary>
-                <para>A document contained in a PDF file.
-</para>
+                <para>
+				    A document contained in a PDF file.
+				</para>
             </summary>
-
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AcroForm">
             <summary>
-                <para>Provides access to the document's interactive form (AcroForm) dictionary.
-</para>
+                <para>
+				    Provides access to the document's interactive form (AcroForm) dictionary.
+				</para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfInteractiveForm"/> object.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:DevExpress.Pdf.PdfInteractiveForm"/> 
+				object.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Actions">
             <summary>
-                <para>Provides access to a dictionary of additional actions defining the actions that shall be taken in response to various trigger events affecting the document as a whole.
-</para>
+                <para>
+				    Provides access to a dictionary of additional actions defining the actions that shall be taken in response 
+					to various trigger events affecting the document as a whole.
+				</para>
             </summary>
-            <value>A DevExpress.Pdf.PdfDocumentActions object.
-</value>
-
-
+            <value>
+			    A DevExpress.Pdf.PdfDocumentActions object.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowAccessibility">
             <summary>
-                <para>Enables copying or otherwise extracting text and graphics from the document (in support of accessibility to users with disabilities or for other purposes).
-</para>
+                <para>
+				    Enables copying or otherwise extracting text and graphics from the document 
+					(in support of accessibility to users with disabilities or for other purposes).
+				</para>
             </summary>
-            <value><b>true</b> to support PDF accessibility; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to support PDF accessibility; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowAnnotationsAndFormsModifying">
             <summary>
-                <para>Enables adding and modifying text annotations and interactive form fields in the PDF.
-</para>
+                <para>
+				    Enables adding and modifying text annotations and interactive form fields in the PDF.
+				</para>
             </summary>
-            <value><b>true</b> to allow making changes to the PDF annotations and form fields; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b>
+				to allow making changes to the PDF annotations and form fields; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowDataExtraction">
             <summary>
-                <para>Enables extracting data from the PDF.
-</para>
+                <para>
+				    Enables extracting data from the PDF.
+				</para>
             </summary>
-            <value><b>true</b> to allow extracting the PDF data; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to allow extracting the PDF data; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowDocumentAssembling">
             <summary>
-                <para>Enables inserting, rotating, or deleting PDF pages and creating navigation elements such as bookmarks or thumbnail images.
-</para>
+                <para>
+				    Enables inserting, rotating, or deleting PDF pages and creating navigation elements such as bookmarks
+					or thumbnail images.
+                </para>
             </summary>
-            <value><b>true</b> to allow assembling the document; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to allow assembling the document; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+            </value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowFormsFilling">
             <summary>
-                <para>Enables filling in interactive form fields of the PDF file, as well as signing the document (which amounts to filling in existing signature fields, a type of interactive form field).
-</para>
+                <para>
+				    Enables filling in interactive form fields of the PDF file, as well as signing the document 
+					(which amounts to filling in existing signature fields, a type of interactive form field).
+				</para>
             </summary>
-            <value><b>true</b> to allow filling in interactive form fields in the PDF; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				     true
+			    </b> 
+				to allow filling in interactive form fields in the PDF; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowHighQualityPrinting">
             <summary>
-                <para>Enables printing the PDF in high resolution, so that a faithful digital copy of the PDF content is generated. 
+                <para>
+				    Enables printing the PDF in high resolution, so that a faithful digital copy of the PDF content is generated. 
 
-</para>
+                </para>
             </summary>
-            <value><b>true</b> to high quality printing; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to high quality printing; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowModifying">
             <summary>
-                <para>Enables modifying the PDF.
-</para>
+                <para>
+				    Enables modifying the PDF.
+				</para>
             </summary>
-            <value><b>true</b> to allow modifying the PDF; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to allow modifying the PDF; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowPrinting">
             <summary>
-                <para>Enables printing the PDF.
-</para>
+                <para>
+				    Enables printing the PDF.
+				</para>
             </summary>
-            <value><b>true</b> to allow printing the PDF; otherwise <b>false</b>.
-</value>
-
-
+            <value>
+			    <b>
+				    true
+				</b> 
+				to allow printing the PDF; 
+				otherwise 
+				<b>
+				    false
+				</b>.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Author">
             <summary>
-                <para>Returns the name of the person who created the document.
-</para>
+                <para>
+				    Returns the name of the person who created the document.
+				</para>
             </summary>
-            <value>A <see cref="T:System.String"/> value.
-</value>
-
-
+            <value>
+			    A 
+				<see cref="T:System.String"/> 
+				value.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Bookmarks">
             <summary>
-                <para>Gets or sets the bookmarks that are used to navigate from one part of a document to another.
-</para>
+                <para> 
+				    Gets or sets the bookmarks that are used to navigate from one part of a document to another.
+				</para>
             </summary>
-            <value>A list of <see cref="T:DevExpress.Pdf.PdfBookmark"/> objects that are the collection of bookmarks. 
-</value>
-
-
+            <value>
+			    A list of <see cref="T:DevExpress.Pdf.PdfBookmark"/> 
+				objects that are the collection of bookmarks. 
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.CreationDate">
             <summary>
-                <para>The date and time the document was created, in human-readable form.
-</para>
+                <para>
+				    The date and time the document was created, in human-readable form.
+				</para>
             </summary>
-            <value>A <see cref="T:System.DateTimeOffset"/> structure.
-</value>
-
-
+            <value>
+			    A <see cref="T:System.DateTimeOffset"/> 
+				structure.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Creator">
             <summary>
-                <para>If the document was converted to PDF from another format, the name of the conforming product that created the original document from which it was converted.
-</para>
+                <para>
+				    If the document was converted to PDF from another format, the name of the conforming product that created the original document from which it was converted.
+                </para>
             </summary>
-            <value>A <see cref="T:System.String"/> value.
-</value>
-
-
+            <value>
+			    A <see cref="T:System.String"/> 
+				value.
+			</value>
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Destinations">
             <summary>
-                <para>Gets named destinations for targets in the document. 
-</para>
+                <para>
+				    Gets named destinations for targets in the document. 
+				</para>
             </summary>
             <value>A dictionary, containing the <see cref="T:DevExpress.Pdf.PdfDestination"/> objects, along with their <see cref="T:System.String"/> key values.
 </value>
