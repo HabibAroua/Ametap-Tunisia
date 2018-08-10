@@ -11,6 +11,7 @@ namespace AMETAP.Model.Business
             set;
         }
         public String description
+		
         {
             get;
             set;

@@ -13,26 +13,31 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String nom
         {
             get;
             set;
         }
+		
         public String prenom
         {
             get;
             set;
         }
+		
         public int ID_NATURAGENT
         {
             get;
             set;
         }
+		
         public int CODE_FONC
         {
             get;
             set;
         }
+		
         public int PERS_CET
         {
             get;
@@ -68,16 +73,19 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String cin
         {
             get;
             set;
         }
+		
         public String adresse
         {
             get;
             set;
         }
+		
         public String date_recrutement
         {
             get;
@@ -89,6 +97,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String ocuupation
         {
             get;
@@ -100,6 +109,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public int code_agence
         {
             get;
@@ -111,6 +121,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String tel
         {
             get;

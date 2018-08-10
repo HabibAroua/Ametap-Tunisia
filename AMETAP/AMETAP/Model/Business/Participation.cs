@@ -47,9 +47,7 @@ namespace AMETAP.Model.Business
         }
 
         public Participation()
-        {
-
-        }
+        {}
 
         public Participation(int id,Participant participant)
         {
@@ -63,8 +61,7 @@ namespace AMETAP.Model.Business
             this.date_part = date_part;
             this.notif = notif;
         }
-        
-
+       
         public Participation(int id, String date_part, int etat, String notif, Payaiment payaiment)
         {
             this.id = id;

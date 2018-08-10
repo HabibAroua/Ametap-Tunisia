@@ -9,11 +9,13 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String password
         {
             get;
             set;
         }
+		
         public Personnel personnel
         {
             get;
@@ -26,7 +28,6 @@ namespace AMETAP.Model.Business
             set;
         }
 
-        
         public Admin(Personnel personnel, String login, String password,String estAdmin)
         {
             this.personnel = personnel;

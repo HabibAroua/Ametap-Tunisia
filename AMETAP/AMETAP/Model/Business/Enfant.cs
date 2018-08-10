@@ -9,6 +9,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String nom
         {
             get;
@@ -26,6 +27,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String ecole
         {
             get;

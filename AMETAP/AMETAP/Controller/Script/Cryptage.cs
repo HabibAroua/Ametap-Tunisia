@@ -15,8 +15,13 @@ namespace AMETAP.View.Script
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
                 byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes("f0xle@rn"));
-                using (TripleDESCryptoServiceProvider tripeDes = new TripleDESCryptoServiceProvider()
-                { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                using 
+				(
+				    TripleDESCryptoServiceProvider tripeDes = new TripleDESCryptoServiceProvider()
+                    { 
+					    Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 
+					}
+				)
                 {
                     ICryptoTransform transform = tripeDes.CreateEncryptor();
                     byte[] resulta = transform.TransformFinalBlock(data, 0, data.Length);

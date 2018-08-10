@@ -10,6 +10,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String nom_organisateur
         {
             get;
@@ -21,6 +22,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String adresse
         {
             get;

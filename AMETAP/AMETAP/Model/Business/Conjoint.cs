@@ -9,6 +9,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public String nom
         {
             get;

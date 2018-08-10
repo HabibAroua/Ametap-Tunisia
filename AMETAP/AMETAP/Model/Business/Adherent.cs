@@ -10,6 +10,7 @@ namespace AMETAP.Model.Business
             get;
             set;
         }
+		
         public int matriculeAmetap
         {
             get;
@@ -22,12 +23,12 @@ namespace AMETAP.Model.Business
             set;
         }
 
-
         public String login
         {
             get;
-            set;
-        }
+            set;	
+		}
+		
         public String password
         {
             get;
