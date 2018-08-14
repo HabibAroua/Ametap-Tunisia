@@ -700,3 +700,79 @@ Fatal NI connect error 12560, connecting to:
     TNS-00530: Erreur d'adaptateur de protocole
     nt secondary err code: 2
     nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SERVICE_NAME=)(CID=(PROGRAM=C:\Users\lenovo\Documents\GitHub\Ametap\AMETAP\AMETAP\bin\Debug\AMETAP.exe)(HOST=DESKTOP-UU0N3RP)(USER=lenovo)))(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 14-AOÛT -2018 08:51:22
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS : aucun processus d'écoute
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Pas de processus d'écoute
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SERVICE_NAME=)(CID=(PROGRAM=C:\Users\lenovo\Documents\GitHub\Ametap\AMETAP\AMETAP\bin\Debug\AMETAP.exe)(HOST=DESKTOP-UU0N3RP)(USER=lenovo)))(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 14-AOÛT -2018 08:51:40
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS : aucun processus d'écoute
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Pas de processus d'écoute
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SERVICE_NAME=)(CID=(PROGRAM=C:\Users\lenovo\Documents\GitHub\Ametap\AMETAP\AMETAP\bin\Debug\AMETAP.exe)(HOST=DESKTOP-UU0N3RP)(USER=lenovo)))(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 14-AOÛT -2018 12:51:00
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS : aucun processus d'écoute
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Pas de processus d'écoute
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(CONNECT_DATA=(SERVICE_NAME=)(CID=(PROGRAM=C:\Users\lenovo\Documents\GitHub\Ametap\AMETAP\AMETAP\bin\Debug\AMETAP.exe)(HOST=DESKTOP-UU0N3RP)(USER=lenovo)))(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521)))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 14-AOÛT -2018 12:51:29
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS : aucun processus d'écoute
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Pas de processus d'écoute
+    nt secondary err code: 61
+    nt OS err code: 0
