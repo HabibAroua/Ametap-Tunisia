@@ -1,7 +1,7 @@
 # Ametap
 Ametap partie desktop
 C'est mon projet fin d'étude , Écrit en langage c# (windows forms) 
-pour éxecuter cette application il faut utiliser le platforme Visual Studio 2015
+pour éxecuter cette application il faut utiliser le platforme Visual Studio 2015 (OS : Windows 10 , SGBD oracle 10g Express )
 
 Cette application est availbe pour les administrateurs de L'application AMETAP qui'ils permet de gérer les différents activités et consulter les informations.
 
