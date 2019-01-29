@@ -135,7 +135,6 @@ namespace AMETAP.Controller
                 if (test2 == true)
                 {
                     MessageBox.Show("La mise à jour de cet organisateur est effectué avec succés", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
@@ -157,5 +156,3 @@ namespace AMETAP.Controller
         }
     }
 }
-    
-
