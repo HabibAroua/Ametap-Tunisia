@@ -1,4 +1,4 @@
-# Ametap
+# Ametap Admin
 Ametap partie desktop
 (
 C'est mon projet fin d'étude , Écrit en langage c# .NET (windows forms) 
