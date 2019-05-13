@@ -16,6 +16,5 @@ Cette application est availbe pour les administrateurs de L'application AMETAP (
 ![inscription](https://user-images.githubusercontent.com/20991604/41009723-a3708570-692a-11e8-85bb-5113f614e310.png)
 
 
-<hr>
 <br>
 </br>
