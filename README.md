@@ -2,7 +2,6 @@
 <h3><u>Ametap partie desktop</u></h3>
 <br>
 
-
 C'est mon projet fin d'étude (partie desktop) , Écrit en langage c# .NET (windows forms) 
 pour éxecuter cette application il faut utiliser le platforme Visual Studio 2015,2017 ou 2019 (OS : Windows 10 , SGBD oracle 10g Express).
 <br>
