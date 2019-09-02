@@ -157,7 +157,6 @@ namespace AMETAP.Controller
 
         }
 
-
         public void AfficherActivite(DataGridView d)
         {
             d.DataSource = aDA.sellectAll();
@@ -177,6 +176,7 @@ namespace AMETAP.Controller
         {
             return aDA.selectNomActiviteLoisir(annee);
         }
+        
         public void calculerMontant_prevu(String capacite, String prix_unitaire, String montant_prevu)
         {
             if ((capacite.Equals("")) || (prix_unitaire.Equals("")))
