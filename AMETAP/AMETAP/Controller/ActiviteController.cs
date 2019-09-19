@@ -22,7 +22,6 @@ namespace AMETAP.Controller
             aDA = new ActiviteDA();
             bDA = new BudgetDA();
             adDA = new AdherentDA();
-
             oDA = new OrganisateurDA();
             bcDA = new BudgetCategorieDA();
         }
@@ -33,7 +32,6 @@ namespace AMETAP.Controller
             DateValue dFin = new DateValue(date_fin);
             DateValue dDebutInscription = new DateValue(date_debut_inscription);
             DateValue dFinInscription = new DateValue(date_fin_inscription);
-
             if ((int.Parse(dDebut.getYear()) != bDA.LastYear()) || (int.Parse(dFin.getYear()) != bDA.LastYear()) || (int.Parse(dDebutInscription.getYear()) != bDA.LastYear()) || (int.Parse(dFinInscription.getYear()) != bDA.LastYear()))
             {
                 MessageBox.Show("Nous sommes en " + bDA.LastYear() + " ", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
