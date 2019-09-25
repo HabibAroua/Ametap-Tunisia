@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using AMETAP.Model.Business;
 
 namespace AMETAP.Controller
@@ -12,6 +12,5 @@ namespace AMETAP.Controller
         {
             return null;
         }
-
     }
 }
