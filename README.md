@@ -22,3 +22,5 @@ Cette application est availbe pour les administrateurs de L'application AMETAP (
 <hr>
 
 La partie client version mobile Android : https://github.com/HabibAroua/Ametap_Mobile_Android
+
+<strong>C'est un logiciel Open Source</strong>
