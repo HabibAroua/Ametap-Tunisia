@@ -22,4 +22,5 @@ Cette application est availbe pour les administrateurs de L'application AMETAP (
 La partie client version mobile Android : https://github.com/HabibAroua/Ametap_Mobile_Android
 
 <strong>C'est un logiciel Open Source</strong> Vous pouvez améloirer ce logiciel
+<br>
 <strong>NB :</strong> Pour modifier ce logiciel tu dois savoir programmer en c# et des connaissance en base de donnée oracle version 10G
