@@ -11,8 +11,6 @@ pour éxecuter cette application il faut utiliser le platforme Visual Studio 201
 <br>
 Cette application est availbe pour les administrateurs de L'application AMETAP (<i>Les membres du bureau de l'amicale</i>) qui'ils permet de gérer les différents activités et consulter les informations.
 <br>
-<br>
-<br>
 ![authentification](https://user-images.githubusercontent.com/20991604/41009722-a3464828-692a-11e8-8cae-2677380ea625.png)
 <br>
 <br>
