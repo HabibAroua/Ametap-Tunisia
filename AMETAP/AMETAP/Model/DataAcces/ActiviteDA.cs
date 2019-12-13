@@ -23,6 +23,7 @@ namespace AMETAP.Model.DataAcces
                 System.Console.WriteLine("Error :"+ex.Message);
             }
         }
+        
         public Boolean insert(Object o)
         {
             try
@@ -60,6 +61,7 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+        
         public Boolean update(Object o1, Object o2)
         {
             return false;
@@ -89,6 +91,7 @@ namespace AMETAP.Model.DataAcces
                 cn.Close();
             }
         }
+        
         public Boolean delete(Object o)
         {
             try
@@ -115,6 +118,7 @@ namespace AMETAP.Model.DataAcces
             }
 
         }
+        
         public DataTable sellectAll()
         {
             OleDbDataAdapter adap1;
@@ -125,6 +129,7 @@ namespace AMETAP.Model.DataAcces
             tab1 = dtst.Tables["Activite"];
             return tab1;
         }
+        
         public DataTable search(String objet)
         {
             OleDbDataAdapter adap1;
@@ -351,6 +356,7 @@ namespace AMETAP.Model.DataAcces
                 return 0;
             }
         }
+        
         public List<int> getListIdOrganisateur()
         {
             try
