@@ -27,4 +27,4 @@ La partie web service https://github.com/HabibAroua/Ametap-service-Oracle
 
 <strong>C'est un logiciel Open Source</strong> Vous pouvez améloirer ce logiciel
 <br>
-<strong>NB :</strong> Pour modifier ce logiciel tu dois savoir programmer en c# et des connaissance en base de donnée oracle version 10G
+<strong>NB :</strong> Pour modifier ce logiciel tu dois savoir programmer en c# et des connaissance en base de donnée oracle express version 10G
