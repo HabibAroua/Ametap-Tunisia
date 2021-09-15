@@ -1,7 +1,7 @@
 # Ametap Admin
 <h2>
   <h1>
-    <strong>Le projet :</strong> 
+    <strong>Le projet :</strong>
     <strong>
       </h1>Developpement et Conception d’une application pour la gestion de l’amicale de l’Entreprise Tunisienne d’Activités Pétrolières
     <strong>
