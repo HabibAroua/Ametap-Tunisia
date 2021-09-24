@@ -40,7 +40,6 @@ namespace AMETAP.Model.DataAcces.PLSQL
         public String ModifierAgence(int id ,String nomOrganisateur , String email ,String adresse ,String description)
         {
             return "Begin ModifierAgence(" + id + ",'" + nomOrganisateur + "','" + email + "','" + adresse + "','" + description + "'); END;";
-
         }
 
         public String ModifierCentre(int id, String nomOrganisateur, String email, String adresse, String description)
@@ -51,7 +50,6 @@ namespace AMETAP.Model.DataAcces.PLSQL
         public String ModifierClub(int id, String nomOrganisateur, String email, String adresse, String description)
         {
             return "Begin ModifierClub(" + id + ",'" + nomOrganisateur + "','" + email + "','" + adresse + "','" + description + "'); END;";
-
         }
 
         public String SupprimerParticipant(int matricule)
